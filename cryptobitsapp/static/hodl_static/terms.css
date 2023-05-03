@@ -1,0 +1,26 @@
+.container{
+    font-size: .84em;
+    font-weight: 300;
+}
+h3{
+    font-size: 600;
+    margin-top: 1em;
+}
+h4{
+    font-size: 600;
+    margin-top: 1em;
+}
+
+.headerfixed{
+    position: fixed !important;
+    top: 0px !important;
+    width: 100%;
+    z-index: 2;
+}
+
+.stysty {
+    box-sizing: border-box;
+    min-width: 0;
+    font-weight: 600;
+    margin: 1rem  0 0rem 0;
+}

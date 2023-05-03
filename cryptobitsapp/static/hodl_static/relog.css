@@ -1,0 +1,196 @@
+:root{
+    --text-head:#1f0547;
+   --sub-head:#6a00c6;
+   --main-text:#e061ff;
+   --text:#a55fff;
+   --background:#faf7ff;
+   --fourty-five:45px;
+   --twenty-eight:28px;
+   --nineteen:19px;
+   --fourteen:14px;
+   
+}
+
+body{
+    overflow: hidden;
+   background-color: #1f0547;
+}
+.navbar1{
+    z-index: 100;
+}
+
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+    position: fixed;
+    /* right: 0; */
+    /* top: 0; */
+    /* height: 130vh; */
+    /* max-width: 100%; */
+    /* max-height: 100%; */
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+   
+  }
+  
+  /* Add some content at the bottom of the video/page */
+  .content {
+    position: fixed;
+    height: 100vh;
+    color: #f1f1f1;
+    background-color: #1f0547a4;
+    width: 100%;
+    padding: 20px;
+  }
+
+.form .row{
+    height: 80vh;
+    align-items: center;
+}
+
+.signup-form{
+    margin-top: 3rem;
+    background-color: none;
+    padding: 1rem;
+}
+
+.signup-form h4{
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    font-weight: 300;
+    color: white;
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #a45fff65;
+    outline: 0;
+    box-shadow:none;
+}
+
+.form-control {
+    display: block;
+    width: 95%;
+    height: calc(2em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: .9rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.form-check-label{
+    font-size: .8rem;
+}
+
+.button{
+    background-color: #1f0547;
+    margin-top: 1rem;
+    color: white;
+    padding: .575rem 8rem;
+}
+.button2{
+    background-color: #1f0547;
+    margin-top: 1rem;
+    color: white;
+    padding: .575rem 10.85rem;
+}
+.button:hover,.button2:hover{
+    background-color:#530497;
+    color: white;
+}
+
+.already {
+    margin-top: 1rem;
+    font-size: .8rem;
+    color: white;
+}
+.already a{
+  color: #6a00c6;
+}
+
+
+footer{
+    background: none;
+    color: white;
+}
+
+.footer-copyright{
+    border-top: none;
+    z-index: 300;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1024px){
+    .button{
+        background-color: var(--sub-head);
+        margin-top: 1rem;
+        color: white;
+        font-size: 12px;
+        padding: .575rem 5.3rem;
+    }
+    
+    .button2{
+        background-color: var(--sub-head);
+        margin-top: 1rem;
+        color: white;
+        padding: .575rem 6.7rem;
+    }
+
+    .signup-form{
+        margin-top:-1rem ;
+    }
+    
+
+    }
+@media (max-width: 575px){
+    .button{
+        background-color: var(--sub-head);
+        margin-top: 1rem;
+        color: white;
+        font-size: 12px;
+        padding: .575rem 5.3rem;
+    }
+    
+    .button2{
+        background-color: var(--sub-head);
+        margin-top: 1rem;
+        color: white;
+        padding: .575rem 6.7rem;
+    }
+
+    .signup-form{
+        margin-top:-1rem ;
+    }
+    
+
+    }
