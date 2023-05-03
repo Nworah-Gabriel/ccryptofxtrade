@@ -1,0 +1,375 @@
+{% extends 'aptiv_templates/Dashboard/__dash_base.html' %}
+{% load static %}
+  {% block content %}
+  
+
+    {% include 'aptiv_templates/Dashboard/__side_bar_mini.html' %}
+
+
+
+    {% include 'aptiv_templates/Dashboard/_header.html' %}
+ 
+
+
+<!doctype html>
+<html lang="en" class="light-theme">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--plugins-->
+
+{% load static %}
+<link href="{% static 'aptiv_static/dashboard/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css' %}" rel="stylesheet" />
+
+<!-- CSS Files -->
+<link href="{% static 'aptiv_static/dashboard/assets/css/bootstrap.min.css' %}" rel="stylesheet">
+<link href="{% static 'aptiv_static/dashboard/assets/css/bootstrap-extended.css' %}" rel="stylesheet">
+<link href="{% static 'aptiv_static/dashboard/assets/css/style.css' %}" rel="stylesheet">
+<link href="{% static 'aptiv_static/dashboard/assets/css/icons.css' %}" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open Sans:300,300i,400,400i,500,600,700,800&display=swap"
+  rel="stylesheet">
+<link rel="stylesheet" href="{% static 'aptiv_static/assets/css/vendor/font-awesome.min.css' %}">
+
+<link href="{% static 'aptiv_static/dashboard/assets/css/header-colors.css' %}" rel="stylesheet" />
+<link href="{% static 'aptiv_static/dashboard/assets/css/dashboard.css' %}" rel="stylesheet" />
+<!-- <link href="{% static 'aptiv_static/dashboard/assets/css/mystyle.css' %}" rel="stylesheet" /> -->
+<!-- <link href="{% static 'aptiv_static/dashboard/assets/css/investment.css' %}" rel="stylesheet" /> -->
+    <title> Dashboard | Investments| Arbitrage </title>
+</head>
+
+<body style="padding: 0px; margin: 0px;">
+
+
+
+  <!-- start page content wrapper-->
+  <div class="page-content-wrapper">
+    <!-- start page content-->
+    <div class="page-content">
+
+      <div class="row">
+        
+      
+           <!-- ===OPTIONS START=== -->
+           <div class="col-lg-3">
+            <div class="heading">
+              <h6><i class="fa fa-info-circle"></i>  
+                The Foreign Exchange market is a global decentralized or 
+                over-the-counter market for the trading of currencies. 
+                This market determines foreign exchange rates for every currency. 
+                APTIV professionals are involved in all aspects of buying, 
+                selling and exchanging currencies at current or determined prices
+               </h6>
+             </div>
+            <div class="investment-option">
+  
+              <!-- ===new options style start === -->
+  
+              <div class="">
+               <ul class="investoption">
+                <li class="optionlist" data-bs-toggle="modal" data-bs-target="#optionModal">
+                  <!-- <img src="assets/images/icons/7.png" width="25"> -->
+                  <h6>Price Action Trade </h6>
+                  <i class="fa fa-angle-right" aria-hidden="true"></i>
+                
+                </li>
+                <li class="optionlist" data-bs-toggle="modal" data-bs-target="#optionModal">
+                  <!-- <img src="assets/images/icons/7.png" width="25"> -->
+                  <h6>Range Trade</h6>
+                  <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </li>
+                <li class="optionlist" data-bs-toggle="modal" data-bs-target="#optionModal">
+                  <!-- <img src="assets/images/icons/7.png" width="25"> -->
+                  <h6>Trend Trade</h6>
+                  <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </li>
+                <li class="optionlist" data-bs-toggle="modal" data-bs-target="#optionModal">
+                  <!-- <img src="assets/images/icons/7.png" width="25"> -->
+                  <h6>Position Trade</h6>
+                  <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </li>
+                <li class="optionlist" data-bs-toggle="modal" data-bs-target="#optionModal">
+                  
+                  <!-- <img src="assets/images/icons/7.png" width="25"> -->
+                  <h6>Swing Trade</h6>
+                  <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </li>
+               
+               </ul>
+              </div>
+    
+            </div>
+          </div>
+
+        <!-- ===OPTIONS END=== -->
+
+    <!-- ===INVESTMENT LEVEL START=== -->
+        <div class="col-lg-9">
+         
+  
+          <div class="investment-levels">
+            <div class="row align-items-center">
+              <div class="card radius-10 w-100">
+                <div class="card-body">
+                  <div class="d-flex align-items-center">
+                    <h6 class="transaction-header" style="color: #1e9481;">Deposits</h6>
+                    <div class="fs-5 ms-auto dropdown">
+                      <div class="arrow">
+                        <!-- <a href="#">
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                      </a> -->
+                      </div>
+                      <div class="dropdown-toggle dropdown-toggle-nocaret cursor-pointer" data-bs-toggle="dropdown"><i
+                          class="bi bi-three-dots"></i></div>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li>
+                          <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="table-responsive mt-2">
+                    <table class="table align-middle mb-0">
+                      <thead class="">
+                        <tr>
+                        
+                          <th>Levels</th>
+                          <th>Total Interest</th>
+                          <th>Duration</th>
+                        
+                         
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <div class="gap-3 mt-3">
+                                <!-- <h6 class="product-name m-3">Smart Mobile Phone</h6> -->
+                                <img src="{% static 'aptiv_static/dashboard/assets/images/icons/1.png' %}" width="25">
+                                <b style="color: #1e9481;font-size: 1rem;">Novice</b>
+                                   <p>$498 ~ $1,998</p>
+                                 
+                            </div>
+                          </td>
+                         
+                          <td style="color:red;">1.5%</td>
+                          <td>7 Days</td>
+                          
+                          <!-- <td>
+                            <a href="#" class="badge alert-success">Proceed</a>
+                          </td> -->
+                        </tr>
+                        <tr>
+                         <td>
+                            <div class="gap-3 mt-3">
+                                <!-- <h6 class="product-name m-3">Smart Mobile Phone</h6> -->
+                                <img src="{% static 'aptiv_static/dashboard/assets/images/icons/2.png' %}" width="25">
+                               <b style="color: #1e9481;font-size: 1rem;">Amateur</b>
+                                   <p>$2000 - $4,997</p>
+                               
+                            </div>
+                          </td>
+                         
+                          <td style="color:red;">2%</td>
+                          <td>10 Days</td>
+                          
+                        
+                        </tr>
+                        
+                        <tr>
+                         <td>
+                            <div class="gap-3 mt-3">
+                              <img src="{% static 'aptiv_static/dashboard/assets/images/icons/3.png' %}" width="25">
+                                <!-- <h6 class="product-name m-3">Smart Mobile Phone</h6> -->
+                               <b style="color: #1e9481;font-size: 1rem;">Senior</b>
+                                   <p>$5000 ~ $14,999</p>
+                                 
+                            </div>
+                          </td>
+                         
+                          <td style="color:red;">3%</td>
+                          <td>21 Days</td>
+                          
+                         
+                        </tr>
+                        
+                        <tr>
+                         <td>
+                            <div class="gap-3 mt-3">
+                              <img src="{% static 'aptiv_static/dashboard/assets/images/icons/4.png' %}" width="25">
+                                <!-- <h6 class="product-name m-3">Smart Mobile Phone</h6> -->
+                            <b style="color: #1e9481;font-size: 1rem;">Enthusiast</b>
+                                   <p>$15,000 ~ $30,000</p>
+                                
+                            </div>
+                          </td>
+                         
+                          <td style="color:red;">4%</td>
+                          <td>22 Days</td>
+                          
+                          
+                        </tr>
+
+                        <tr>
+                         <td>
+                            <div class="gap-3 mt-3">
+                              <img src="{% static 'aptiv_static/dashboard/assets/images/icons/5.png' %}" width="25">
+                                <!-- <h6 class="product-name m-3">Smart Mobile Phone</h6> -->
+                                <b style="color: #1e9481;font-size: 1rem;">Professional</b>
+                                   <p>$30,000 ~ $99,999</p>
+                                 
+                            </div>
+                          </td>
+                         
+                          <td style="color:red;">5%</td>
+                          <td>30 Days</td>
+                          
+                         
+                        </tr>
+
+                        <tr>
+                         <td>
+                            <div class="gap-3 mt-3">
+                                <!-- <h6 class="product-name m-3">Smart Mobile Phone</h6> -->
+                                <img src="{% static 'aptiv_static/dashboard/assets/images/icons/6.png' %}" width="25">
+                              <b style="color: #1e9481;font-size: 1rem;">Expert</b>
+                                   <p>$100,000 ~ $500,000</p>
+                                 
+                            </div>
+                          </td>
+                         
+                          <td style="color:red;">6%</td>
+                          <td>1 Year</td>
+                          
+                          
+                        </tr>
+                       
+                        
+                        
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+           
+
+
+            </div>
+          </div>
+        </div>
+        <!-- ===INVESTMENT LEVEL END=== -->
+
+
+       
+      </div>
+
+       <!--start table row-->
+
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-12 col-xl-12 d-flex">
+         
+  
+        </div>
+       
+
+      </div>
+      <!--end table row-->
+    
+
+      <div class="modal fade" id="optionModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <!-- <h5 class="modal-title">Level Name</h5> -->
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+           <div class="modal-body">
+            <p>To subscribe to the novice level you will
+            have to pay a sum within the range of <b style="color: #137d6c;">$498 to $1998</b> only.
+          </p>
+
+          <form action="" class="deposit-form d-flex ">
+          <div class="form-group">
+            <label for="">Enter Amount ($):</label>
+            <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+          </div>
+
+          <button class="deposit" type="submit"> Make Payment</button>
+          
+
+        </form>
+           </div>
+          </div>
+        </div>
+      </div>
+
+
+    
+      
+
+    </div>
+    <!-- end page content-->
+  </div>
+  <!--end page content wrapper-->
+
+
+
+
+
+  <!--Start Back To Top Button-->
+  <a href="javaScript:;" class="back-to-top">
+    <ion-icon name="arrow-up-outline"></ion-icon>
+  </a>
+  <!--End Back To Top Button-->
+
+
+
+
+  <!--start overlay-->
+  <div class="overlay"></div>
+  <!--end overlay-->
+
+</div>
+<!--end wrapper-->
+
+  
+        <!--Start Back To Top Button-->
+        <a href="javaScript:;" class="back-to-top">
+            <ion-icon name="arrow-up-outline"></ion-icon>
+        </a>
+        <!--End Back To Top Button-->
+
+
+
+
+        <!--start overlay-->
+        <div class="overlay"></div>
+        <!--end overlay-->
+
+    </div>
+    <!--end wrapper-->
+
+
+     <!-- JS Files-->
+ 
+  <script src="{% static 'aptiv_static/dashboard/assets/js/jquery.min.js' %}"></script>
+  <script src="{% static 'aptiv_static/dashboard/assets/js/bootstrap.bundle.min.js' %}"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <!--plugins-->
+  <script src="{% static 'aptiv_static/dashboard/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js' %}"></script>
+  <script src="{% static 'aptiv_static/dashboard/assets/plugins/chartjs/chart.min.js' %}"></script>
+  <script src="{% static 'aptiv_static/dashboard/assets/js/index.js' %}"></script>
+  <!-- Main JS-->
+  <script src="{% static 'aptiv_static/dashboard/assets/js/main.js' %}"></script>
+  <script src="{% static 'aptiv_static/dashboard/assets/js/investment.js' %}"></script>
+
+
+</body>
+
+</html>
+
+{% endblock %}

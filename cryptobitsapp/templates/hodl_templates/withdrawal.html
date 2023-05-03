@@ -1,0 +1,287 @@
+{% extends 'hodl_templates/dashbase.html' %}
+{% load static %}
+  {% block content %}
+<!-- End Navbar -->
+
+<style>/* The alert message box */
+  .alert_message {
+      margin-top: 30px;
+    padding: 20px;
+    background-color: #173e43;
+    color: white;
+    /* display:none; */
+  }
+  
+  .closebtn_message {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .closebtn_message:hover {
+    color: black;
+  }</style>
+    <div class="container-fluid py-4">
+      {% include 'hodl_templates/_transfer_modal.html' %}
+      {% include 'hodl_templates/_balance.html' %}
+
+        <div class="row">
+            <div class="col-md-12 mt-4">
+                <div class="card">
+                    <div class="card-header pb-0 px-3">
+                        <h3 class="mb-0">Make Withdrawal</h3>
+                      </div>
+                      
+                    <div class="card-body pt-4 p-3">
+                        <div class="createdeposit">    
+                            <div class="row">
+
+                            <!-- try accepted coins -->
+                            {% for coin in accepted_coin%}
+                         <div class="col-lg-4 mt-3">
+                             <div class="withcards">
+                            
+                                 <div class="header">{% if coin.logo %}<img style="width:39px; padding-right: 5px;" src="{{coin.logo.url}}" alt="" width="220">{%endif%}{{coin.name}}</div>
+                                 <div class="alert_message" id="alertWithdraw{{coin.code}}" style="background-color:{{color}}; display: none;">
+                                  <span class="closebtn_message" onclick="this.parentElement.style.display='none';">&times;</span>
+                                  <p id="alertWithdrawMessage{{coin.code}}"></p>
+                                </div>
+                                 <div class="body">
+                                     <div class="title-group">
+                                      <p class="title" style="
+                                      line-height: 8px;"> Balance :</p>
+                                      <p class="title" style="
+                                      line-height: 8px;">Min. Amount :</p>
+                                      <p class="title" style="
+                                      line-height: 8px;">Max. Amount: </p>
+                                      <p class="title" style="
+                                      line-height: 8px;">Network: </p>
+                                      <!-- <p class="title">Charges(Fixed): </p> -->
+                                      <p class="title" style="
+                                      line-height: 8px;">dollar rate: </p>
+                                      
+                                     </div>
+                                     
+                                     <div class="title-values">
+                                      
+                                      <p  class="values walletBal" style="
+                                      line-height: 8px; color:purple;" >{{coin.now_wallet_bal| floatformat:6 }}</p>
+                                      <p class="values" style="
+                                      line-height: 8px; color:purple;" >{{coin.minimum_withdraw| floatformat:6}}</p>
+                                      <p class="values" style="
+                                      line-height: 8px; color:purple;">{{coin.maximum_withdraw| floatformat:6}}</p>
+                                      <p class="values" style="
+                                      line-height: 8px; color:purple;">{{coin.network}}</p>
+                                      <!-- <p class="values">{{coin.charge}}</p> -->
+                                      <p class="values" style="
+                                      line-height: 8px; color:purple;">{{coin.dollar_value | floatformat:2}}</p>
+                                      <!-- <p class="values">{{coin.time}} minutes</p> -->
+                                     </div>
+                                 </div>
+                                 
+                                 <form  id="formWithdraw{{coin.code}}" method="POST" >
+                                 {%csrf_token%}
+                                  <div class="form-group">
+                                    <label for="">Input Amount($):</label>
+                                    <input type="float" class="form-control" id="amount{{coin.code}}" aria-describedby="helpId" placeholder="" value="" >
+                                  </div>
+                                  
+                                 
+                                  <div class="form-group">
+                                    <label for="">Input Address:</label>
+                                    <input type="text" class="form-control" id="address{{coin.code}}" aria-describedby="helpId" placeholder="" value="">
+                                  </div>
+                                  <div class="form-group">
+                                    
+                                    <input type="hidden" class="form-control" id="dollar_value{{coin.code}}" aria-describedby="helpId" placeholder="" value="{{coin.dollar_value}}">
+                                  </div>
+                                  <div class="form-group">
+                                    
+                                    <input type="hidden" class="form-control" id="coincode{{coin.code}}" aria-describedby="helpId" placeholder="" value="{{coin.code}}">
+                                  </div>
+                                  
+
+                                 
+                                  
+                  
+                                  <button type="submit" class="btn btn-primary" onclick="$('#formWithdraw{{coin.code}}').on('submit',function(e){
+                                      e.preventDefault();
+                                      
+                                      {{coin.code}}function();
+                                      submitform();
+                                  });">Withdraw</button>
+                              </form>
+                             </div>
+                         </div>
+                         {%endfor%}
+                         <!-- end accepted coins -->
+                        
+
+                        
+                  
+                              </div>
+                           
+                            </div>
+                  
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form action="#" class="ml-2" id="formWithdraw">
+          {%csrf_token%}
+          <input type="hidden" name="{{withdrawform.amount.name}}" id= "{{withdrawform.amount.name}}"  value="">
+        <input type="hidden" name="{{withdrawform.address.name}}" id="{{withdrawform.address.name}}" value="">
+        <input type="hidden" name="{{withdrawform.currency.name}}" id="{{withdrawform.currency.name}}" value="">
+        <input type="hidden" name="{{withdrawform.dollar_value.name}}" id="{{withdrawform.dollar_value.name}}" value="">
+
+
+
+        </form>
+        
+        
+
+      </form>
+
+      <div class="row">
+        <div class="col-md-12 mt-4">
+          <div class="card">
+            <div class="card-header pb-0 px-3">
+              <h3 class="mb-0">Withdrawal Log</h3>
+            </div>
+            <div class="card-body pt-4 p-3">
+              <div class="table-responsive p-0">
+                <table class="table align-items-center justify-content-center mb-0">
+                  <thead>
+                    <tr>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Amount Requested</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Amount + Charges</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Receiving Mode</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Status</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Date Created</th>
+                    </tr>
+                  </thead>
+                  {% for withdraw in mywithdrawal %}
+                  <tbody>
+                    <tr>
+                      <td>
+                      {{withdraw.uuid}}
+                      </td>
+                      <td>
+                        <p class="text-sm font-weight-bold mb-0">{{withdraw.amount}}</p>
+                      </td>
+                      <td>
+                        <p class="text-sm font-weight-bold mb-0">{{withdraw.charge}}</p>
+                      </td>
+                      <td>
+                        <span class="text-xs font-weight-bold">{{withdraw.coin_code}}</span>
+                      </td>
+                      <td>
+                        <span class="text-xs font-weight-bold" style="color:{% if withdraw.status == 'APV' %}green{%else%} red{%endif%};">{% if withdraw.status == 'APV' %}Approved{%else%} Submitted{%endif%}</span>
+                      </td>
+                      <td>
+                        <span class="text-xs font-weight-bold">{{withdraw.date}}</span>
+                        
+                      </td>
+                    </tr>
+                  </tbody>
+                  {% endfor %}
+                </table>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+
+
+    </div>
+
+
+
+  </main>
+  
+
+
+<!-- exclusive scripts -->
+
+<script>
+
+   amount = document.getElementById("{{withdrawform.amount.name}}");
+   address = document.getElementById("{{withdrawform.address.name}}");
+   currency = document.getElementById("{{withdrawform.currency.name}}");
+   dollar_value = document.getElementById("{{withdrawform.dollar_value.name}}");
+
+  {% for coin in accepted_coin%}
+    function {{coin.code}}function() {
+      const form_withdraw{{coin.code}} = document.getElementById("formWithdraw{{coin.code}}");
+
+      amount.value = form_withdraw{{coin.code}}.elements['amount{{coin.code}}'].value;
+      address.value = form_withdraw{{coin.code}}.elements['address{{coin.code}}'].value;
+      currency.value = form_withdraw{{coin.code}}.elements['coincode{{coin.code}}'].value;
+      dollar_value.value = form_withdraw{{coin.code}}.elements['dollar_value{{coin.code}}'].value;
+      console.log(amount.value, address.value, currency.value)
+      
+ 
+      
+    }
+    
+    {% endfor %}
+
+   
+    
+
+      
+  </script>
+
+<script>
+  function submitform(){
+    
+    $.ajax({
+          type:"POST",
+          url :"{% url 'make_withdraw' %}",
+          data : $("#formWithdraw").serialize(),
+          dataType:'json',
+          success:function(data){
+              if (data.msg === "Success"){
+                  const alert = document.getElementById("alertWithdraw" + currency.value);
+                  alert.style.display = 'block';
+                  alert.style.background = "green";
+                  $("#alertWithdrawMessage"+ currency.value).text(data.response)
+                  
+                  
+                  }
+              else if (data.msg === "Invalid"){
+                  const alert = document.getElementById("alertWithdraw"+ currency.value);
+                  alert.style.display = 'block';
+                  alert.style.background = "red";
+                  $("#alertWithdrawMessage"+ currency.value).text(data.response)
+                  }
+              else if (data.msg === "Fail"){
+                  const alert = document.getElementById("alertWithdraw{{coin.code}}");
+                  alert.style.display = 'block';
+                  alert.style.background = "red";
+                  $("#alertWithdrawMessage{{coin.code}}").text(data.response)
+              }
+              else{
+                  const alert = document.getElementById("alertWithdraw{{coin.code}}");
+                  alert.style.display = 'block';
+                  alert.style.background = "red";
+                  $("#alertWithdrawMessage{coin.code}}").text("An Unexpected Error Occured")
+
+                }
+          }
+      })
+
+  }
+        
+
+</script>
+
+  {%endblock%}

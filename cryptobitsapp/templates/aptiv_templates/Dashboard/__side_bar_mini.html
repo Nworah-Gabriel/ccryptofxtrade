@@ -1,0 +1,23 @@
+ <!--start sidebar wrapper-->
+ <div class="mini-sidebar-wrapper" style="border:1px solid blue;">
+  <!-- <div class="closed">
+      <ion-icon name="close-outline"></ion-icon>
+    </div> -->
+    {% load static %}
+<ul>
+  
+ 
+  <li style=" padding:2px;"> <img src="{% static 'aptiv_static/dashboard/assets/images/icons8-dashboard-64.PNG' %}" alt="" srcset="" width="20%" height="20%"><a style="padding-left:  10px; font-weight: bold; color: ;" href='#' onclick="location.href='{% url 'dashboard' %}'">Account</a></li>
+  <li style=""> <img src="{% static 'aptiv_static/dashboard/assets/images/icons8-investment-64.png' %}" padding-left:0px; alt="" srcset="" width="20%" height="20%"><a style="padding-left:  10px; font-weight: bold; color: ;"  href='#' onclick="location.href='{% url 'investment' %}'">Investments</a></li>
+
+  <li style=""> <img src="{% static 'aptiv_static/dashboard/assets/images/icons8-wallet-64.PNG' %}" alt="" srcset="" width="20%" height="20%"><a style="padding-left:  10px; font-weight: bold; color: ;"  href='#' onclick="location.href='{% url 'wallet' %}'">Wallet</a></li>
+
+  <li style=""> <img src="{% static 'aptiv_static/dashboard/assets/images/icons8-transaction-60.png' %}" alt="" srcset="" width="20%" height="20%"><a style="padding-left:  10px; font-weight: bold; color: ;"  href='#'  onclick="location.href='{% url 'transactions' %}'">Transactions</a></li>
+
+
+
+</ul>
+
+
+</div>
+<!--end sidebar wrapper-->

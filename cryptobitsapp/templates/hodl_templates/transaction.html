@@ -1,0 +1,134 @@
+{% extends 'hodl_templates/dashbase.html' %}
+{% load static %}
+  {% block content %}
+    <!-- End Navbar -->
+    <div class="container-fluid py-4">
+      
+      <div class="row">
+        <div class="col-12">
+          <div class="card mb-4">
+            <div class="card-header pb-0">
+              <h3>Log</h3>
+            </div>
+          
+            <div class="card-body px-0 pt-0 pb-2">
+              <div class="table-responsive p-0">
+                <table class="table align-items-center mb-0">
+                  <thead>
+                    <tr>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">ID</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Amount</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date created</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">status</th>
+                    </tr>
+                  </thead>
+                  
+                  {% for transaction in mywithdrawal%}
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                        
+                            <h6 class="mb-0 text-sm">withdraw</h6>
+                          
+                      </td>
+                      
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                        
+                            <h6 class="mb-0 text-sm">#{{transaction.uuid}}</h6>
+                          
+                      </td>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                        
+                            <h6 class="mb-0 text-sm">${{transaction.amount}}</h6>
+                          
+                      </td>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                        
+                            <h6 class="mb-0 text-sm">{{transaction.date}}</h6>
+                          
+                      </td>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                       
+                            <h6 class="mb-0 text-sm"  style="color:{% if transaction.status == 'APV' %}green{%else%} red{%endif%};">{% if transaction.status == 'APV' %}Approved{%else%} Submitted{%endif%}
+                              </h6>
+                          
+                      </td>
+                     
+                    </tr>
+                    
+                 
+                  </tbody>
+                {%endfor%}
+                
+                <div class="card-body px-0 pt-0 pb-2">
+                  <div class="table-responsive p-0">
+                    <table class="table align-items-center mb-0">
+                      <thead>
+                        <tr>
+                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type</th>
+                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">ID</th>
+                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Amount</th>
+                          <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date created</th>
+                          <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">status</th>
+                        </tr>
+                      </thead>
+                {% for transaction in mydeposit%}
+
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                        
+                            <h6 class="mb-0 text-sm">deposit</h6>
+                          
+                      </td>
+                      
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                        
+                            <h6 class="mb-0 text-sm">#{{transaction.uuid}}</h6>
+                          
+                      </td>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                        
+                            <h6 class="mb-0 text-sm">${{transaction.amount}}</h6>
+                          
+                      </td>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                        
+                            <h6 class="mb-0 text-sm">{{transaction.date}}</h6>
+                          
+                      </td>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                       
+                            <h6 class="mb-0 text-sm"  style="color:{% if transaction.status == 'APV' %}green{%else%} red{%endif%};">{% if transaction.status == 'APV' %}Approved{%else%} Submitted{%endif%}
+                              </h6>
+                           </div>
+                         
+                      </td>
+                     
+                    </tr>
+                    
+                 
+                  </tbody>
+                {%endfor%}
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!--   Core JS Files   -->
+  {%endblock%}

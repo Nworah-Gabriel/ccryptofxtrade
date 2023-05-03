@@ -1,0 +1,184 @@
+
+<!--Transfer Modal -->
+<div class="trans-bg">
+    <div class="trans-modal">
+  
+      <div class="trans-card">
+        <i class="fa fa-window-close exito mr-auto" aria-hidden="true"></i>
+        <div class="modal-title">
+          <h5>Transfer</h5>
+        </div>
+
+
+  <form action="#" class="ml-2" id="formTransfer">
+{% csrf_token %}
+  <div class="modal-body">
+      <p class="mb-0 title">From:</p>
+      <div class="form-group">
+        <label for="">Select Coin:<span class="convertValue" id="dollarValueFrom" style="color:red; margin-left: 15px;">converting...</span></label>
+        <select class="form-control" name="select_coin_one" id="selectCoinOne" onchange="if (this.selectedIndex) console.log('ok'); converter(this.value, this );">
+          <option>select</option>
+          
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="">Input Amount: </label>
+        <input type="text"
+          class="form-control" name="id_transfer_amt" id="idTransferAmt" aria-describedby="helpId" placeholder="">
+         
+      </div>
+
+    
+
+      <p class="mb-0 title">To:</p>
+      <div class="form-group">
+        
+        <label for="">Select Coin:<span class="convertValue" id="dollarValueTo" style="color:red; margin-left: 15px;">converting...</span> </label>
+        <select class="form-control" name="select_coin_two" id="selectCoinTwo" onchange="if (this.selectedIndex) console.log('ok'); converter(this.value, this );">
+          <option>select</option>
+        </select>
+      </div>
+     
+
+      
+      <button type="submit" onclick="fund_transfer_post()" class="btn btn-primary finish">Transfer</button>
+    </div>
+    </div>
+
+  </div>
+</div>
+
+    </form>
+        
+  <!--Transfer Modal end-->
+  <script>
+
+  function converter(name, element = ""){
+    
+    // var e = document.getElementById("selectCoinOne");
+    var e = name;
+    var element = element;
+    
+    // var convert_value = element.parentNode.querySelector('.convertValue');
+    // alert(convert_value);
+
+    // var value=e.options[e.selectedIndex].value;// get selected option value
+    var value_span_id = element.parentNode.querySelector('.convertValue').id;
+
+    $("#"+value_span_id).text("converting...");
+    // alert("id  "+ element.id);
+    if (element.id === 'idTransferAmt'){
+      data_bal = element.text;
+      token_name = text[0];
+      
+
+    }
+    else{
+      var text=element.options[element.selectedIndex].text;
+      text = text.split(":");
+      data_bal = text[1];
+      $('idTransferAmt').text("converting...");
+      token_name = text[0];
+      document.getElementById('idTransferAmt').token_name = text[0];
+      // $('#idTransferAmt').token_name=text[0];
+    };
+    
+    // alert(document.getElementById('idTransferAmt'));
+    
+    // alert(text[1]);
+    
+    var balance_val =  parseFloat(data_bal);
+    // alert(balance_val + "hiy");
+    $.ajax({
+          type:"GET",
+          url :"{% url 'get_coin_value' %}",
+
+          data : {'msg':'goood','format':'single', csrfmiddlewaretoken: '{{ csrf_token }}', 'token_name':token_name},
+          dataType:'json',
+          success:function(data){
+            var rate = data.rate;
+            var value_in_dollar = parseFloat(rate) * balance_val;
+            // $("#dollarValueFrom").text(btc_rate);
+            var value_span_id = element.parentNode.querySelector('.convertValue').id;
+            
+            $("#"+value_span_id).text("(USD):  $" + value_in_dollar.toFixed(4));
+
+           
+
+          }
+
+        })
+
+  }
+
+    function fund_transfer_get(){
+
+
+      $.ajax({
+        type:"GET",
+        url :"{% url 'fund_transfer' %}",
+        data : {csrfmiddlewaretoken: '{{ csrf_token }}'},
+        dataType:'json',
+        success:function(data){
+            if (data.msg === "Success"){
+                // alert(data.response);
+                var accounts = "<option>select</option>"
+                for (const [key, value] of Object.entries(data.response)) {
+                   
+                    accounts = accounts + "<option value='" +value[0] + "," + value[2]+"'>" + value[0].toUpperCase() +": " + value[1] +"</option>"
+                  };
+                  
+                  $('#selectCoinOne').html( accounts);
+                  $('#selectCoinTwo').html( accounts);
+
+
+
+            }
+             
+              else{
+                    alert("can't fetch accounts");
+
+                }
+         
+        }
+    })
+      
+  }
+
+  function fund_transfer_post(){
+
+  const form_transfer = document.getElementById("formTransfer");
+  form_transfer.addEventListener("submit", submitHandler);
+  function submitHandler(e){
+      e.preventDefault()
+      $.ajax({
+            type:"POST",
+            url :"{% url 'fund_transfer' %}",
+            data : $("#formTransfer").serialize(),
+            dataType:'json',
+            async: false,
+            success:function(data){
+                if (data.msg === "Success"){
+                  alert(data.response);
+                  location.reload();
+                    
+                    
+                    }
+
+                else if(data.msg === "Invalid"){
+                  alert(data.response);
+                  location.reload();
+                }
+                
+                else{
+                    alert("Transfer was not successful");
+  
+                  }
+            }
+        })
+  
+      }
+    }  
+  
+  </script> 

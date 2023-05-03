@@ -1,0 +1,123 @@
+
+{% extends 'aptiv_templates/Dashboard/__dash_base.html' %}
+{% load static %}
+  {% block content %}
+  
+
+    {% include 'aptiv_templates/Dashboard/__side_bar_mini.html' %}
+
+
+
+    {% include 'aptiv_templates/Dashboard/_header.html' %}
+
+
+    <!-- start page content wrapper-->
+    <div class="page-content-wrapper">
+      <!-- start page content-->
+      <div class="page-content">
+
+        <div class="row justify-content-center">
+           
+           
+            <div class="col-lg-5">
+             <h3 class="verify-head">Verify your account will help you trade more easily</h3>
+            <h6>Higher KYC level will bring more benefits on your account</h6>
+
+            <ul class="p-0 list-unstyled mt-4">
+
+                <li class="verify-item d-flex justify-content-between align-items-center">
+                        <div class="level-title">
+                            <h5>Level 1</h5>
+                            <p>Email Verification</p>
+                        </div>
+
+                        <div class="level-right">
+                           <span class="level-badge level-badge-success">
+                            Verified</span>
+                            <div class="mt-1">
+                            <!-- <a href="#"> Change phone number</a> -->
+                          </div>
+                        </div>
+                </li>
+
+                <li class="verify-item d-flex justify-content-between align-items-center">
+                        <div class="level-title">
+                            <h5>Level 2</h5>
+                            <p>ID verification</p>
+                        </div>
+
+                        <div class="level-right">
+                           
+                            {%if act_data_old.verified == True %}
+
+                            <span class="level-badge level-badge-success">
+                                Verified</span>
+                            
+                                {%elif act_data_old.verified == False %}
+                                <span class="level-badge level-badge-warning">
+                                    submitted</span>
+                               
+                            {%else%}
+                            <span class="level-badge">
+                                Not Submitted</span>
+                                <div class="mt-1">
+                                <a href='#' onclick="location.href='{% url 'account-verification' %}'">Verify</a>
+                              </div>
+                            {%endif%}
+                           
+                        </div>
+                </li>
+
+              
+
+               
+
+
+            </ul>
+            
+            
+            </div>
+          
+
+
+          </div>
+
+          <div class="col">
+            <!-- Modal -->
+            <div class="modal fade" id="documentVerification" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Upload Your Document</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    
+          <div class="row">
+            <div class="col-xl-9 mx-auto">
+              <h6 class="mb-0 text-uppercase">Fancy File Upload</h6>
+              <hr/>
+              <div class="card">
+                <div class="card-body">
+                  <input id="fancy-file-upload" type="file" name="files" accept=".jpg, .png, image/jpeg, image/png" multiple>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--end row-->
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+      </div>
+      <!-- end page content-->
+    </div>
+    <!--end page content wrapper-->
+
+
+ 
+    <script src="{% static 'aptiv_static/dashboard/assets/js/wallet.js' %}"></script>
+    {%endblock%}

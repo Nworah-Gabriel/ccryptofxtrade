@@ -1,0 +1,499 @@
+
+{% extends 'aptiv_templates/Dashboard/__dash_base.html' %}
+{% load static %}
+  {% block content %}
+  
+
+    {% include 'aptiv_templates/Dashboard/__side_bar_mini.html' %}
+
+
+
+    {% include 'aptiv_templates/Dashboard/_header.html' %}
+
+    <link href="{% static 'aptiv_static/dashboard/assets/css/investment.css' %}" rel="stylesheet" />
+   
+
+
+    <!-- start page content wrapper-->
+    <div class="page-content-wrapper">
+      <!-- start page content-->
+      <div class="page-content">
+
+        <div class="heading" style="text-color:white !important; background-color: #2ea390; margin-bottom:5px;">
+          <h3 style="color:white !important; text-align: center;">Investment levels</h3>
+        </div>
+
+        <div class="investment-levels">
+          <div class="row align-items-center">
+
+            <div class="col-lg-4">
+              <div class="novice ">
+              <div class="card radius-10 w-100 d-flex">
+                <div class="card-body d-flex">
+                  
+                  <!-- <div class="number">
+                    <p>1</p>
+                  </div> -->
+
+                  <div class="level-head">
+                    <h5 id="level">NOVICE</h5>
+                    <img src="{% static 'aptiv_static/dashboard/assets/images/icons/1.png' %}" width="90" class="mt-3">
+                    <!-- <div style="font-size: 2em;" class="text-center"><i class="fa fa-star"></i></div> -->
+                   
+                  </div>
+
+                  <div class="level-price">
+                    <h6>Price:</h6>
+                    <p>$498 ~ $1,998</p>
+                  </div>
+
+                  <div class="enroll">
+                    <a href="" class="enroll-btn" data-bs-toggle="modal" data-bs-target="#levelModal">Enroll</a>
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="amateur">
+              <div class="card radius-10 w-100 d-flex">
+                <div class="card-body d-flex">
+                  
+                  <!-- <div class="number">
+                    <p>2</p>
+                  </div> -->
+
+                  <div class="level-head">
+                    <h5 id="level">AMATEUR</h5>
+                    <center><img src="{% static 'aptiv_static/dashboard/assets/images/icons/2.png' %}" width="90" class="mt-3"></center>
+                   
+                  </div>
+
+                  <div class="level-price">
+                    <h6>Price:</h6>
+                    <p>$2000 ~ $4,997</p>
+                  </div>
+
+                  <div class="enroll">
+                    <a href="" class="enroll-btn" data-bs-toggle="modal" data-bs-target="#levelModal2">Enroll</a>
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="senior">
+              <div class="card radius-10 w-100 d-flex">
+                <div class="card-body d-flex">
+                  
+                  <!-- <div class="number">
+                    <p>3</p>
+                  </div> -->
+
+                  <div class="level-head">
+                    <h5 id="level">SENIOR</h5>
+                    <img src="{% static 'aptiv_static/dashboard/assets/images/icons/3.png' %}" width="90" class="mt-3">
+                   
+                  </div>
+
+                  <div class="level-price">
+                    <h6>Price:</h6>
+                    <p>$5000 ~ $14,999</p>
+                  </div>
+
+                  <div class="enroll">
+                    <a href="" class="enroll-btn" data-bs-toggle="modal" data-bs-target="#levelModal3">Enroll</a>
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="enthu">
+              <div class="card radius-10 w-100 d-flex">
+                <div class="card-body d-flex">
+                  
+                  <!-- <div class="number">
+                    <p>4</p>
+                  </div> -->
+
+                  <div class="level-head">
+                    <h5 id="level">ENTHUSIAST</h5>
+                   <center><img src="{% static 'aptiv_static/dashboard/assets/images/icons/4.png' %}" width="90" class="mt-3"></center>
+                   
+                  </div>
+
+                  <div class="level-price">
+                    <h6>Price:</h6>
+                    <p>$15,000 ~ $30,000</p>
+                  </div>
+
+                  <div class="enroll">
+                    <a href="" class="enroll-btn" data-bs-toggle="modal" data-bs-target="#levelModal4">Enroll</a>
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="pro">
+              <div class="card radius-10 w-100 d-flex">
+                <div class="card-body d-flex">
+                  
+                  <!-- <div class="number">
+                    <p>5</p>
+                  </div> -->
+
+                  <div class="level-head">
+                    <h5 id="level">PROFESSIONAL</h5>
+                    <center><img src="{% static 'aptiv_static/dashboard/assets/images/icons/5.png' %}" width="90" class="mt-3"></center>
+                   
+                  </div>
+
+                  <div class="level-price">
+                    <h6>Price:</h6>
+                    <p>$30,000 ~ $99,999</p>
+                  </div>
+
+                  <div class="enroll">
+                    <a href="" class="enroll-btn" data-bs-toggle="modal" data-bs-target="#levelModal5">Enroll</a>
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="expert">
+              <div class="card radius-10 w-100 d-flex">
+                <div class="card-body d-flex">
+                  
+                  <!-- <div class="number">
+                    <p>6</p>
+                  </div> -->
+
+                  <div class="level-head">
+                    <h5 id="level">EXPERT</h5>
+                    <img src="{% static 'aptiv_static/dashboard/assets/images/icons/6.png' %}" width="90" class="mt-3">
+                   
+                  </div>
+
+                  <div class="level-price">
+                    <h6>Price:</h6>
+                    <p>$100,000 ~ $500,000</p>
+                  </div>
+
+                  <div class="enroll">
+                    <a href="" class="enroll-btn" data-bs-toggle="modal" data-bs-target="#levelModal6">Enroll</a>
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+   
+
+        <!-- FOR NOVICE PAYMENT -->
+        <div class="modal fade" id="levelModal" tabindex="-1" aria-hidden="true"> 
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">NOVICE</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+             <div class="modal-body">
+              <p>To subscribe to this selected level you will
+              have to pay a sum within the range of <b style="color: #137d6c;">$498 to $1998</b> only.
+            </p>
+
+            <form action="" class="deposit-form d-flex ">
+            <div class="form-group">
+              <label for="">Enter Amount ($):</label>
+              <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+            </div>
+            <a  href='#' onclick="location.href='{% url 'wallet' %}'" class="deposit" style="width: 100%;"> Make Deposit</a>
+          </form>
+             </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FOR AMATEUR PAYMENT -->
+        <div class="modal fade" id="levelModal2" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">AMATEUR</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+             <div class="modal-body">
+              <p>To subscribe to this selected level you will
+              have to pay a sum within the range of <b style="color: #137d6c;">$2,000 to $4,997</b> only.
+            </p>
+
+            <form action="" class="deposit-form d-flex ">
+            <div class="form-group">
+              <label for="">Enter Amount ($):</label>
+              <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+            </div>
+            <a  href='#' onclick="location.href='{% url 'wallet' %}'" class="deposit" style="width: 100%;"> Make Deposit</a>
+          </form>
+             </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FOR SENIOR PAYMENT -->
+        <div class="modal fade" id="levelModal3" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">SENIOR</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+             <div class="modal-body">
+              <p>To subscribe to this selected level you will
+              have to pay a sum within the range of <b style="color: #137d6c;">$5,000 to $14,999</b> only.
+            </p>
+
+            <form action="" class="deposit-form d-flex ">
+            <div class="form-group">
+              <label for="">Enter Amount ($):</label>
+              <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+            </div>
+            <a  href='#' onclick="location.href='{% url 'wallet' %}'" class="deposit" style="width: 100%;"> Make Deposit</a>
+          </form>
+             </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FOR ENTHUSIAST PAYMENT -->
+        <div class="modal fade" id="levelModal4" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">ENTHUSIAST</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+             <div class="modal-body">
+              <p>To subscribe to this selected level you will
+              have to pay a sum within the range of <b style="color: #137d6c;">$15,000 to $30,000</b> only.
+            </p>
+
+            <form action="" class="deposit-form d-flex ">
+            <div class="form-group">
+              <label for="">Enter Amount ($):</label>
+              <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+            </div>
+            <a  href='#' onclick="location.href='{% url 'wallet' %}'" class="deposit" style="width: 100%;"> Make Deposit</a>
+          </form>
+             </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FOR PROFESSIONAL PAYMENT -->
+        <div class="modal fade" id="levelModal5" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">PROFESSIONAL</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+             <div class="modal-body">
+              <p>To subscribe to this selected level you will
+              have to pay a sum within the range of <b style="color: #137d6c;">$30,000 to $99,999</b> only.
+            </p>
+
+            <form action="" class="deposit-form d-flex ">
+            <div class="form-group">
+              <label for="">Enter Amount ($):</label>
+              <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+            </div>
+            <a onclick="location.href='{% url 'wallet' %}'" class="deposit" style="width: 100%;"> Make Deposit</a>
+          </form>
+             </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- FOR EXPERT PAYMENT -->
+        <div class="modal fade" id="levelModal6" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">EXPERT</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+             <div class="modal-body">
+              <p>To subscribe to this selected level you will
+              have to pay a sum within the range of <b style="color: #137d6c;">$100,000 to $500,000</b> only.
+            </p>
+
+            <form action="" class="deposit-form d-flex ">
+            <div class="form-group">
+              <label for="">Enter Amount ($):</label>
+              <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+            </div>
+            <a  href='#' onclick="location.href='{% url 'wallet' %}'" class="deposit" style="width: 100%;"> Make Deposit</a>
+          </form>
+             </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===INVESTMENT OPTIONS START=== -->
+        <div>
+          <div class="investment-option">
+
+            <!-- ===new options style start === -->
+
+            <div>
+             <ul class="investoption">
+              <li class="optionlist">
+                <a  href="stock">
+                <img src="{% static 'aptiv_static/dashboard/assets/images/icons/7.png' %}" width="25">
+                <h6 class="mb-0">Stocks</h6>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+              </li>
+              <li class="optionlist">
+                <a  href="shares">
+                <img src="{% static 'aptiv_static/dashboard/assets/images/icons/8.png' %}" width="25">
+                <h6 class="mb-0">Shares</h6>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+              </li>
+              <li class="optionlist">
+                <a href="crypto">
+                <img src="{% static 'aptiv_static/dashboard/assets/images/icons/9.png' %}" width="25">
+                <h6 class="mb-0">Crypto Currency</h6>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+              </li>
+              <li class="optionlist">
+                <a href="forex">
+                <img src="{% static 'aptiv_static/dashboard/assets/images/icons/10.png' %}" width="25">
+                <h6 class="mb-0">Foreign Exchange</h6>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+              </li>
+              <li class="optionlist">
+                <a href="real">
+                <img src="{% static 'aptiv_static/dashboard/assets/images/icons/11.png' %}" width="25">
+                <h6 class="mb-0">Realestate Market</h6>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+              </li>
+             </ul>
+            </div>
+  
+          </div>
+        </div>
+
+        <!-- ===INVESTMENT OPTIONS END=== -->
+      </div>
+
+       <!--start table row-->
+
+      <div class="row justify-content-center">
+        <div class="col-11 col-lg-11 col-xl-11 d-flex">
+          <div class="card radius-10 w-100">
+            <div class="card-body">
+              <div class="d-flex align-items-center">
+                <h6 class="transaction-header" style="color: #1e9481;">Deposits</h6>
+                <div class="fs-5 ms-auto dropdown">
+                  <div class="arrow">
+                    <!-- <a href="#">
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                  </a> -->
+                  </div>
+                  <div class="dropdown-toggle dropdown-toggle-nocaret cursor-pointer" data-bs-toggle="dropdown"><i
+                      class="bi bi-three-dots"></i></div>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li>
+                      <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="table-responsive mt-2">
+                <table class="table align-middle mb-0">
+                  <thead class="">
+                    <tr>
+                      <th>Date</th>
+                      <th>Product</th>
+                      <th>Price</th>
+                      <th>Status</th>
+                      <!-- <th>Action</th> -->
+                     
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for transaction in transaction %}
+                    <tr>
+                      <td>{{ transaction.date }}</td>
+                      <td>
+                        <div class="gap-3">
+                            <h6 class="product-name m-3">{{ transaction.currency_coin }}</h6>
+                        </div>
+                      </td>
+                     
+                      <td>${{ transaction.amount }}</td>
+                      <td><span class="badge alert-success">{{ transaction.status }}</span></td>
+                      
+                      <!-- <td>
+                        <div class="d-flex align-items-center gap-3 fs-6">
+                          <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            title="" data-bs-original-title="View detail" aria-label="Views">
+                            <ion-icon name="eye-sharp"></ion-icon>
+                          </a>
+                          <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            title="" data-bs-original-title="Edit info" aria-label="Edit">
+                            <ion-icon name="pencil-sharp"></ion-icon>
+                          </a>
+                          <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            title="" data-bs-original-title="Delete" aria-label="Delete">
+                            <ion-icon name="trash-sharp"></ion-icon>
+                          </a>
+                        </div>
+                      </td> -->
+                    </tr>
+                    {% endfor %}
+                   
+                    
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+       
+
+      </div>
+      <!--end table row-->
+        
+
+      </div>
+      <!-- end page content-->
+    </div>
+    <!--end page content wrapper-->
+    <script src="{% static 'aptiv_static/dashboard/assets/js/investment.js' %}"></script>
+    {%endblock%}

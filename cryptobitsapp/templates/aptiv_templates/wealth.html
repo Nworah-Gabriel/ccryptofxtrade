@@ -1,0 +1,407 @@
+
+{% extends 'aptiv_templates/base.html' %}
+{% load static %}
+    {% block content %}
+
+
+
+    <!-- Start Header Area -->
+   
+
+    {% include 'aptiv_templates/_header.html' %}
+   
+            
+
+            {% include 'aptiv_templates/_side__nav.html' %}
+
+                <div class="col-lg-10 main-sections">
+                    <!-- hero slider section start -->
+
+
+                    <section class="hero-slider  hero-transparent-bg grey-bg fix" style="background: url({% static 'aptiv_static/assets/img/banner/multi.jpg' %});background-position: center;background-size: cover;">
+                        <div class="overlay">
+                            <div class="hero-slider-active slick-arrow-style  slick-dot-style">
+                                <!-- single slider item start -->
+                                <div class="hero-single-slide">
+                                    <div class="hero-slider-item">
+                                        <div class="container">
+                                            <div class="row align-items-center">
+                                                <div class="col-xl-12 col-sm-6">
+                                                    <div class="hero-slider-content">
+                                                        <div class="hero-content">
+                                                            <h1 class="slide-title"
+                                                                style="color:white;width: 100%;font-weight: 400;">
+                                                                APTIV Bank Wealth Advisory
+                                                            </h1>
+
+                                                           
+                                                            <p>Wealth management focused on you.
+                                                            </p>
+
+                                                            <a onclick="location.href='{% url 'signup' %}'" href="#" class="btn btn-hero">Open an Account</a>
+                                                        
+                                                            <!-- <ul class="account-nav mt-4">
+                                                                Go to:
+                                                                <li><a href="product.html">Overview</a></li>
+                                                                <li><a href="Understand.html">Understanding Stocks</a></li>
+                                                            </ul> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="col-xl-7 col-sm-6">
+                                    <div class="slider-thumb moving-vertical">
+                                        <img src="{% static 'aptiv_static/assets/img/slider/slider-thumb1.png' %}" alt="slider thumb">
+                                    </div>
+                                </div> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- single slider item start -->
+
+
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- hero slider section end -->
+
+                    <section class="robo-wrapper robo-padding inner fix ">
+                        <div class="container">
+                            <div class="robo-content">
+                            <div class="row align-items-center">
+                                <div class="col-xl-6  order-md-last wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="robo-img">
+                                        <img src="{% static 'aptiv_static/assets/img/banner/graph.png' %}"' alt="" width="600px">
+                                    </div>
+                                </div>
+                
+                                <div class="col-xl-6 order-lg-first  wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="team-content team-content--style_2 about-inner">
+                                        <p>You've worked hard to build your wealth. Now it's time to make it work for you. APTIV Wealth Advisory™
+                                             delivers exceptional client service and advice 
+                                            to help you achieve your most important financial goals. Once enrolled, you receive:</p>
+                                        
+                                        <ol class="m-0 pl-4">
+                                            <li class="pb-2">A personalized approach to wealth management that starts with your goals and includes key aspects of your financial life.</li>
+                                            <li class="pb-2">A wealth management strategy with advice and investment guidance that adapts to life changes.</li>
+                                            <li class="pb-2">A dedicated advisor backed by an experienced team.</li>
+                                        </ol>
+                                     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        </div>
+                    </section>
+
+
+                   
+
+                    <section class="robo-wrapper robo-padding inner fix ">
+                        <div class="container">
+                            <div class="robo-content">
+                            <div class="row align-items-center">
+                                <div class="col-xl-6  order-md-last wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="robo-img">
+                                        <img src="{% static 'aptiv_static/assets/img/banner/person.jpg' %}" alt="" >
+                                    </div>
+                                </div>
+                
+                                <div class="col-xl-6 order-lg-last  wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="team-content team-content--style_2 about-inner">
+                                        <p class="talk1">A personalized approach to wealth management.</p>
+                                        
+                                        <p>
+                                            We believe that wealth management should be designed to reflect your unique needs and goals. 
+                                            Your Wealth Advisor will work with you to understand your situation and build a 
+                                            comprehensive wealth strategy that aligns with your objectives today, tomorrow, and into the future.
+                                        </p>
+                                     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        </div>
+                    </section>
+
+                    
+                    <section class="robo-wrapper robo-padding inner fix ">
+                        <div class="container">
+                            <div class="robo-content">
+                            <div class="row align-items-center">
+                                <div class="col-xl-6  order-md-last wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="robo-img">
+                                        <img src="{% static 'aptiv_static/assets/img/banner/chan.jpg' %}" alt="" >
+                                    </div>
+                                </div>
+                
+                                <div class="col-xl-6 order-lg-first  wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="team-content team-content--style_2 about-inner">
+                                        <p class="talk1">A comprehensive wealth management strategy for your changing life.</p>
+                                        
+                                        <p>
+                                            From investment and retirement planning to tax 
+                                            information and education and family support, 
+                                            we help you to create a wealth
+                                             management strategy that fits your short-term needs and long-term goals.
+                                        </p>
+                                     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        </div>
+                    </section>
+
+                    <section class="robo-wrapper robo-padding inner fix ">
+                        <div class="container">
+                            <div class="robo-content">
+                            <div class="row align-items-center">
+                                <div class="col-xl-6  order-md-last wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="robo-img">
+                                        <img src="{% static 'aptiv_static/assets/img/banner/tea.jpg' %}" alt="." >
+                                    </div>
+                                </div>
+                
+                                <div class="col-xl-6 order-lg-last  wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="team-content team-content--style_2 about-inner">
+                                        <p class="talk1">An experienced team at your service.</p>
+                                        
+                                        <p>
+                                            Our priority is to understand and support your entire financial life. Led by your Wealth Advisor, 
+                                            you'll work alongside a dedicated team of professionals with a 
+                                            wide range of expertise to help you make informed decisions about your wealth.
+                                        </p>
+                                     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        </div>
+                    </section>
+
+
+                
+
+
+
+                    <section class="product-section inner fix">
+                        <div class="container">
+                            <div class="robo-conte">
+                            <div class="row ">
+                                <div class="col-xl-10 wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <p class="talk1">Value you can expect from APTIV Bank.</p>
+
+                                    <p>For more than 40 years, APTIV Bank has been there for investors through good times and bad. 
+                                        Our client-first approach means that whatever comes your way today, 
+                                        we will always be invested in your tomorrow.</p>
+                                </div>
+                            </div>
+                        </div>
+                
+                        </div>
+                    </section>
+
+
+ 
+                    <section class=" inner fix pt-5 mt-5" style="width: 90%;margin: 0px auto;">
+                    
+                          <div class="row text-center">
+                            <div class="col-lg-4">
+                                <img src="{% static 'aptiv_static/assets/img/banner/Value_Satisfaction Guarantee _0.png' %}" alt="" class="pb-4">
+                                <h5 class="pb-3">Satisfaction Guarantee</h5>
+                                <p>If for any reason you are not completely satisfied, 
+                                    we'll refund your fees or commissions 
+                                    and work with you to make things right.
+                                </p>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <img src="{% static 'aptiv_static/assets/img/banner/ICN-Pricing.png' %}" alt="" class="pb-4">
+                                <h5 class="pb-3">Pricing</h5>
+                                <p>The annual fee for APTIV Wealth Advisory starts at 
+                                    0.80% of assets, and the fee rate decreases 
+                                    at higher asset levels. Enrollment minimum is $1 million.
+                                </p>
+                            </div>
+                            
+                            <div class="col-lg-4">
+                                <img src="{% static 'aptiv_static/assets/img/banner/Value_Security Guarantee_0.png' %}" alt="" class="pb-4">
+                                <h5 class="pb-3">Security Guarantee</h5>
+                                <p>APTIV Bank will cover losses in any of your APTIV Bank accounts due to unauthorized activity. 
+                                </p>
+                            </div>
+                          </div>
+                
+                    </section>
+
+                    <span class="mt-5 mb-4" style="border-bottom: .5px solid rgb(206, 204, 204);width:100% ;">p</span>
+
+
+                
+
+                 
+
+                    <section class="product-section pb-5 pt-5 mt-4 mb-5" style="background-color: #e8e8e8;">
+                        <div class="container text-center">
+                       <h4 class="talk1 pb-2">Ready to start a conversation?</h4>
+                       <p class="pb-2">Talk to a Financial Consultant to find out if APTIV Wealth Advisory is right for you.</p>
+                       <h5 class="pb-2"> <b> call 000-000-0000 </b></h5>
+                   
+                 
+                   
+                    </div>
+                    </section>
+
+
+                    <section class="product-section pb-5 pt-3" >
+                        <div class="container">
+                            <h5 class="talk1 pb-3">Common Questions</h5>
+                            <div class="faq-inner regtabs">
+                                <div class="accordion" id="general-question">
+
+                                    <div class="card">
+                                        <div class="card-header" id="headingOne">
+                                            <h5 class="mb-0">
+                                                <button class="accordio-heading" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    <i class="ion-ribbon-b"></i>
+                                                    What are the qualifications of my APTIV Wealth Advisory team?
+                                                </button>
+                                            </h5>
+                                        </div>
+    
+                                        <div id="collapseOne" class="collapse sho" aria-labelledby="headingOne" data-parent="#general-question">
+                                            <div class="card-body">
+                                                <p class="p-3">
+                                                    APTIV Bank Wealth Advisory has more than 600 team members with dedicated wealth experience, 
+                                                    and 95% of our Wealth Advisors hold a professional designation in their area of expertise (as of September 2021). 
+                                                    Once enrolled, you will receive regulatory documents that detail your 
+                                                    advisor's background and associated professional designations and certifications.
+                                            </p>
+                                              
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card">
+                                        <div class="card-header" id="headingTwo">
+                                            <h5 class="mb-0">
+                                                <button class="accordio-heading" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-controls="collapseTwo">
+                                                    <i class="ion-android-car"></i>
+                                                    Will I get answers to my other financial questions?
+                                                </button>
+                                            </h5>
+                                        </div>
+    
+                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#general-question">
+                                            <div class="card-body">
+                                                <p>
+                                                    How much do you need to save for retirement, and are you on track to meet your goals? And now that you’ve built your savings, 
+                                                    how can you make smart decisions to preserve and grow those assets? Whatever your financial question, 
+                                                    your APTIV Bank Wealth Advisory team has you covered. 
+                                                    They’re available when you need them to discuss key aspects of your financial life.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card">
+                                        <div class="card-header" id="headingThree">
+                                            <h5 class="mb-0">
+                                                <button class="accordio-heading" type="button" data-toggle="collapse" data-target="#collapseThree" aria-controls="collapseThree">
+                                                    <i class="ion-university"></i>
+                                                    Who should I contact with portfolio questions?
+                                                </button>
+                                            </h5>
+                                        </div>
+    
+                                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#general-question">
+                                            <div class="card-body">
+                                                <p>
+                                                   Your Financial Consultant coordinates your entire relationship with APTIV Bank and can 
+                                                   help connect you with specialists and service support. Your Wealth Advisor is your 
+                                                   primary contact for inquiries related to 
+                                                   your APTIV Bank Wealth Advisory wealth management strategy and portfolio management.
+                                                </p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="card-header" id="headingfive">
+                                            <h5 class="mb-0">
+                                                <button class="accordio-heading" type="button" data-toggle="collapse" data-target="#collapseFour" aria-controls="collapseFour">
+                                                    <i class="ion-android-car"></i>
+                                                    Will I receive tax advice?
+                                                </button>
+                                            </h5>
+                                        </div>
+    
+                                        <div id="collapseFour" class="collapse" aria-labelledby="headingfive" data-parent="#general-question">
+                                            <div class="card-body">
+                                                <p>
+                                                    Your Wealth Advisor doesn't provide specific tax advice. However, 
+                                                    they can work with you to target tax-smart investment and planning strategies.
+                                            </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    
+                                    <div class="card">
+                                        <div class="card-header" id="headingSix">
+                                            <h5 class="mb-0">
+                                                <button class="accordio-heading" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                                                    <i class="ion-ribbon-b"></i>
+                                                    How do I view my statements and reports online?
+                                                </button>
+                                            </h5>
+                                        </div>
+    
+                                        <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#general-question">
+                                            <div class="card-body">
+                                                <p class="p-3">
+                                                    After logging in to APTIV Bank, go to the Accounts tab, then to History and Statements, 
+                                                    and finally to Statements and Reports.
+                                            </p>
+                                              
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+
+
+                          
+                          
+                    </div>
+                    </section>
+
+                    {% include 'aptiv_templates/__call_section.html' %}
+
+
+              
+
+                 
+                   
+
+
+
+      <!-- footer section start -->
+      {% include 'aptiv_templates/_footer.html' %}
+      <!-- footer section end -->
+          </div>
+          </div>
+       
+               
+              
+          
+          
+          {% endblock %}

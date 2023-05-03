@@ -1,0 +1,225 @@
+
+{% extends 'aptiv_templates/base.html' %}
+{% load static %}
+    {% block content %}
+
+
+
+    <!-- Start Header Area -->
+   
+
+    {% include 'aptiv_templates/_header.html' %}
+   
+            
+
+            {% include 'aptiv_templates/_side__nav.html' %}
+                <title>Financial Planning Tools & Calculator | APTIV Bank</title>
+
+                <div class="col-lg-10 main-sections">
+                    <!-- hero slider section start -->
+
+
+                    <section class="hero-slider  hero-transparent-bg grey-bg fix" style="background: url({% static 'aptiv_static//assets/img/banner/tra.jpg' %});background-position: center;background-size: cover;">
+                        <div class="overlay">
+                            <div class="hero-slider-active slick-arrow-style  slick-dot-style">
+                                <!-- single slider item start -->
+                                <div class="hero-single-slide">
+                                    <div class="hero-slider-item">
+                                        <div class="container">
+                                            <div class="row align-items-center">
+                                                <div class="col-xl-12 col-sm-6">
+                                                    <div class="hero-slider-content">
+                                                        <div class="hero-content">
+                                                            <h1 class="slide-title"
+                                                                style="color:white;width: 90%;font-weight: 400;">
+                                                                What's next? We're here to help you get ready.
+                                                            </h1>
+
+                                                           
+                                                            <p>Use our calculators to get quick answers to your financial questions. Or become a APTIV Bank client and 
+                                                            receive a complimentary financial plan to help you achieve your retirement goals.
+                                                            </p>
+
+                                                            <a onclick="location.href='{% url 'signup' %}'" href="#" class="btn btn-hero">Open an Account</a>
+                                                        
+                                                            <!-- <ul class="account-nav mt-4">
+                                                                Go to:
+                                                                <li><a href="product.html">Overview</a></li>
+                                                                <li><a href="Understand.html">Understanding Stocks</a></li>
+                                                            </ul> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="col-xl-7 col-sm-6">
+                                    <div class="slider-thumb moving-vertical">
+                                        <img src="{% static 'aptiv_static/assets/img/slider/slider-thumb1.png' %}" alt="slider thumb">
+                                    </div>
+                                </div> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- single slider item start -->
+
+
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- hero slider section end -->
+
+
+
+
+
+                    <section class="robo-wrapper robo-paddin inner fix pb-4 pt-5 mt-2">
+                        <div class="container">
+                            <div class="robo-content">
+                            <div class="row align-items-center">
+                                <div class="col-xl-6  order-md-first wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="robo-img">
+                                        <img src="{% static 'aptiv_static/assets/img/banner/hands.jpg' %}" alt="">
+                                    </div>
+                                </div>
+                
+                                <div class="col-xl-6 order-lg-last  wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="team-content team-content--style_2 about-inner">
+                                        <p class="talk">Rethinking your retirement?</p>
+                                        
+                                       <p>
+                                        No matter if you're in your 20s or 50s, see where you stand and learn 
+                                        how to fill in any gaps. 
+                                        Get the answers and information you need with our retirement calculators.
+                                    </p>
+                                     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        </div>
+                    </section>
+
+
+
+                    <section class="robo-wrapper robo-paddin inner fix pb-4 pt-4">
+                        <div class="container">
+                            <div class="robo-content">
+                            <div class="row align-items-center">
+                                <div class="col-xl-6  order-md-last wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="robo-img">
+                                        <img src="{% static 'aptiv_static/assets/img/banner/coll.jpg' %}" alt="">
+                                    </div>
+                                </div>
+                
+                                <div class="col-xl-6 order-lg-first  wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="team-content team-content--style_2 about-inner">
+                                        <p class="talk">Saving for college?</p>
+                                        
+                                       <p>
+                                        Use our college savings calculator to answer a few questions about your 
+                                        goals for your student’s potential college plans, 
+                                        then receive an estimated monthly savings goal to help you plan ahead.
+                                    </p>
+                                     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        </div>
+                    </section>
+
+                    <section class="robo-wrapper robo-paddin inner fix pb-4 pt-4">
+                        <div class="container">
+                            <div class="robo-content">
+                            <div class="row align-items-center">
+                                <div class="col-xl-6  order-md-first wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="robo-img">
+                                        <img src="{% static 'aptiv_static/assets/img/banner/home.jpg' %}" alt="">
+                                    </div>
+                                </div>
+                
+                                <div class="col-xl-6 order-lg-last  wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="team-content team-content--style_2 about-inner">
+                                        <p class="talk">Thinking about a new home?</p>
+                                        
+                                       <p>
+                                        Begin to plan for your home purchase with the mortgage calculator. 
+                                        Based on your needs, see how much you could expect to pay each month.
+                                    </p>
+                                     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        </div>
+                    </section>
+
+
+                    <section class=" inner fix pt-5 mt-5 pb-5 mb-3" style="width: 90%;margin: 0px auto;">
+                    
+                        <div class="row text-center">
+                          <div class="col-lg-4">
+                              <img src="{% static 'aptiv_static/assets/img/banner/ICN-Checklist.png' %}" alt="" class="pb-4">
+                              <h5 class="pb-3">Your complimentary financial plan.</h5>
+                              <p>At APTIV Bank, every client can get access to APTIV Bank Plan™ , 
+                                a complimentary plan to help you reach your retirement goals. 
+                              </p>
+                          </div>
+
+                          <div class="col-lg-4">
+                              <img src="{% static 'aptiv_static/assets/img/banner/ICN-Automated_0.png' %}" alt="" class="pb-4">
+                              <h5 class="pb-3">Ongoing guidance.</h5>
+                              <p>Get unlimited guidance from a CERTIFIED FINANCIAL PLANNER™ professional, 
+                                as well as digital planning tools 
+                                and automated investing with APTIV Bank Intelligent Portfolios Premium®.
+                              </p>
+                          </div>
+                          
+                          <div class="col-lg-4">
+                              <img src="{% static 'aptiv_static/assets/img/banner/ICN-One-One.png' %}" alt="" class="pb-4">
+                              <h5 class="pb-3">One-on-one advice.</h5>
+                              <p>
+                                Get one-on-one guidance to help you create a financial plan and investment strategy tailored to your goals. 
+                                A Financial Consultant can also help you select the right level of services and connect you to 
+                                specialists for more complex needs. Find a Financial Consultant near you.
+                              </p>
+                          </div>
+                        </div>
+              
+                  </section>
+                
+
+                    <section class="product-section pb-5 pt-5 mt-4 mb-5" style="background-color: #e8e8e8;">
+                        <div class="container text-center">
+                       <h4 class="talk1 pb-2">Ready to start planning and investing?</h4>
+                       <p>No account fees or minimum deposit required</p>
+                   
+                    <a onclick="location.href='{% url 'signup' %}'" href="#" class="btn btn-hero mb-3">Open an Account</a>
+                            <br>
+                    Already a client? <a href="login.html">Log in</a>
+
+                   
+                    </div>
+                    </section>
+
+                    {% include 'aptiv_templates/__call_section.html' %}
+
+
+
+
+
+   <!-- footer section start -->
+   {% include 'aptiv_templates/_footer.html' %}
+   <!-- footer section end -->
+       </div>
+       </div>
+    
+            
+           
+       
+       
+       {% endblock %}
+       

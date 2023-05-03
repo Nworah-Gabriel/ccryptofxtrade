@@ -1,0 +1,169 @@
+
+{% extends 'aptiv_templates/base.html' %}
+{% load static %}
+    {% block content %}
+
+
+
+    <!-- Start Header Area -->
+   
+
+    {% include 'aptiv_templates/_header.html' %}
+   
+            
+
+            {% include 'aptiv_templates/_side__nav.html' %}
+
+                <div class="col-lg-10 main-sections">
+                    <!-- hero slider section start -->
+
+
+                    <section class="hero-slider  hero-transparent-bg grey-bg fix" style="background: url({% static 'aptiv_static//assets/img/banner/nas.jpg' %});background-position: center;background-size: cover;">
+                        <div class="overlay">
+                            <div class="hero-slider-active slick-arrow-style  slick-dot-style">
+                                <!-- single slider item start -->
+                                <div class="hero-single-slide">
+                                    <div class="hero-slider-item">
+                                        <div class="container">
+                                            <div class="row align-items-center">
+                                                <div class="col-xl-12 col-sm-6">
+                                                    <div class="hero-slider-content">
+                                                        <div class="hero-content">
+                                                            <h1 class="slide-title"
+                                                                style="color:white;width: 90%;font-weight: 400;">
+                                                                We believe there should be more than one way to work 
+                                                                with an investment firm
+                                                            </h1>
+
+                                                           
+                                                            <p>
+                                                                That’s why we offer multiple ways, so you can work and grow with us how you want.
+                                                            </p>
+                                                        
+                                                            <!-- <ul class="account-nav mt-4">
+                                                                Go to:
+                                                                <li><a href="product.html">Overview</a></li>
+                                                                <li><a href="Understand.html">Understanding Stocks</a></li>
+                                                            </ul> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="col-xl-7 col-sm-6">
+                                    <div class="slider-thumb moving-vertical">
+                                        <img src="{% static 'aptiv_static/assets/img/slider/slider-thumb1.png' %}" alt="slider thumb">
+                                    </div>
+                                </div> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- single slider item start -->
+
+
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- hero slider section end -->
+                    
+                    <section class=" inner fix pt-5 mt-5 pb-5" style="width: 90%;margin: 0px auto;">
+                    
+                        <div class="row ">
+                          <div class="col-lg-4">
+                            <h4 class="pb-3"><b>Manage and trade your own investments.</b></h5>
+                              <img src="{% static 'aptiv_static/assets/img/banner/ali.jpg' %}" alt="" class="pb-4" >
+                             
+                              <li>$0 online listed stock and ETF commissions</li>
+                              <li>Powerful trading platforms to help you navigate the market</li>
+                              <li>Research, tools, education, and expert insights to help make confident investment decisions</li>
+                          </div>
+
+                          <div class="col-lg-4">
+                            <h4 class="pb-3"><b>Get automated investing and professional guidance</b></h5>
+                              <img src="{% static 'aptiv_static/assets/img/banner/lu.jpg' %}" alt="" class="pb-4" >
+                             
+                              
+                              <li>Our robo-advisor builds a diversified portfolio of ETFs that are handpicked by our team of investment professionals</li>
+                              <li>Your investments are monitored daily and automatically rebalanced to stay on track</li>
+                              <li>Option to select our Premium service with unlimited 1:1 guidance from a CFP® professional</li>
+                          </div>
+
+                          <div class="col-lg-4">
+                            <h4 class="pb-3"><b>Plan and invest with a consultant</b></h5>
+                              <img src="{% static 'aptiv_static/assets/img/banner/bus.jpg' %}" alt="" class="pb-4" >
+                             
+                              <li>Dedicated relationship with a Financial Consultant who will get to know you and your needs</li>
+                              <li>Personalized financial plan to help you meet your goals</li>
+                              <li>No charge to work with a Financial Consultant</li>
+                          </div>
+
+                        </div>
+              
+                  </section>
+                
+                    <section class=" inner fix pt-5 mt-5 pb-5" style="width: 90%;margin: 0px auto;">
+                    
+                        <h3 class="pb-4"><b>No matter how you invest with us, you’ll always get:</b></h3>
+                        <div class="row ">
+                          <div class="col-lg-4" >
+
+                            <h4 class="pb-3" style="color:#006b38;">24/7 customer support</h5>
+
+                              <p>
+                                Clear, reliable help from experienced investment professionals as you need it.
+                              </p>
+                          </div>
+
+                          <div class="col-lg-4">
+                            <h4 class="pb-3" style="color:#006b38;">Low costs, transparent fees</h5>
+
+                              <li>$0 online listed stock, ETF, and base options trade commissions</li>
+                              <li>$0 account maintenance fees (other charges may apply)</li>
+                              <li>4,000+ no-load, no-transaction-fee mutual funds (when traded online)</li>
+                          </div>
+
+                          <div class="col-lg-4">
+                            <h4 class="pb-3" style="color:#006b38 ;">Research and tools</h5>
+
+                              <p>Award-winning research including insights from APTIV Bank experts and third-party sources, 
+                                plus screeners and tools to help make informed investing decisions.</p>
+                          </div>
+                          
+                          <div class="col-lg-4">
+                            <h4 class="pb-3" style="color:#006b38 ;">Satisfaction guarantee</h5>
+
+                              <p>
+                                If you’re not satisfied for any reason, we’ll refund your eligible fee or commission, and work to make things right.
+                              </p>
+                          </div>
+
+                          <div class="col-lg-4">
+                            <h4 class="pb-3" style="color:#006b38 ;">APTIV security guarantee</h5>
+
+                              <p>
+                                We’ll cover any losses in any of your APTIV Bank accounts due to unauthorized activity, 
+                                as part of our security measures.
+                              </p>
+                          </div>
+
+                        </div>
+              
+                  </section>
+                
+
+
+                   
+
+
+
+      <!-- footer section start -->
+      {% include 'aptiv_templates/_footer.html' %}
+      <!-- footer section end -->
+          </div>
+          </div>
+       
+               
+              
+          
+          
+          {% endblock %}

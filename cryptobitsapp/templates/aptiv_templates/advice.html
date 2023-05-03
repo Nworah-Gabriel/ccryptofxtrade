@@ -1,0 +1,588 @@
+
+{% extends 'aptiv_templates/base.html' %}
+{% load static %}
+    {% block content %}
+
+
+
+    <!-- Start Header Area -->
+   
+
+    {% include 'aptiv_templates/_header.html' %}
+   
+            
+
+            {% include 'aptiv_templates/_side__nav.html' %}
+            
+
+                <div class="col-lg-10 main-sections">
+                    <!-- hero slider section start -->
+
+
+                    <section class="hero-slider  hero-transparent-bg grey-bg fix" style="background: url(/assets/img/banner/business-analytics-concept-with-digital-data-diagrams-chart-financial-dashboard-company.jpg);background-position: center;background-size: cover;">
+                        <div class="overlay">
+                            <div class="hero-slider-active slick-arrow-style  slick-dot-style">
+                                <!-- single slider item start -->
+                                <div class="hero-single-slide">
+                                    <div class="hero-slider-item">
+                                        <div class="container">
+                                            <div class="row align-items-center">
+                                                <div class="col-xl-12 col-sm-6">
+                                                    <div class="hero-slider-content">
+                                                        <div class="hero-content">
+                                                            <h1 class="slide-title"
+                                                                style="color:white;width: 100%;font-weight: 400;">
+                                                                APTIV Intelligent Portfolios
+                                                            </h1>
+
+                                                           
+                                                            <p>Welcome to automated investing, where our robo-advisor
+                                                               can help build and manage your portfolio.
+                                                            </p>
+
+                                                            <a onclick="location.href='{% url 'signup' %}'" href="#" class="btn btn-hero">Open an Account</a>
+                                                        
+                                                            <!-- <ul class="account-nav mt-4">
+                                                                Go to:
+                                                                <li><a href="product.html">Overview</a></li>
+                                                                <li><a href="Understand.html">Understanding Stocks</a></li>
+                                                            </ul> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="col-xl-7 col-sm-6">
+                                    <div class="slider-thumb moving-vertical">
+                                        <img src="{% static 'aptiv_static/assets/img/slider/slider-thumb1.png' %}" alt="slider thumb">
+                                    </div>
+                                </div> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- single slider item start -->
+
+
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- hero slider section end -->
+
+
+
+
+                    <section class="product-section pb-5 pt-5" >
+                        <div class="container">
+                        <div class="row stock-type">
+                            <div class="col-lg-10 pb-2">
+                                <p class="mb-3 talk">Our robo-advisor does the work, so you don't have to.</p>
+                            </div>
+                         
+                            
+                            <div class="col-lg-4">
+                                <h4 class="pt-3"><b>Automated investing with human help when you need it.</b></h4>
+
+                                <li class="mt-2 pb-3">
+                                    Our robo-advisor builds, monitors, 
+                                    and automatically rebalances a diversified portfolio 
+                                    based on your goals.
+                                </li>
+
+                                <li class="pb-3">
+                                    24/7 live support from U.S.-based service professionals.
+                                </li>
+
+                                <li>
+                                    Get started with as little as $5,000.
+                                </li>
+
+                            </div>
+                            
+                            <div class="col-lg-4">
+                                <h4 class="pt-3"><b>Backed by our commitment to keeping costs low.</b></h4>
+
+                                <li class="mt-3 pb-3">
+                                    Pay no advisory fee and no commissions.
+                                </li>
+
+                                <li class="pb-3">
+                                    Invest in a portfolio of low-cost exchange-traded funds (ETFs).
+                                </li>
+
+                                <li>
+                                    Just as if you'd invested on your own, you will pay the operating expenses 
+                                    on the ETFs in your portfolio, which includes APTIV ETFs™.
+                                </li>
+
+                            </div>
+
+                            <div class="col-lg-4">
+                                <h4 class="pt-3"><b>What else you should know.</b></h4>
+
+                                <li class="mt-3">
+                                    We believe cash is a key component of an investment portfolio. 
+                                    Based on your risk profile, a portion of your portfolio is placed 
+                                    in an FDIC-insured deposit at APTIV Bank. Some cash alternatives
+                                    outside of the program pay a higher yield. 
+                                </li>
+
+                              
+                            </div>
+                            
+
+
+                        </div>
+                    </div>
+                    </section>
+
+
+                    <section class="robo-wrapper robo-padding inner fix">
+                        <div class="container">
+                            <div class="robo-content">
+                            <div class="row align-items-center">
+                                <div class="col-xl-6  order-md-last wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="robo-img">
+                                        <img src="{% static 'aptiv_static/assets/img/banner/hands.jpg' %}" alt="">
+                                    </div>
+                                </div>
+                
+                                <div class="col-xl-6 order-lg-first  wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="team-content team-content--style_2 about-inner">
+                                        <p class="talk1">How APTIV Intelligent Portfolios works:</p>
+                                        
+                                        <ol class="m-0 pl-4">
+                                            <li class="pb-2">Complete a short questionnaire to establish your goals, risk tolerance, and timeline.</li>
+                                            <li class="pb-2">Get a diversified portfolio of ETFs chosen by experts.</li>
+                                            <li class="pb-2">Our robo-advisor monitors your portfolio daily and automatically rebalances it as needed.</li>
+                                        </ol>
+                                     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        </div>
+                    </section>
+
+
+                   
+
+
+
+                    <section class="product-section pb-5 pt-5" >
+                        <div class="container">
+                        <div class="row stock-type">
+                            <div class="col-lg-10">
+                                <h1 class="mb-3">Set your goals and start reaching for them.</h1>
+
+                                <p class="mb-3">
+                                    Our robo-advisor can help you invest for retirement, college, vacations, 
+                                    building long-term wealth, or creating a sustainable income stream. 
+                                    Here's what you get with APTIV Intelligent Portfolios.
+                                 </p>
+                                
+
+                            </div>
+                         
+                          
+                        </div>
+                    </div>
+                    </section>
+
+
+
+                    <section class="product-section inner fix">
+                        <div class="container">
+                            <div class="robo-conte">
+                            <div class="row  align-items-center">
+                                <div class="col-xl-6  order-md-last wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="robo-img">
+                                        <img src="{% static 'aptiv_static/assets/img/banner/chai.jfif' %}" alt="">
+                                    </div>
+                                </div>
+                
+                                <div class="col-xl-6 order-lg-first  wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="team-content team-content--style_2 about-inner">
+                                        <h1 class="talk1">A diversified portfolio, tailored to your needs.</h1>
+                                        
+                                        <p>
+                                            Based on your answers about your goals, risk tolerance, and timeline, 
+                                            APTIV Intelligent Portfolios 
+                                            will provide you a tailored portfolio from more than 80 variations:
+                                        </p>
+                                        <ol class="m-0 pl-4">
+                                            <li class="pb-2">51 ETFs Selected and monitored by APTIV experts that span 20+ Expanded Asset Classes </li>
+                                            <li class="pb-2">3 Investment Strategies Tooltip Global, U.S. Focused, Income Focused</li>
+                                            <li class="pb-2">6 Risk Profiles Tooltip Ranging from Conservative to Aggressive Growth</li>
+                                        </ol>
+                                     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        </div>
+                    </section>
+
+                    <span class="mt-5 mb-4" style="border-bottom: .5px solid rgb(206, 204, 204);width:100% ;"></span>
+
+ 
+                    <section class="product-section inner fix pt-5 mt-5">
+                        <div class="container">
+                            <div class="robo-conte">
+                            <div class="row  align-items-center">
+                                <div class="col-xl-6  order-md-last wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="robo-img">
+                                        <img src="{% static 'aptiv_static/assets/img/banner/reb.jpg' %}" alt="">
+                                    </div>
+                                </div>
+                
+                                <div class="col-xl-6 order-lg-first  wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="team-content team-content--style_2 about-inner">
+                                        <h1 class="talk1">Automatic Rebalancing</h1>
+                                        
+                                        <p>
+                                            Our robo-advisor technology monitors and automatically rebalances 
+                                            your investments to help keep you diversified and on track.
+                                        </p>
+                                     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        </div>
+                    </section>
+
+                    <span class="mt-5 mb-4" style="border-bottom: .5px solid rgb(206, 204, 204);width:100% ;"></span>
+
+
+                
+
+                 
+                    <section class="product-section inner fix pt-5 mt-5">
+                        <div class="container">
+                            <div class="robo-conte">
+                            <div class="row  align-items-center">
+                                <div class="col-xl-6  order-md-last wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="robo-img">
+                                        <img src="{% static 'aptiv_static/assets/img/banner/busi.jpg' %}" alt="">
+                                    </div>
+                                </div>
+                
+                                <div class="col-xl-6 order-lg-first  wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="team-content team-content--style_2 about-inner">
+                                        <h1 class="talk1">Tax Efficiency</h1>
+                                        
+                                        <p>
+                                            If an investment declines in value, 
+                                            our automatic tax-loss harvesting can help 
+                                            you offset the taxes on investment gains.  
+                                        </p>
+                                     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        </div>
+                    </section>
+                 
+                    <section class="product-section inner fix pt-5 mt-5 mb-5">
+                        <div class="container">
+                            <div class="robo-conte">
+                            <div class="row  align-items-center">
+                                <div class="col-xl-6  order-md-last wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="robo-img">
+                                        <img src="{% static 'aptiv_static/assets/img/banner/ri copy.png' %}" alt="">
+                                    </div>
+                                </div>
+                
+                                <div class="col-xl-6 order-lg-first  wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="team-content team-content--style_2 about-inner">
+                                        <h1 class="talk1">A range of accounts.</h1>
+                                        
+                                        <p>
+                                            There are different account types to choose from, including brokerage, IRA, custodial, and trust accounts. 
+                                        </p>
+                                     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        </div>
+                    </section>
+
+                    <section class="product-section pb-5 pt-5 mt-4 mb-5" style="background-color: #e8e8e8;">
+                        <div class="container text-center">
+                       <h4 class="talk1 pb-2">Ready to get started</h4>
+                   
+                    <a onclick="location.href='{% url 'signup' %}'" href="#" class="btn btn-hero">Open an Account</a>
+
+                   
+                    </div>
+                    </section>
+
+                    {% include 'aptiv_templates/__call_section.html' %}
+
+
+                    <section class="product-section pb-5 pt-3" >
+                        <div class="container">
+                            <h5 class="talk1 pb-3">Common Questions</h5>
+                          <p style="font-size: 1.3rem;" class="pb-1">Getting started</p>
+                            <div class="faq-inner regtabs">
+                                <div class="accordion" id="general-question">
+
+                                    <div class="card">
+                                        <div class="card-header" id="headingOne">
+                                            <h5 class="mb-0">
+                                                <button class="accordio-heading" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    <i class="ion-ribbon-b"></i>
+                                                    What is the minimum amount required to open an account?
+                                                </button>
+                                            </h5>
+                                        </div>
+    
+                                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#general-question">
+                                            <div class="card-body">
+                                                <p class="p-3">
+                                                    You can open a APTIV Intelligent Portfolios account with a minimum of $5,000.
+                                            </p>
+                                              
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card">
+                                        <div class="card-header" id="headingTwo">
+                                            <h5 class="mb-0">
+                                                <button class="accordio-heading" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-controls="collapseTwo">
+                                                    <i class="ion-android-car"></i>
+                                                        What type of account can I have with APTIV Intelligent Portfolios?
+                                                </button>
+                                            </h5>
+                                        </div>
+    
+                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#general-question">
+                                            <div class="card-body">
+                                                <p>You can have the following account types:</p>
+
+                                                <li> <b>Taxable:</b>  Individual, Joint Tenant, Tenants in Common, Community Property, Custodial, Revocable Living Trust</li>
+                                                <li> <b>Tax-Advantaged:</b>  Traditional IRA, Roth IRA, Rollover IRA, Inherited IRA, SEP-IRA, SIMPLE IRA </li>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card">
+                                        <div class="card-header" id="headingThree">
+                                            <h5 class="mb-0">
+                                                <button class="accordio-heading" type="button" data-toggle="collapse" data-target="#collapseThree" aria-controls="collapseThree">
+                                                    <i class="ion-university"></i>
+                                                   
+                                                    Can I roll over my 401(k) or IRA?
+                                                </button>
+                                            </h5>
+                                        </div>
+    
+                                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#general-question">
+                                            <div class="card-body">
+                                                <p>
+                                                    Of course! After considering your options you can choose a Rollover or Roth IRA account, 
+                                                    these rollovers are as simple as contacting your former employer plan administrator or 
+                                                    custodian and telling them you want a direct rollover of your plan assets.
+                                                </p>
+
+                                                <b class="pb-2">Next Steps</b>
+                                                <li>Complete any forms required by your plan administrator or custodian.</li>
+                                                <li>Decide how you want your retirement assets distributed.</li>
+                                                <li>Your APTIV rollover specialist can assist you with 
+                                                    questions depositing funds into your APTIV Intelligent Portfolios IRA.
+                                                </li>
+
+                                                <b class="pb-2">Tips:</b>
+                                                <li>To prevent funds from being taxed, the check should be made payable to "APTIV Bank, Inc., FBO (Your Name)."</li>
+                                                <li>For an easy deposit, give your employer your APTIV Intelligent Portfolios IRA 
+                                                    account number and ask them to include it on the check.
+                                                </li>
+
+                                                <li>
+                                                    Instruct your plan administrator or custodian to mail the check to: APTIV Bank, Inc., 
+                                                    P.O. Box 628291, Orlando, FL 32862-8291.
+                                                </li>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="card-header" id="headingfive">
+                                            <h5 class="mb-0">
+                                                <button class="accordio-heading" type="button" data-toggle="collapse" data-target="#collapseFour" aria-controls="collapseFour">
+                                                    <i class="ion-android-car"></i>
+                                                    Can I make a partial withdrawal from my account?
+                                                </button>
+                                            </h5>
+                                        </div>
+    
+                                        <div id="collapseFour" class="collapse" aria-labelledby="headingfive" data-parent="#general-question">
+                                            <div class="card-body">
+                                                <p>
+                                                    Yes, you can withdraw cash from your account at any time by logging in and
+                                                    selecting "Add/Withdraw Money." If the requested amount is less than the cash 
+                                                    allocation in your portfolio, you can transfer it to another APTIV account 
+                                                    immediately or to a linked external account overnight. If the withdrawal 
+                                                    request exceeds your portfolio's cash allocation, we will sell ETFs to generate 
+                                                    the requested amount of cash. The processing and settlement takes between 4-6 business days.
+                                                    After your withdrawal, your portfolio will be rebalanced to its target asset allocation 
+                                                    if it has drifted significantly from the portfolio's original target. Your withdrawal 
+                                                    may also cause your account to become ineligible for tax-loss harvesting if you have 
+                                                    enrolled in the service and your account
+                                                    falls below the $40,000 minimum.
+                                            </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+
+
+                            <p style="font-size: 1.3rem;" class="pb-1 pt-5 mt-3">Costs & fees</p>
+                            <div class="faq-inner regtabs">
+                                <div class="accordion" id="general-question">
+
+                                    <div class="card">
+                                        <div class="card-header" id="headingSix">
+                                            <h5 class="mb-0">
+                                                <button class="accordio-heading" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                                                    <i class="ion-ribbon-b"></i>
+                                                    What costs and fees are charged for APTIV Intelligent Portfolios?
+                                                </button>
+                                            </h5>
+                                        </div>
+    
+                                        <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#general-question">
+                                            <div class="card-body">
+                                                <p class="p-3">
+                                                    You pay no advisory fee and no commissions. 
+                                                    Your diversified portfolio is comprised of low-cost exchange-traded funds (ETFs) 
+                                                    and a cash allocation. Just as if you'd invested on your own, you will pay the 
+                                                    operating expenses on the ETFs in your portfolio—which includes APTIV Bank ETFs. 
+                                                    We believe cash is a key component of an investment portfolio. Based on your risk profile, 
+                                                    a portion of your portfolio is placed in an FDIC-insured deposit at APTIV Bank Bank. 
+                                                    Some cash alternatives outside of the program pay a higher yield.
+                                            </p>
+                                              
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card">
+                                        <div class="card-header" id="headingSeven">
+                                            <h5 class="mb-0">
+                                                <button class="accordio-heading" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-controls="collapseSeven">
+                                                    <i class="ion-android-car"></i>
+                                                    If no advisory fee is charged, how does APTIV Bank make money?
+                                                </button>
+                                            </h5>
+                                        </div>
+    
+                                        <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#general-question">
+                                            <div class="card-body">
+                                                <p>We are committed to keeping fees low to help you achieve your goals. 
+                                                    It starts with not charging an advisory fee or commissions. 
+                                                    We can do that because we earn revenue from other sources as detailed below.</p>
+
+                                                <li> <b>ETFs:</b> 
+                                                    APTIV Bank Intelligent Portfolios invests in APTIV Bank ETFs. This creates revenue for 
+                                                    APTIV Bank Investment Management, Inc., a APTIV Bank affiliate that receives management fees on those ETFs. APTIV Bank Intelligent Portfolios® also invests in third-party ETFs, and APTIV Bank also receives 
+                                                    compensation for providing shareholder services to those third-party ETFs.
+                                                </li>
+                                                <li> <b>Cash:</b>  
+                                                    We believe cash is a key component of an investment portfolio. 
+                                                    Based on your risk profile, a portion of your portfolio is placed in an 
+                                                    FDIC-insured deposit at APTIV Bank. 
+                                                    Some cash alternatives outside of the program pay a higher yield.
+                                                </li>
+                                               
+                                                <li> <b>Order Flow:</b>  APTIV Bank receives revenue from the market centers where ETF trade orders are routed for execution. </li>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card">
+                                        <div class="card-header" id="headingEight">
+                                            <h5 class="mb-0">
+                                                <button class="accordio-heading" type="button" data-toggle="collapse" data-target="#collapseEight" aria-controls="collapseEight">
+                                                    <i class="ion-university"></i>
+                                                    Am I paid interest on my cash? How does it compare to the interest I could earn elsewhere?
+                                                </button>
+                                            </h5>
+                                        </div>
+    
+                                        <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#general-question">
+                                            <div class="card-body">
+                                                <p>
+                                                    Yes, the interest rate on cash balances in the Sweep Program is set on the first
+                                                    business day of each month equal to the seven-day yield 
+                                                    (with waivers) for the APTIV Bank Government Money Fund – Sweep Shares 
+                                                    (symbol: SWGXX) as determined at the end of the prior month. 
+                                                    See Current Interest Rates for more details. Some cash alternatives 
+                                                    outside of the program pay a higher yield.
+                                                </p>
+
+                        
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="card-header" id="headingNine">
+                                            <h5 class="mb-0">
+                                                <button class="accordio-heading" type="button" data-toggle="collapse" data-target="#collapseNine" aria-controls="collapseNine">
+                                                    <i class="ion-android-car"></i>
+                                                    Does APTIV Bank charge an additional fee for rebalancing or tax-loss harvesting?
+                                                </button>
+                                            </h5>
+                                        </div>
+    
+                                        <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#general-question">
+                                            <div class="card-body">
+                                                <p>
+                                                No, APTIV Bank Intelligent Portfolios has leveraged the power of technology to automate these complex tasks.
+                                                Tax-loss harvesting is available for taxable portfolios with $50,000 or more, and there 
+                                                are no additional fees for activating this feature in your account. 
+                                                You must be enrolled for tax-loss harvesting to occur.
+                                            </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                          
+                    </div>
+                    </section>
+              
+
+                 
+                   
+
+
+
+ 
+      <!-- footer section start -->
+      {% include 'aptiv_templates/_footer.html' %}
+      <!-- footer section end -->
+          </div>
+          </div>
+       
+               
+              
+          
+          
+          {% endblock %}
+          
+            

@@ -1,0 +1,828 @@
+
+{% extends 'aptiv_templates/base.html' %}
+{% load static %}
+    {% block content %}
+
+
+
+    <!-- Start Header Area -->
+   
+
+    {% include 'aptiv_templates/_header.html' %}
+   
+            
+
+            {% include 'aptiv_templates/_side__nav.html' %}
+
+                <div class="col-lg-10 main-sections">
+                    <!-- hero slider section start -->
+
+
+                    <section class="hero-slider  hero-transparent-bg grey-bg fix">
+                        <div class="overlay">
+                            <div class="hero-slider-active slick-arrow-style  slick-dot-style">
+                                <!-- single slider item start -->
+                                <div class="hero-single-slide">
+                                    <div class="hero-slider-item">
+                                        <div class="container">
+                                            <div class="row align-items-center">
+                                                <div class="col-xl-12 col-sm-6">
+                                                    <div class="hero-slider-content">
+                                                        <div class="hero-content">
+                                                            <h1 class="slide-title"
+                                                                style="color:white;width: 100%;font-weight: 400;">
+                                                                $0 commissions on online trades.
+                                                            </h1>
+
+                                                           
+                                                            <p>See all our pricing and trading fees in one convenient place. </p>
+
+                                                            <a onclick="location.href='{% url 'signup' %}'" href="#" class="btn btn-hero">Open an Account</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="col-xl-7 col-sm-6">
+                                    <div class="slider-thumb moving-vertical">
+                                        <img src="assets/img/slider/slider-thumb1.png" alt="slider thumb">
+                                    </div>
+                                </div> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- single slider item start -->
+
+
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- hero slider section end -->
+
+
+
+
+                    <section class="product-section pb-5 pt-5" >
+                        <div class="container">
+                        <div class="row">
+                          <div class="col-lg-4 text-center">
+                            <h3 class="pb-2">$0</h3>
+                            <h4 class="pb-2">Listed Stocks and ETFs</h4>
+                            <p style="font-size:.8rem;">online commission</p>
+                          </div>
+
+                          <div class="col-lg-4 text-center">
+                            <h3 class="pb-2">$0</h3>
+                            <h4 class="pb-2">Options</h4>
+                            <p style="font-size:.8rem;">online base commission + $0.65 per contract fee</p>
+                          </div>
+
+                          <div class="col-lg-4 text-center">
+                            <h3 class="pb-2">$0</h3>
+                            <h4 class="pb-2">Mutual Funds</h4>
+                            <p style="font-size:.8rem;">on thousands of funds from APTIV Mutual Fund OneSource</p>
+                          </div>
+                         
+                          
+                        </div>
+                    </div>
+                    </section>
+
+
+
+                    <section class="product-section pb-5 pt-5" >
+                        <div class="container">
+                        <div class="row stock-type">
+                            <div class="col-lg-10">
+                              
+                               <p class="talk1">Plus, no trade minimums, no account minimums, and a Satisfaction Guarantee.</p>
+
+                            </div>
+                         
+                        </div>
+                    </div>
+                    </section>
+
+
+
+                    <section class="product-section pb-5 pt-5" >
+                        <div class="table-responsive understand">
+
+                            <h2 class="pb-4">Trading Fees and Commissions</h2>
+                       
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Online Trades</th>
+                                        <th>Broker-Assisted Trades</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td scope="row"><b>Listed Stocks and ETFs</b></td>
+                                        <td>
+                                            <p>$0 online commission</p>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                $0 + $25 service charge
+                                            </p>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td scope="row"><b>Options</b></td>
+                                        <td>
+                                            <p>
+                                                $0 online base commission + $0.65 per contract fee
+                                            </p>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                $0.65 per contract + $25 service charge
+                                            </p>
+                                        </td>
+                                        
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td scope="row"><b>US Over-The-Counter (OTC) Equities</b></td>
+                                        <td>
+                                            <p>
+                                               $6.95 
+                                            </p>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                $6.95 + $25 service charge
+                                            </p>
+                                        </td>
+                                        
+                                    </tr>
+
+                                    <tr>
+                                        <td scope="row"><b>APTIV Mutual Fund OneSource®</b></td>
+                                        <td>
+                                            <p>
+                                                $0
+                                            </p>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                $0 + $25 service charge
+                                            </p>
+                                        </td>
+                                        
+                                    </tr>
+
+                                    <tr>
+                                        <td scope="row"><b>All other mutual funds</b></td>
+                                        <td>
+                                            <p>
+                                                Up to $74.95 per purchase
+                                            </p>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                Online pricing + $25 service charge
+                                            </p>
+                                        </td>
+                                        
+                                    </tr>
+
+                                    <tr>
+                                        <td scope="row"><b>Futures</b></td>
+                                        <td>
+                                            <p>
+                                                $2.25 per contract
+                                            </p>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                $2.25 per contract
+                                            </p>
+                                        </td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td scope="row"><b>Futures Options</b></td>
+                                        <td>
+                                            <p>
+                                                $2.25 per contract
+                                            </p>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                $2.25 per contract
+                                            </p>
+                                        </td>
+                                        
+                                    </tr>
+
+                                    <tr>
+                                        <td scope="row"><b>New issues, including CDs</b></td>
+                                        <td>
+                                            <p>
+                                                Selling concession is included in the offering price
+                                            </p>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                Selling concession is included in the offering price
+                                            </p>
+                                        </td>
+                                        
+                                    </tr>
+
+                                    <tr>
+                                        <td scope="row"><b>Foreign stock transactions placed on the U.S. over-the-counter (OTC) market</b></td>
+                                        <td>
+                                            <p>
+                                                $50 foreign transaction fee 
+                                            </p>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                $75 ($50 foreign transaction fee and a $25 broker assistance fee) 
+                                            </p>
+                                        </td>
+                                        
+                                    </tr>
+
+                                    <tr>
+                                        <td scope="row"><b>Foreign stock transactions placed directly on local exchanges</b></td>
+                                        <td>
+                                            <p>
+                                                Not available
+                                            </p>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                The greater of $100 or 0.75% of principal, with no maximum
+                                            </p>
+                                        </td>
+                                        
+                                    </tr>
+
+                                    <tr>
+                                        <td scope="row"><b>Treasuries, including Auction and Secondary: Treasury Bonds, Treasury Bills, Treasury Notes and TIPS</b></td>
+                                        <td>
+                                            <p>
+                                                $0
+                                            </p>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                $0 + $25 service charge
+                                            </p>
+                                        </td>
+                                        
+                                    </tr>
+
+                                    <tr>
+                                        <td scope="row"><b>Other Secondary Trades: CDs, Corporate Bonds, Municipal Bonds, Government Agencies, Zero-Coupon Treasuries, including STRIPS</b></td>
+                                        <td>
+                                            <p>$1 per bond* </p>
+                                            <p>$10 minimum </p>
+                                            <p>$250 maximum*  </p>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                Online pricing + $25 service charge
+                                            </p>
+                                        </td>
+                                        
+                                    </tr>
+
+                                    <tr>
+                                        <td scope="row"><b>Commercial Paper, Foreign Bonds, Asset-Backed Securities, Mortgage-Backed Securities, Collateralized Mortgage Obligations, and Unit Investment Trusts</b></td>
+                                        <td>
+                                            <p>These are specialty products. Please contact us for information.</p>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                These are specialty products. Please contact us for information.
+                                            </p>
+                                        </td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td scope="row"><b>Preferred Listed Stocks and REITs</b></td>
+                                        <td>
+                                            <p>$0</p>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                $0 + $25 service charge 
+                                            </p>
+                                        </td>
+                                        
+                                    </tr>
+
+                                   
+
+                                
+                                </tbody>
+                            </table>
+                    </div>
+                    </section>
+
+                    <section class="product-section pb-5 pt-5" >
+                        <div class="table-responsive understand">
+
+                            <h2 class="pb-4">Investment Management Fees and Minimums</h2>
+                       
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Costs and Fees</th>
+                                        <th>Account Minimums</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td scope="row"><b>APTIV Bank Intelligent Portfolios</b>
+                                            Just as if you'd invested on your own, you will pay the operating expenses on 
+                                            the ETFs in your portfolio—which includes APTIV Bank ETFs. We believe cash is a key component of an investment portfolio. Based on your risk profile, a portion of your portfolio is placed in an FDIC-insured deposit at 
+                                            APTIV Bank Bank. Some cash alternatives outside of the programs pay a higher yield.</td>
+                                        <td>
+                                            <p>No advisory fee + No commissions</p>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                $5,000
+                                            </p>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td scope="row"><b>APTIV Bank Intelligent Portfolios Premium</b> 
+                                            Just as if you'd invested on your own, you will pay the operating expenses on the ETFs in your portfolio—which includes APTIV Bank ETFs. We believe cash is a key component of an investment portfolio. Based on your risk profile, a portion of your portfolio is placed in an FDIC-insured 
+                                            deposit at APTIV Bank Bank. Some cash alternatives outside of the programs pay a higher yield.</td>
+                                        <td>
+                                            <p>
+                                                One-time planning fee: $300 
+                                            </p>
+                                            <p>
+                                                Monthly advisory fee: $30
+                                            </p>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                $25,000
+                                            </p>
+                                        </td>
+                                        
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td scope="row"><b>APTIV Bank Wealth Advisory</b></td>
+                                        <td>
+                                            <p>
+                                                Starts at 0.80% 
+                                                (Fee rates decrease at higher asset levels)
+                                            </p>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                $1 million
+                                            </p>
+                                        </td>
+                                        
+                                    </tr>
+
+                                    <tr>
+                                        <td scope="row"><b>APTIV Bank Advisor Network</b></td>
+                                        <td>
+                                            <p>
+                                                No charge for referrals
+                                                Fees vary by advisor
+                                            </p>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                $500,000
+                                            </p>
+                                        </td>
+                                        
+                                    </tr>
+
+                                    <tr>
+                                        <td scope="row"><b>APTIV Bank Managed Portfolios</b></td>
+                                        <td>
+                                            <p>
+                                                Starts at 0.90% 
+                                                (Fee rates decrease at higher asset levels)
+                                            </p>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                $25,000
+                                            </p>
+                                        </td>
+                                        
+                                    </tr>
+
+                                    <tr>
+                                        <td scope="row"><b>Futures</b></td>
+                                        <td>
+                                            <p>
+                                                $2.25 per contract
+                                            </p>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                $2.25 per contract
+                                            </p>
+                                        </td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td scope="row"><b>Managed Account Select Equity Strategies</b></td>
+                                        <td>
+                                            <p>
+                                                Starts at 1.00% 
+                                                (Fee rates decrease at higher asset levels)
+                                            </p>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                $100,000
+                                            </p>
+                                        </td>
+                                        
+                                    </tr>
+
+                                    <tr>
+                                        <td scope="row"><b>Managed Account Select Fixed Income Strategies</b></td>
+                                        <td>
+                                            <p>
+                                                Starts at 0.65% 
+                                                (Fee rates decrease at higher asset levels)
+                                            </p>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                $250,000
+                                            </p>
+                                        </td>
+                                        
+                                    </tr>
+
+                                    <tr>
+                                        <td scope="row"><b>APTIV Bank Personalized Indexing</b></td>
+                                        <td>
+                                            <p>
+                                                Starts at 0.40%
+                                                (Fee rates decrease at higher asset levels)
+                                            </p>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                $100,000
+                                            </p>
+                                        </td>
+                                        
+                                    </tr>                             
+                                </tbody>
+                            </table>
+                    </div>
+                    </section>
+
+                    <section class="product-section pb-5 pt-5" >
+                        <div class="table-responsive understand">
+
+                            <h2 class="pb-4">Money Transfer Fees</h2>
+                       
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Fees to Transfer </th>
+                                        <th>Business Days to Complete</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td scope="row"><b>Online between APTIV Bank accounts</b></td>
+                                        <td>
+                                            <p>$0</p>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                0–1 days 
+                                            </p>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td scope="row"><b>Online between outside accounts and APTIV Bank investment accounts via APTIV Bank MoneyLink</b></td>
+                                        <td>
+                                            <p>
+                                                $0
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p>
+                                                1–2 days 
+                                            </p>
+                                        </td>
+                                        
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td scope="row"><b>APTIV Bank Mobile Deposit</b></td>
+                                        <td>
+                                            <p>
+                                                $0
+                                            </p>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                            Mobile deposits submitted before 4 p.m. local time within the contiguous U.S. will be processed the same business day
+                                            </p>
+                                        </td>
+                                        
+                                    </tr>
+
+                                    <tr>
+                                        <td scope="row"><b>Check</b></td>
+                                        <td>
+                                            <p>
+                                                $0
+                                            </p>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                            0-1 days
+                                            </p>
+                                        </td>
+                                        
+                                    </tr>
+
+                                    <tr>
+                                        <td scope="row"><b>Wire</b></td>
+                                        <td>
+                                            <p>
+                                               <b> From your APTIV Bank investment accounts:</b> <br>
+                                                $25 per transfer; $15 if transferred online
+                                                
+                                            </p>
+                                            <p>
+                                               <b> Into your APTIV Bank investment accounts: </b> <br>
+                                               Depends on sending institution  
+                                            </p>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                <b> From your APTIV Bank investment accounts:</b> <br>
+                                                0–1 days
+                                                 
+                                             </p>
+                                             <p>
+                                                <b> Into your APTIV Bank investment accounts: </b> <br>
+                                                Depends on sending institution 
+                                             </p>
+                                        </td>
+                                        
+                                    </tr>
+
+                                    <tr>
+                                        <td scope="row"><b>Direct Deposit </b></td>
+                                        <td>
+                                            <p>
+                                                $0
+                                            </p>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                N/A
+                                            </p>
+                                        </td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td scope="row"><b>Automatic Investment Plan</b></td>
+                                        <td>
+                                            <p>
+                                            $0
+                                            </p>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                0–1 days
+                                            </p>
+                                        </td>
+                                        
+                                    </tr>
+
+                                    <tr>
+                                        <td scope="row"><b>APTIV Bank Bank Bill Pay</b></td>
+                                        <td>
+                                            <p>
+                                                $0
+                                            </p>
+
+                                        </td>
+                                        <td>
+                                            <p>
+                                                1 or more business days depending on delivery
+                                            </p>
+                                        </td>
+                                        
+                                    </tr>                          
+                                </tbody>
+                            </table>
+                    </div>
+                    </section>
+                    <section class="product-section pb-5 pt-5" >
+                      
+                        <div class="row">
+                            <div class="col-lg-10">
+                                <p class="talk1">The APTIV Bank Satisfaction Guarantee</p>
+
+                                <p>We believe every investor deserves to work with a firm they can count on. At APTIV Bank, 
+                                    our commitment to your satisfaction is backed by a guarantee. If for any reason you’re not completely satisfied, 
+                                    we’ll refund your eligible fee or commission and work with you to make things right.</p>
+                            </div>
+                        </div>
+                    </section>
+
+
+
+             
+
+                    <section class="product-section pb-5 pt-5" >
+                        <div class="container">
+                            <h5 class="talk1 pb-4">Common Questions</h5>
+                          
+                            <div class="faq-inner regtabs">
+                                <div class="accordion" id="general-question">
+
+                                    <div class="card">
+                                        <div class="card-header" id="headingOne">
+                                            <h5 class="mb-0">
+                                                <button class="accordio-heading" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    <i class="ion-ribbon-b"></i>
+                                                    What is the minimum investment needed for a brokerage account?
+                                                </button>
+                                            </h5>
+                                        </div>
+    
+                                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#general-question">
+                                            <div class="card-body">
+                                                <p class="p-3">There is no minimum investment needed to open a brokerage account.
+                                            </p>
+                                              
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card">
+                                        <div class="card-header" id="headingTwo">
+                                            <h5 class="mb-0">
+                                                <button class="accordio-heading" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-controls="collapseTwo">
+                                                    <i class="ion-android-car"></i>
+                                                    How much will it cost to open an account?
+                                                </button>
+                                            </h5>
+                                        </div>
+    
+                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#general-question">
+                                            <div class="card-body">
+                                                <p>
+                                                    There are no fees to open and maintain a APTIV Bank account. 
+                                            </p>       
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card">
+                                        <div class="card-header" id="headingThree">
+                                            <h5 class="mb-0">
+                                                <button class="accordio-heading" type="button" data-toggle="collapse" data-target="#collapseThree" aria-controls="collapseThree">
+                                                    <i class="ion-university"></i>
+                                                   
+                                                    How much does it cost to execute a trade? Do you charge trading commissions?
+                                                </button>
+                                            </h5>
+                                        </div>
+    
+                                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#general-question">
+                                            <div class="card-body">
+                                                <p>
+                                                    Online listed stock and ETF trades at APTIV Bank are commission-free.
+                                                    Online options trades are $0.65 per contract.3 Service charges apply for automated 
+                                                    phone trades ($5) and broker-assisted trades ($25) for stocks, ETFs, and Options. 
+                                                    Futures trades are $2.25 per contract8 for both online and broker-assisted trades. 
+                                                    Thousands of mutual funds through APTIV Bank Mutual Fund OneSource4 are transaction-free 
+                                                    for both online and automated phone trades, and a $25 service charge applies to broker-assisted trades. 
+                                                    Non-APTIV Bank Mutual Fund OneSource trades are up to $74.95 per purchase and $0 per redemption for 
+                                                    online and automated phone trades. APTIV Bank's short-term redemption fee of $49.95 will be charged on 
+                                                    redemption of funds purchased through APTIV Bank's Mutual Fund OneSource service [and certain other funds with 
+                                                    no transaction fee] and held for 90 days or less. APTIV Bank reserves the right to exempt certain funds from this fee, 
+                                                    including APTIV Bank Funds, which may charge a separate redemption fee, and funds 
+                                                    that accommodate short-term trading. Funds are also subject to management fees and expenses.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="card-header" id="headingfive">
+                                            <h5 class="mb-0">
+                                                <button class="accordio-heading" type="button" data-toggle="collapse" data-target="#collapseFour" aria-controls="collapseFour">
+                                                    <i class="ion-android-car"></i>
+                                                    What is covered by the Satisfaction Guarantee?
+                                                </button>
+                                            </h5>
+                                        </div>
+    
+                                        <div id="collapseFour" class="collapse" aria-labelledby="headingfive" data-parent="#general-question">
+                                            <div class="card-body">
+                                                <p>
+                                                    We believe every investor deserves to work with a firm they can count on. At APTIV Bank, o
+                                                    ur commitment to your satisfaction is backed by a guarantee. If for any reason you're not completely satisfied, 
+                                                    we'll refund your eligible fee or commission and work with you to make things right.
+                                                    You won't find that kind of promise everywhere—but you will find it here.
+                                            </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                          
+                    </div>
+                    </section>
+
+
+
+
+
+                    <section class="product-section pb-5 pt-5 mt-4 mb-5" style="background-color: #e8e8e8;">
+                        <div class="container text-center">
+                       <h4 class="talk1 pb-2">Take the next step.</h4>
+                     
+                   
+                    <a onclick="location.href='{% url 'signup' %}'" href="#" class="btn btn-hero">Open an Account</a>
+                    </div>
+                    </section>
+
+
+                        {% include 'aptiv_templates/__call_section.html' %}
+
+              
+
+                 
+                   
+
+
+
+        
+      <!-- footer section start -->
+      {% include 'aptiv_templates/_footer.html' %}
+      <!-- footer section end -->
+          </div>
+          </div>
+       
+               
+              
+          
+          
+          {% endblock %}
+          

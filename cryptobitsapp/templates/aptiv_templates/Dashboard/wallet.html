@@ -1,0 +1,1215 @@
+
+{% extends 'aptiv_templates/Dashboard/__dash_base.html' %}
+{% load static %}
+  {% block content %}
+  
+
+    {% include 'aptiv_templates/Dashboard/__side_bar_mini.html' %}
+
+
+
+    {% include 'aptiv_templates/Dashboard/_header.html' %}
+
+
+
+    <!-- start page content wrapper-->
+    <div class="page-content-wrapper">
+      <!-- start page content-->
+      <div class="page-content">
+
+        <div class="wallet-card">
+
+
+
+
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div class="asset-value">
+                <h6>Estimated Assets Value</h6>
+                <h5 class="font-weight-bolder mb-0">
+                  ${{user_total_balance|floatformat:2 }} <span style="font-size: .9rem;color: #c90da0;">- <span id="btcVal"> Total</span><b>BTC</b></span>
+                  <!-- <span class="text-success text-sm font-weight-bolder">+55%</span> -->
+                </h5>
+                <p class="text-sm mb-0 text-capitalize font-weight-bold">1btc = <span id="btcRate">BTCRATE </span><b>USD</b></p>
+                
+              </div>
+
+
+              <div class="form-check m-3">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
+                  Show all currencies
+                </label>
+              </div>
+            </div>
+            <!-- wallet-coins start -->
+            <div class="col-lg-4">
+              <div class="wallets">
+                <div class="wallets-head">
+                  <p>Wallets</p>
+                  <a href="#">Contact Support</a>
+                </div>
+
+                {% for wallet in user_wallets %}
+                <!-- coin-start -->
+                <div class="wallet-coin">
+                  <div class="row">
+                    <div class="col-lg-1">
+                      <img src="{{wallet.logo.url}}" class="mt-2" alt="" width="20">
+                    </div>
+                    <div class="col-lg-8 ">
+                      <h6 class="coin-name mt-2"><b>{{wallet.coin.name|title }}</b> {{wallet.coin.code}}</h6>
+                      <p class="coin-amount mt-1"> {{wallet.balance|floatformat:4}} {{wallet.coin.code}}</p>
+                      <ul class="mt-2">
+                        
+                        <li class="deposit" onclick = "Deposit('{{wallet.coin.api_id}}');">Deposit</li>
+                        <li class="withdraw" onclick = "withdraw('{{wallet.coin.api_id}}');">Withdraw</li>
+                        <li class="swap">Swap</li>
+                        <li class="option" onclick = "withdraw('{{wallet.coin.api_id}}');" data-title="Transaction History"><i class="fa fa-ellipsis-v"></i></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <!-- coin-ends -->
+                {%endfor%}
+
+                
+              </div>
+              <div class="wallets">
+                <div class="wallets-head">
+                  <p>Get Wallet</p>
+                  <a href="#">more</a>
+                </div>
+                
+                <div class="alert_message" id="create_alert" style="background-color:{{color}}; display: none;">
+                  <span class="closebtn_message" onclick="this.parentElement.style.display='none'; location.reload();">&times;</span>
+                   <p><i class="fa fa-warning" style="font-size: 1.2rem; margin-right: 5px;"></i><span id="alertCreateMessage"></span></p> 
+                  </div>
+                {% for wallet,value in user_non_wallets.items %}
+                <!-- coin-start -->
+                <div class="wallet-coin">
+                  <div class="row">
+                    <div class="col-lg-1">
+                      <img src="{{wallet.logo.url}}" class="mt-2" alt="" width="20">
+                    </div>
+                    <div class="col-lg-8 ">
+
+                      
+                      <h6 class="coin-name mt-2"><b>{{wallet|title }}</b> </h6>
+                      <p class="coin-amount mt-1">rate: USD {{value.0|floatformat:4}} </p>
+                      <ul class="mt-1">
+                        
+                        <li class="create" style="    background-color: #137d6c; color: #fff;" onclick = "Create('{{value.1}}');">Create Wallet</li>
+
+                        <!-- <li class="withdraw" onclick = "withdraw('{{wallet.coin.api_id}}');">Withdraw</li>
+                        <li class="swap">Swap</li> -->
+
+                        
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <!-- coin-ends -->
+                {%endfor%}
+
+                
+              </div>
+            </div>
+          
+            <div class="col-lg-6 walletmodals ">
+              <!-- deposit modal starts -->
+              <div class="deposit-modal">
+                <div class="modal-head">
+                  <h4>Deposit <span class="coinCodeOne">...</span></h4>
+                  <div class="close">
+                    <ion-icon name="close-outline"></ion-icon>
+                  </div>
+                </div>
+
+                <div class="modal-content">
+                  <h5>Network:</h5>
+                  <input class="form-select" id="validationDefault04" value="network" readonly>
+                    
+   
+                  <div class="notes mt-3">
+                    <h6>Notes:</h6>
+
+                    <p class="mb-2">
+                      <span class="info">
+                        <ion-icon name="information-outline"></ion-icon>
+                      </span>You have to deposit at least <b><span class="coin_min">000</span> <span class="coinCodeOne">...</span></b> to be credited.
+                      Any deposit that is less than <b><span class="coin_min">000</span></b> <span class="coinCodeOne">...</span> will not be refunded
+                    </p>
+                    <p>
+                      <span class="info">
+                        <ion-icon name="information-outline"></ion-icon>
+                      </span>
+                      This deposit address only accepts <b><span class="coinCodeOne">...</span></b>. Do not send other coins to it.
+                    </p>
+
+                  </div>
+
+                  <div class="deposit-address mt-4">
+                    <h6>Deposit Address:</h6>
+                    <div class="address">
+                      <span class="address-code" id="coinAddy">
+                        address
+                      </span>
+                      <button href="" class="copy">Copy</button>
+                    </div>
+
+
+                  </div>
+
+                  <div class="trans">
+                    <button href="" class="transHist">Transactions History</button>
+                  </div>
+
+                </div>
+
+              </div>
+              <!-- deposit modal ends -->
+
+              <!-- withdraw modal starts -->
+              <div class="withdraw-modal">
+
+                <div class="modal-head">
+                  <h4>Withdraw <span class="coinCodeOne1">...</span></h4>
+                  <div class="close">
+                    <ion-icon name="close-outline"></ion-icon>
+                  </div>
+                </div>
+
+                <div class="modal-content">
+                  <div class="card">
+                    <div class="card-body">
+                      <ul class="nav nav-tabs nav-primary" role="tablist">
+                        <li class="nav-item" role="presentation">
+                          <a class="nav-link active" data-bs-toggle="tab" href="#coinWallet" role="tab"
+                            aria-selected="true">
+                            <div class="d-flex align-items-center">
+
+                              <div class="tab-title">Coin Wallet</div>
+                            </div>
+                          </a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <a class="nav-link" data-bs-toggle="tab" href="#username" role="tab" aria-selected="false">
+                            <div class="d-flex align-items-center">
+
+                              <div class="tab-title">Send To other User</div>
+                            </div>
+                          </a>
+                        </li>
+                        <!-- <li class="nav-item" role="presentation">
+                          <a class="nav-link" data-bs-toggle="tab" href="#phoneNumber" role="tab" aria-selected="false">
+                            <div class="d-flex align-items-center">
+
+                              <div class="tab-title">Phone Number</div>
+                            </div>
+                          </a>
+                        </li> -->
+                      </ul>
+
+
+
+                      <div class="tab-content py-3">
+                        <div class="tab-pane fade show active" id="coinWallet" role="tabpanel">
+                          <div class="">
+                            <div class="alert_message" id="alertWithdraw{{coin.code}}" style="background-color:{{color}}; display: none;">
+                            <span class="closebtn_message" onclick="this.parentElement.style.display='none';">&times;</span>
+                              <p id="alertWithdrawMessage{{coin.code}}"></p>
+                            </div>
+                            <input type="hidden" id="wDraw_coin_min" value="0"></input>
+                            <input type="hidden" id="wDraw_coin_max" value="100"></input>
+                            <input type="hidden" id="usd_wDraw_coin_min" value="0"></input>
+                            <input type="hidden"  id="usd_wDraw_coin_max" value="100"></input>
+                            <form method="POST" id="formWithdraw">
+                              {%csrf_token%}
+                            <h5 class="mt-2"> <span class="coinCodeOne1">...</span> Address:</h5>
+                            <input type="text" name="{{withdrawform.address.name}}" class="form-control" id="withAddress" placeholder=" beneficiary address"
+                              required>
+                            <div class="valid-feedback">Looks good!</div>
+                            <!-- to help process -->
+                            <input type="hidden" class="form-control" id="coin_dollar_value" name="{{withdrawform.dollar_value.name}}" aria-describedby="helpId" placeholder="" value="1">
+
+                            <input type="hidden" class="form-control" id="usd_trans" aria-describedby="helpId" placeholder=""  name="{{withdrawform.usd_trans.name}}" value="1" >
+
+                            <input type="hi" class="form-control" id="coincode" aria-describedby="helpId" placeholder="" name="{{withdrawform.currency.name}}" value="{{coin.code}}">
+                          
+
+                            <h6 class="mb-2 mt-3"><span id="coinNameOne1"> coin </span> Amount:</h6>
+                            <div class="input-group">
+                              <input type="float" name="{{withdrawform.amount.name}}" class="form-control" id="amount" placeholder="0.00" onChange="limiter(this); "
+                                aria-label="Amount"> 
+<!--                                 
+                                <span class=" input-group-text coinCodeOne1">...</span> 
+                                <span class=" input-group-text">USD</span>  -->
+                                <input class="input-group-text " id="coinCodeOne0" type="button" onclick="$('#coinCodeOne0').attr('style', 'border-bottom:5px solid green;');
+                                $('#coinCodeUsd').attr('style', 'border-bottom:none;');
+                                $('#limit_usd').attr('style', 'display:none;');
+                                $('#limit_non_usd').attr('style', 'display:block;');
+                                $('#usd_trans').val(0);
+                                
+                                
+                                " value="...">
+
+                                <input class="input-group-text " style="border-bottom:5px solid green;" id="coinCodeUsd" type="button" onclick="$('#coinCodeUsd').attr('style', 'border-bottom:5px solid green;');
+                                $('#coinCodeOne0').attr('style', 'border-bottom:none;');
+                               
+                                $('#limit_usd').attr('style', 'display:block;');
+                                $('#limit_non_usd').attr('style', 'display:none;');
+                                $('#usd_trans').val(1);" value="USD">
+
+                              
+                               
+
+                            </div>
+                            <p class="mt-2 mb-2">available: <b>
+                              <span style="color:#137d6c;" id="wllet_coin_bal">0.00000000</span>  <span class="coinCodeOne1">...</span> </b>-($<span class="" id="usd_wllet_bal">000.00</span>)
+                           
+                                </p>
+
+                                <p class="mt-2 mb-2" id="limit_non_usd" style="display:none;">
+                                  <b>min:
+                                    <span style=" padding-right:15px;" >
+                                      <span style="color:#137d6c;" id="wDraw_coin_min1"> 000</span>  <span class="coinCodeOne2">...</span>    </b>
+                                    </span>
+
+                                    
+
+                                    <b>
+                                      max:
+                                      <span style=" " >
+                                        <span style="color:#137d6c;" id="wDraw_coin_max1"> 000</span>  <span class="coinCodeOne2">...</span>    </b>
+                                      </span>
+                                      
+                                      
+                                       </b>
+                               
+                                    </p>
+
+                                    <p class="mt-2 mb-2" id="limit_usd">
+                                      <b>min:
+                                        <span style=" padding-right:15px;" >
+                                          <span style="color:#137d6c;" id="usd_wDraw_coin_min1"> 000</span> <span class="">USD</span>    </b>
+                                        </span>
+                                       
+                                    
+                                        <b>
+                                          max:<span  style="color:#137d6c; " id="usd_wDraw_coin_max1">000 </span>  <span class="">USD</span>  </b>
+                                   
+                                        </p>
+
+                            <div class="form-check">
+                              <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue"
+                                  checked>
+                                Save this address for future withdrawals
+                              </label>
+                            </div>
+
+                            <div class="notes mt-3">
+                              <h6>Notes:</h6>
+
+                              <p class="mb-2">
+                                <span class="info">
+                                  <ion-icon name="information-outline"></ion-icon>
+                                </span>The above fees are not fixed,
+                                can vary depending on the state of the blockchain networks
+                              </p>
+                              <p class="mb-2">
+                                <span class="info ">
+                                  <ion-icon name="information-outline"></ion-icon>
+                                </span>
+                                Estimated time to complete: 2 minutes
+                              </p>
+                              <p class="mb-2">
+                                <span class="info">
+                                  <ion-icon name="information-outline"></ion-icon>
+                                </span>
+                                Do not withdraw directly to a crowdfund or ICO.
+                                We will not credit your account with tokens from that sale.
+                              </p>
+
+                            </div>
+
+
+                            <button id="proceed" type="submit" 
+                            
+                            
+                            onclick="$('#formWithdraw').submit(function(e){
+                              e.preventDefault();
+                              
+                              // coinfunction();
+                              submitform();
+                              $('#formWithdraw').unbind('submit');
+                              return false;
+                          });" 
+                          class="btn btn-primary" >proceed</button>
+
+
+
+                           <!-- <button id="proceed" type="submit" 
+                            
+                            
+                            onclick="$('#formWithdraw').on('submit',function(e){
+                              e.preventDefault();
+                              
+                              // coinfunction();
+                              submitform();
+                          });" 
+                          class="btn btn-primary" >proceed</button> -->
+                          
+                          <button id="refresh" type="submit" onclick=" location.reload();" class="btn btn-primary" >refresh</button>
+                          </form>
+                          </div>
+                        </div>
+
+
+
+
+
+
+                        <div class="tab-pane fade" id="username" role="tabpanel">
+                          <div>
+                            <div class="alert_send" id="send_alert" style="background-color:yellow; display: block;">
+                              <span class="closebtn_message" onclick="this.parentElement.style.display='none'; location.reload();">&times;</span>
+                               <p><i class="fa fa-warning" style="font-size: 1.2rem; margin-right: 5px;"></i><span id="alertsendMessage">You do not have access to this feature</span></p> 
+                              </div>
+                            <h6>Username:</h6>
+                            <input type="text" class="form-control" id="validationCustom01" placeholder="Input Username"
+                              required>
+
+
+                            <h6><span id="coinNameOne2"> coin </span> Amount</h6>
+                            <div class="input-group">
+                              <input type="text" class="form-control" placeholder="0.00"
+                                aria-label="Amount (to the nearest dollar)"> 
+                                
+                               
+                                <span class=" input-group-text coinCodeOne1">...</span> 
+
+                            </div>
+                            <p>BTC available amount: <b><span style="color:#137d6c;">0.00000000</span>  <span class=" coinCodeOne1">...</span> </b></p>
+
+                            <!-- <div class="message">
+                              <label for="validationCustom01" class="form-label mt-3"><b>Messsage:</b></label>
+                              <input type="text" class="form-control" id="validationCustom01" required>
+                            
+                            </div> -->
+
+                            <button type="submit" class="btn btn-primary" disabled>Submit</button>
+
+                          </div>
+                        </div>
+
+                        <!-- <div class="tab-pane fade" id="phoneNumber" role="tabpanel">
+                          <div>
+                            <h6>Phone Number:</h6>
+                            <input type="tel" class="form-control" placeholder="+0000000000" required>
+
+
+
+                            <h6>Bitcoin Amount</h6>
+                            <div class="input-group mb-3">
+                              <input type="text" class="form-control"> <span class="input-group-text">BTC</span>
+                            </div>
+                            <p>BTC available amount: <b><span style="color:#137d6c;">0.00000000</span> BTC</b></p>
+
+
+
+                            <button type="submit" class="btn btn-primary">Submit</button>
+
+                          </div>
+                        </div> -->
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+
+              </div>
+              <!-- withdraw modal ends -->
+
+              <!-- swap modal start -->
+              <div class="swap-modal">
+                <div class="modal-head">
+                  <h4>Swap</h4>
+                  <div class="close">
+                    <ion-icon name="close-outline"></ion-icon>
+                  </div>
+                </div>
+
+                <div class="modal-content">
+                  <div class="card">
+                    <div class="card-body">
+                      <ul class="nav nav-tabs nav-primary" role="tablist">
+                        <li class="nav-item" role="presentation">
+                          <a class="nav-link active" data-bs-toggle="tab" href="#marketPrice" role="tab"
+                            aria-selected="true">
+                            <div class="d-flex align-items-center">
+
+                              <div class="tab-title">Market Price</div>
+                            </div>
+                          </a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <a class="nav-link" data-bs-toggle="tab" href="#yourPrice" role="tab" aria-selected="false">
+                            <div class="d-flex align-items-center">
+
+                              <!-- <div class="tab-title">Your Price</div> -->
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
+
+                      <div class="tab-content py-3">
+                        <div class="tab-pane fade show active" id="marketPrice" role="tabpanel">
+                          
+                          <form action="#" class="" id="formTransfer">
+                            {% csrf_token %}
+                            <div class="row align-items-center">
+                              <div class="form-group">
+                                <label for="">Select Coin:<span class="convertValue" id="dollarValueFrom" style="color:red; margin-left: 15px;">converting...</span></label>
+                                <select class="form-control" name="select_coin_one" id="selectCoinOne" onchange="if (this.selectedIndex); converter(this.value, this );">
+
+                                  <!-- onchange="if (this.selectedIndex) console.log('ok'); converter(this.value, this );" -->
+                                  {%for wallet in user_wallets%}
+                                  <option>{{wallet.coin.name}}: {{wallet.balance}}</option>
+
+
+
+
+                                  {%endfor%}
+                                </select>
+                              </div>
+                              <script>
+                                // function converter(coin)
+                              </script>
+
+                           
+
+                              <div class="form-group">
+                                <label for="">Input Amount: </label>
+                                <input type="text"
+                                  class="form-control" name="id_transfer_amt" id="idTransferAmt" aria-describedby="helpId" placeholder="">
+                                 
+                              </div>
+                              
+                              <p class="mb-0 title">To:</p>
+                                <div class="form-group">
+                                  <label for="">Select Coin:<span class="convertValue" id="dollarValueTo" style="color:red; margin-left: 15px;">converting...</span></label>
+                                <select class="form-control" name="select_coin_two" id="selectCoinTwo" onchange="if (this.selectedIndex); converter(this.value, this );">
+
+                                  
+
+                                    <!-- onchange="if (this.selectedIndex) console.log('ok'); converter(this.value, this );" -->
+                                    {%for wallet in user_wallets%}
+                                  <option>{{wallet.coin.name}}: {{wallet.balance}}</option>
+                                  {%endfor%}
+                                  </select>
+                                </div>
+                             
+                          </br>
+                            <button type="submit" onclick="fund_transfer_post()" class="btn btn-primary finish">Swap</button>
+                          </form>
+                        </div>
+
+                        <!-- <div class="tab-pane fade" id="yourPrice" role="tabpanel">
+                          <form action="">
+                            <div class="row align-items-center">
+                              <h6>Amount of <span class="coinName">BTC</span>*:</h6>
+                              <div class="col-lg-9">
+                                <div class="form-group">
+
+                                  <input type="text" class="form-control" name="" id="" aria-describedby="helpId"
+                                    placeholder="0.00">
+                                </div>
+                              </div>
+                              <div class="col-lg-3">
+                                <button type="button" class="btn btn-primary coinBtn" data-bs-toggle="modal" id="coinBtnp"
+                                  data-bs-target="#coinListModal"><img src="assets/images/coins/bit.png"
+                                  width="20"
+                                    alt=""> BTC <i class="fa fa-chevron-right" style="font-size: .9rem;"></i></button>
+                              </div>
+
+                              <div class="col-lg-12">
+                                <div class="form-group">
+                                  <h6 for="">Price:</h6>
+                                  <input type="text" class="form-control" name="" id="" aria-describedby="helpId"
+                                    placeholder="0.00 USDT/BTC">
+                                </div>
+                              </div>
+
+                              <p class="mt-2">Current Market price: <b><span style="color:#137d6c;">0.00000000</span>
+                                <span class="coinName2"> USDT </span>/<span class="coinName"> BTC </span></b></p>
+
+                              <h6>Amount of <span class="coinName2">USDT</span>*:</h6>
+                              <div class="col-lg-9">
+                                <div class="form-group">
+                                  <input type="text" class="form-control" name="" id="" aria-describedby="helpId"
+                                    placeholder="0.00">
+                                </div>
+                              </div>
+                              <div class="col-lg-3">
+                                <button type="button" class="btn btn-primary coinBtn2" data-bs-toggle="modal" id="coinBtnp2"
+                                data-bs-target="#coinListModal2">
+                                <img src="assets/images/coins/bit.png" width="20" alt=""> USDT 
+                              </button>
+                              </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary mt-4">Buy <span class="coinName2"> USDT </span></button>
+                          </form>
+                        </div> -->
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+              
+
+              </div>
+
+             
+              <!-- swap modal ends -->
+
+              <!-- option-modal start -->
+              <div class="option-modal mt-4">
+                <div class="modal-head">
+                  <h4>Transaction history</h4>
+                  <div class="close">
+                    <ion-icon name="close-outline"></ion-icon>
+                  </div>
+                </div>
+
+                <div class="modal-content">
+                  <div class="card">
+                    <div class="card-body">
+                      <ul class="nav nav-tabs nav-primary" role="tablist">
+                        <li class="nav-item" role="presentation">
+                          <a class="nav-link active" data-bs-toggle="tab" href="#deposit" role="tab"
+                            aria-selected="true">
+                            <div class="d-flex align-items-center">
+
+                              <div class="tab-title">Deposit</div>
+                            </div>
+                          </a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <a class="nav-link" data-bs-toggle="tab" href="#withdrawal" role="tab" aria-selected="false">
+                            <div class="d-flex align-items-center">
+
+                              <div class="tab-title">Withdrawal</div>
+                            </div>
+                          </a>
+                        </li>
+                        <!-- <li class="nav-item" role="presentation">
+                          <a class="nav-link" data-bs-toggle="tab" href="changes" role="tab" aria-selected="false">
+                            <div class="d-flex align-items-center">
+
+                              <div class="tab-title">Changes</div>
+                            </div>
+                          </a>
+                        </li> -->
+                      </ul>
+                      <div class="tab-content py-3">
+                        <div class="tab-pane fade show active" id="deposit" role="tabpanel">
+                          <!-- table -->
+                          <div class="table-responsive mt-2">
+                            <table class="table align-middle mb-0">
+                              <thead class="">
+                                <tr>
+                                  <th>Date</th>
+                                  <th>Product</th>
+                                  <th>Price</th>
+                                  <th>Status</th>
+                                  <th>Action</th>
+
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>#89742</td>
+                                  <td>
+                                    <div class="gap-3">
+                                      <h6 class="product-name m-3">Smart Mobile Phone</h6>
+                                    </div>
+                                  </td>
+
+                                  <td>$214</td>
+                                  <td><span class="badge alert-success">Completed</span></td>
+
+                                  <td>
+                                    <div class="d-flex align-items-center gap-3 fs-6">
+                                      <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
+                                        data-bs-placement="bottom" title="" data-bs-original-title="View detail"
+                                        aria-label="Views">
+                                        <ion-icon name="eye-sharp"></ion-icon>
+                                      </a>
+                                      <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip"
+                                        data-bs-placement="bottom" title="" data-bs-original-title="Edit info"
+                                        aria-label="Edit">
+                                        <ion-icon name="pencil-sharp"></ion-icon>
+                                      </a>
+                                      <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
+                                        data-bs-placement="bottom" title="" data-bs-original-title="Delete"
+                                        aria-label="Delete">
+                                        <ion-icon name="trash-sharp"></ion-icon>
+                                      </a>
+                                    </div>
+                                  </td>
+                                </tr>
+                                
+
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="withdrawal" role="tabpanel">
+                          <!-- table -->
+                          <div class="table-responsive mt-2">
+                            <table class="table align-middle mb-0">
+                              <thead class="">
+                                <tr>
+                                  <th>Date</th>
+                                  <th>Product</th>
+                                  <th>Price</th>
+                                  <th>Status</th>
+                                  <th>Action</th>
+
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>#89742</td>
+                                  <td>
+                                    <div class="gap-3">
+                                      <h6 class="product-name m-3">Smart Mobile Phone</h6>
+                                    </div>
+                                  </td>
+
+                                  <td>$214</td>
+                                  <td><span class="badge alert-success">Completed</span></td>
+
+                                  <td>
+                                    <div class="d-flex align-items-center gap-3 fs-6">
+                                      <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
+                                        data-bs-placement="bottom" title="" data-bs-original-title="View detail"
+                                        aria-label="Views">
+                                        <ion-icon name="eye-sharp"></ion-icon>
+                                      </a>
+                                      <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip"
+                                        data-bs-placement="bottom" title="" data-bs-original-title="Edit info"
+                                        aria-label="Edit">
+                                        <ion-icon name="pencil-sharp"></ion-icon>
+                                      </a>
+                                      <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
+                                        data-bs-placement="bottom" title="" data-bs-original-title="Delete"
+                                        aria-label="Delete">
+                                        <ion-icon name="trash-sharp"></ion-icon>
+                                      </a>
+                                    </div>
+                                  </td>
+                                </tr>
+                                
+
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+
+                        <!-- <div class="tab-pane fade" id="changes" role="tabpanel">
+
+                        </div> -->
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+
+              </div>
+              <!-- option-modal ends -->
+
+            </div>
+
+            <!-- coinlists -->
+            <div class="coinlist-modal">
+              <!-- swap from  -->
+              <div class="col">
+                <!-- Modal -->
+                <div class="modal fade" id="coinListModal" tabindex="-1" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Swap From</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <h6 class="mb-3"><b>Top coins:</b></h6>
+                        <ul>
+                          {%for wallet in user_wallets%}
+                          <li class="choose-coin" data-bs-dismiss="modal"><img src="{{wallet.coin.name}}" width="20" alt=""> {{wallet.coin.name}}</li>
+
+                          {%endfor%}
+                        
+                      
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- swap to  -->
+              <div class="col">
+                <!-- Modal -->
+                <div class="modal fade" id="coinListModal2" tabindex="-1" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Swap To</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <h6 class="mb-3"><b>Top coins:</b></h6>
+                        <ul>
+                          {%for wallet in user_wallets%}
+                          <li class="choose-coin" data-bs-dismiss="modal"><img src="{{wallet.coin.name}}" width="20" alt=""> {{wallet.coin.name}}</li>
+
+                          {%endfor%}
+                        
+                        </ul>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- coinlists -->
+
+
+
+          </div>
+
+
+        </div>
+        <!-- end page content-->
+      </div>
+      <!--end page content wrapper-->
+            
+  <!--Transfer Modal end-->
+  <script>
+    
+  // function converter(name,id_exchange){
+  //  console.log(name);
+                                
+                                
+
+  // }
+
+
+
+  function converter(name, element = ""){
+    
+    // var e = document.getElementById("selectCoinOne");
+    var e = name;
+    var element = element;
+    
+    // var convert_value = element.parentNode.querySelector('.convertValue');
+    // alert(convert_value);
+
+    // var value=e.options[e.selectedIndex].value;// get selected option value
+    var value_span_id = element.parentNode.querySelector('.convertValue').id;
+    // console.log("llok");
+    $("#"+value_span_id).text("converting...");
+    // alert("id  "+ element.id);
+    if (element.id === 'idTransferAmt'){
+      data_bal = element.text;
+      token_name = text[0];
+      
+
+    }
+    else{
+      var text=element.options[element.selectedIndex].text;
+      
+      text = text.split(":");
+      data_bal = text[1];
+      $('idTransferAmt').text("convert..");
+      token_name = text[0];
+      console.log(token_name + "hiyp");
+      // console.log(text[0]);
+      // document.getElementById('idTransferAmt').token_name = text[0];
+      // $('#idTransferAmt').token_name=text[0];
+    };
+    
+    // alert(document.getElementById('idTransferAmt'));
+    
+    // alert(text[1]);
+    
+    var balance_val =  parseFloat(data_bal);
+    console.log(balance_val + "hiy");
+    $.ajax({
+          type:"GET",
+          url :"{% url 'get_coin_value' %}",
+
+          data : {'msg':'goood','format':'single', csrfmiddlewaretoken: '{{ csrf_token }}', 'token_name':token_name},
+
+        
+          dataType:'json',
+          success:function(data){
+            console.log("hoog");
+            var rate = data.rate;
+            var value_in_dollar = parseFloat(rate) * balance_val;
+            // $("#dollarValueFrom").text(btc_rate);
+            var value_span_id = element.parentNode.querySelector('.convertValue').id;
+            // console.log(value_in_dollar);
+            $("#"+value_span_id).text("(USD):  $" + value_in_dollar.toFixed(4));
+
+           
+
+          }
+
+        })
+
+  }
+
+    
+  
+    //   function fund_transfer_get(){
+  
+  
+    //     $.ajax({
+    //       type:"GET",
+    //       url :"{% url 'fund_transfer' %}",
+    //       data : {csrfmiddlewaretoken: '{{ csrf_token }}'},
+    //       dataType:'json',
+    //       success:function(data){
+    //           if (data.msg === "Success"){
+    //               // alert(data.response);
+    //               var accounts = "<option>select</option>"
+    //               for (const [key, value] of Object.entries(data.response)) {
+                     
+    //                   accounts = accounts + "<option value='" +value[0] + "," + value[2]+"'>" + value[0].toUpperCase() +": " + value[1] +"</option>"
+    //                 };
+                    
+    //                 $('#selectCoinOne').html( accounts);
+    //                 $('#selectCoinTwo').html( accounts);
+  
+  
+  
+    //           }
+               
+    //             else{
+    //                   alert("can't fetch accounts");
+  
+    //               }
+           
+    //       }
+    //   })
+        
+    // }
+  
+    function fund_transfer_post(){
+  
+    const form_transfer = document.getElementById("formTransfer");
+    form_transfer.addEventListener("submit", submitHandler);
+    function submitHandler(e){
+        e.preventDefault()
+        $.ajax({
+              type:"POST",
+              url :"{% url 'fund_transfer' %}",
+              data : $("#formTransfer").serialize(),
+              dataType:'json',
+              async: false,
+              success:function(data){
+                  if (data.msg === "Success"){
+                    alert(data.response);
+                    location.reload();
+                      
+                      
+                      }
+  
+                  else if(data.msg === "Invalid"){
+                    alert(data.response);
+                    location.reload();
+                  }
+                  
+                  else{
+                      alert("Transfer was not successful");
+    
+                    }
+              }
+          })
+    
+        }
+      }  
+    
+    </script> 
+
+
+      <script>
+        function limiter(input) {
+          
+          
+          let usd_trans = document.querySelector("#usd_trans").value;
+          // alert(usd_trans);
+          if (usd_trans == 1){
+          var coin_min = document.querySelector("#usd_wDraw_coin_min").value;
+          var coin_max = document.querySelector("#usd_wDraw_coin_max").value;
+            
+          }
+          else{
+          var coin_max = document.querySelector("#wDraw_coin_max").value;
+          var coin_min = document.querySelector("#wDraw_coin_min").value;
+
+          };
+
+          
+          // alert(coin_min);
+          // alert(coin_max);
+          // if (input.value < coin_min) input.value = coin_min;
+          // if (input.value > coin_max) input.value = coin_max;
+        };
+      </script>
+      <script>
+        // $.get(URL,callback);
+        window.onload = function coinValue(){
+          $.ajax({
+              type:"GET",
+              url :"{% url 'get_coin_value' %}",
+    
+              // data : $("#formWithdraw").serialize(),
+              dataType:'json',
+              success:function(data){
+                var btc_rate = data.values.btc;
+                // alert(data);
+                // console.log(btc_rate);
+                $("#btcRate").text(btc_rate);
+                var balequibal = '{{user_total_balance}}';
+                var balbtcval = parseFloat(balequibal) / parseFloat(btc_rate) ;
+                $("#btcVal").text(balbtcval.toFixed(4));
+    
+                
+    
+    
+    
+              }
+    
+            })
+        }
+        
+      </script>
+
+<script>
+  // $.get(URL,callback);
+  window.onload = function coinValue(){
+    $.ajax({
+        type:"GET",
+        url :"{% url 'get_coin_value' %}",
+
+        // data : $("#formWithdraw").serialize(),
+        dataType:'json',
+        success:function(data){
+          var btc_rate = data.values.btc;
+          // alert(data);
+          console.log(btc_rate);
+          $("#btcRate").text(btc_rate);
+          var balequibal = '{{user_total_balance}}';
+          var balbtcval = parseFloat(balequibal) / parseFloat(btc_rate) ;
+          $("#btcVal").text(balbtcval.toFixed(4));
+
+       
+        }
+
+      })
+  }
+
+  function Deposit(coin_id){
+    // var coin_name = coin_name;
+    let coinId = coin_id;
+    // alert(coinId)
+   
+    $.ajax({
+            type: 'GET',
+            url: "{% url 'wallet_deposit'  %}",
+            data : {'coin_id': coinId},
+            success: function (data) {
+                if (data.msg === "Success"){
+              
+                // $('#CompanyMobile').html( '<a href="https://wa.me/' + data.detail.mobile + '"> ' +data.detail.mobile+  '</a>');
+             
+                $('.coinCodeOne').text(data.detail.coin_code);
+                $('.coin_min').text(data.detail.coin_min);
+                // console.log(data.detail.network);
+                $('#coinAddy').text(data.detail.wallet_address);
+                $('#validationDefault04').val(data.detail.network);
+                // $('#coinNameOne').text(data.detail.coin_name);
+                
+                // $('.coinCodeOne').text(data.detail.coin_code);
+                
+                // alert(data.detail.coin_name);
+                
+                    }
+
+                else if(data.msg === "Invalid"){
+                 alert("else");
+                }
+            }
+        }) 
+    }
+
+
+    function Create(coin_id){
+    // var coin_name = coin_name;
+    let coinId = coin_id;
+    // alert(coinId)
+   
+    $.ajax({
+            type: 'GET',
+            url: "{% url 'wallet_create'  %}",
+            data : {'coin_id': coinId},
+            success: function (data) {
+              if (data.msg === "Success"){
+                // console.log("hello");
+                const calert = document.getElementById("create_alert");
+                calert.style.display = 'block';
+                calert.style.background = "green";
+                $("#alertCreateMessage").text(data.response)
+                
+                
+                }
+            else if (data.msg === "Invalid"){
+                // console.log("hi2");
+                const calert = document.getElementById("create_alert");
+                calert.style.display = 'block';
+                calert.style.background = "red";
+                $("#alertCreateMessage").text(data.response)
+                
+                }
+            else if (data.msg === "Fail"){
+                // alert("hi3");
+                const calert = document.getElementById("create_alert");
+                calert.style.display = 'block';
+                calert.style.background = "red";
+                $("#alertCreateMessage").text(data.response)
+            }
+            else{
+                // alert("hi4");
+                const calert = document.getElementById("create_alert");
+                calert.style.display = 'block';
+                calert.style.background = "red";
+                $("#alertCreateMessage").text("An Unexpected Error Occured")
+
+              }
+            }
+        }) 
+    }
+
+    function withdraw(coin_id){
+    // var coin_name = coin_name;
+    let coinId = coin_id;
+    // alert(coinId)
+   
+    $.ajax({
+            type: 'GET',
+            url: "{% url 'wallet_withdraw'  %}",
+            data : {'coin_id': coinId},
+            success: function (data) {
+                if (data.msg === "Success"){
+              
+                // $('#CompanyMobile').html( '<a href="https://wa.me/' + data.detail.mobile + '"> ' +data.detail.mobile+  '</a>');
+                
+                $('#coinCodeOne0').val(data.detail.coin_code);
+                $('#coincode').val(data.detail.coin_code);
+                $('.coinCodeOne1').text(data.detail.coin_code);
+                $('.coinCodeOne2').text(data.detail.coin_code);
+                $('#coinCodeOne01').text(data.detail.coin_code);
+                $('#coinNameOne1').text(data.detail.coin_name);
+                $('#coinNameOne2').text(data.detail.coin_name);
+                $('#wDraw_coin_min').val(data.detail.coin_min);
+                $('#wDraw_coin_max').val(data.detail.coin_max);
+                $('#usd_wDraw_coin_min').val(data.detail.usd_coin_min);
+                $('#usd_wDraw_coin_max').val(data.detail.usd_coin_max);
+                $('#wDraw_coin_min1').text(data.detail.coin_min);
+                $('#wDraw_coin_max1').text(data.detail.coin_max);
+                $('#usd_wDraw_coin_min1').text(data.detail.usd_coin_min);
+                $('#usd_wDraw_coin_max1').text(data.detail.usd_coin_max);
+
+
+                $('#wllet_coin_bal').text(data.detail.wallet_coin_bal);
+                $('#usd_wllet_bal').text(data.detail.usd_wallet_coin_bal);
+                $('#coin_dollar_value').val(data.detail.coin_dollar_value);
+                // $('.coin_min').text(data.detail.coin_min);
+                // console.log(data.detail.network);
+                // $('#coinAddy').text(data.detail.wallet_address);
+                // $('#validationDefault04').val(data.detail.network);
+              
+                
+                    }
+
+                else if(data.msg === "Invalid"){
+                 alert("else");
+                }
+            }
+        }) 
+    }
+
+  
+</script>
+<script>
+function submitform(){
+  // console.log($("#formWithdraw").serialize());
+  $.ajax({
+        type:"POST",
+        url :"{% url 'make_withdraw' %}",
+        data : $("#formWithdraw").serialize(),
+        dataType:'json',
+        success:function(data){
+            if (data.msg === "Success"){
+                // console.log("hello");
+                const alert = document.getElementById("alertWithdraw");
+                alert.style.display = 'block';
+                alert.style.background = "green";
+                $("#alertWithdrawMessage").text(data.response)
+                
+                
+                }
+            else if (data.msg === "Invalid"){
+                // console.log("hi2");
+                const alert = document.getElementById("alertWithdraw");
+                alert.style.display = 'block';
+                alert.style.background = "red";
+                $("#alertWithdrawMessage").text(data.response)
+                }
+            else if (data.msg === "Fail"){
+                // alert("hi3");
+                const alert = document.getElementById("alertWithdraw");
+                alert.style.display = 'block';
+                alert.style.background = "red";
+                $("#alertWithdrawMessage").text(data.response)
+            }
+            else{
+                // alert("hi4");
+                const alert = document.getElementById("alertWithdraw");
+                alert.style.display = 'block';
+                alert.style.background = "red";
+                $("#alertWithdrawMessage").text("An Unexpected Error Occured")
+
+              }
+        }
+    })
+
+}
+      
+
+</script>
+
+
+      <script src="{% static 'aptiv_static/dashboard/assets/js/wallet.js' %}"></script>
+      {%endblock%}

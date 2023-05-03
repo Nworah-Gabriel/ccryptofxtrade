@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  
+<style>/* The alert message box */
+  .alert_message {
+      margin-top: 30px;
+    padding: 20px;
+    background-color: #173e43;
+    color: white;
+    /* display:none; */
+  }
+  
+  .closebtn_message {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .closebtn_message:hover {
+    color: black;
+  }</style>
+    <div class="container-fluid py-4">
+</head>
+<body>
+  {% load static%}
+  <h1>Update Farm balance</h1>
+  <div class="alert_message" id="alertUpdate" style="background-color:{{color}};">
+    <span class="closebtn_message" onclick="this.parentElement.style.display='none';">&times;</span>
+    <p id="alertUpdateMessage"></p></div>
+  <table>
+
+
+    {%for username in stock_users %}
+<p>{{username}}</p>
+    {%endfor%}
+
+    {%for person in stock_users %}
+    <th>{{person.user.username}}</th>
+    
+    <th>
+      <div id = "currentbal_{{person.user.username}}">
+        <p>current balance: <p id="currentBal-{{person.user.username}}">{{person.balance}} </p></p>
+      </div>
+    
+      <p>edited balance:  </p>
+      
+  </br>
+      <form method="POST" class = "UpdateFormClass" id="formUpdate-{{person.user.username}}" >
+        
+        {%csrf_token%}
+        <!-- IMPORTANT: THE ARRANGEMENT OF THIS FIELD WOULD AFFECT THE SUCCESS FUNCTION OF THIS FIELD, WHEN IT NEEDS TO GET THE USERNAME  -->
+       <div id = "editedbal_{{person.user.username}}">
+        <input id= "editedBal-{{person.user.username}}" name="{{updatebalanceform.newbalance.name}}"  value="{{person.balance}}" type="integer"></input></br>
+       </div>
+        <input type="button" color="red" value="+" onclick="subBalance('add','{{person.user.username}}')"></input>
+        <input id="username-{{person.user.username}}" name="username" value="{{person.user.username}}"type="hidden"></input>
+        <input id="amount-{{person.user.username}}" name="" value="0.00" type="integer"></input>
+      
+        <input type="button"  color="red" value="-" onclick="subBalance('sub', '{{person.user.username}}')"></input>
+        <input type="checkbox" id="send_email-{{person.user.username}}"  name="{{updatebalanceform.send_email.name}}"   >send email</input> 
+        <button type="submit" class="btn btn-primary" onclick="$('#formUpdate-{{person.user.username}}').on('submit',function(e){
+          e.preventDefault();
+          
+          {{person.user.username}}function();
+          submitform();
+      });">Submit</button>
+     
+      </form>
+
+      <script>
+        
+        function subBalance(sign, username){
+        let edited_balance_id = "editedBal-" + username
+        edited_balance=document.getElementById(edited_balance_id); 
+        let edited_balance_value = parseFloat(edited_balance.value);
+        let change_id = "amount-" + username
+        console.log(change_id)
+        change = document.getElementById(change_id);
+        let change_value = parseFloat(change.value);
+          if (sign === 'add'){
+
+            let edited = edited_balance_value + change_value ;
+            document.getElementById( edited_balance_id).value = edited;
+            
+
+
+          }
+          
+          else if (sign === 'sub'){
+            let edited = edited_balance_value - change_value ;
+            document.getElementById(edited_balance_id).value = edited;
+            
+
+
+          }
+         
+
+        }
+      
+      </script>
+
+    </th>
+    </tr>
+  
+
+
+
+
+
+
+  </table>
+  {%endfor%}
+  <form action="#" class="ml-2" id="formUpdate">
+    {%csrf_token%}
+    
+
+  <input type="text" name="{{updatebalanceform.amount.name}}" id= "id_{{updatebalanceform.amount.name}}"  value="">
+  <input type="text" name="{{updatebalanceform.username.name}}" id="id_{{updatebalanceform.username.name}}" value="">
+  <input type="text" name="{{updatebalanceform.newbalance.name}}" id="id_{{updatebalanceform.newbalance.name}}" value="">
+  <input type="checkbox" name="{{updatebalanceform.send_email.name}}" id="id_{{updatebalanceform.send_email.name}}"  color="red" value="">send email</input>
+
+
+</form>
+  <script>
+
+    amount = document.getElementById("id_{{updatebalanceform.amount.name}}");
+    username = document.getElementById("id_{{updatebalanceform.username.name}}");
+    send_email = document.getElementById("id_{{updatebalanceform.send_email.name}}");
+    newbalance = document.getElementById("id_{{updatebalanceform.newbalance.name}}");
+  
+   {% for person in all_users %}
+     function {{person.user.username}}function() {
+       const formupdate{{person.user.username}} = document.getElementById("formUpdate-{{person.user.username}}");
+       console.log(formupdate{{person.user.username}})
+       amount.value = formupdate{{person.user.username}}.elements['amount-{{person.user.username}}'].value;
+       username.value = formupdate{{person.user.username}}.elements['username-{{person.user.username}}'].value;
+       newbalance.value = formupdate{{person.user.username}}.elements['editedBal-{{person.user.username}}'].value;
+       if (formupdate{{person.user.username}}.elements['send_email-{{person.user.username}}'].checked == true){
+        send_email.value = "1";
+       }
+       else {
+        send_email.value = "0";
+       }
+       send_email.checked = formupdate{{person.user.username}}.elements['send_email-{{person.user.username}}'].checked;
+       
+       var send_email_old= formupdate{{person.user.username}}.elements['send_email-{{person.user.username}}'].checked;
+
+
+       
+  
+       
+     }
+     
+     {% endfor %}
+  
+    
+     
+  
+       
+   </script>
+ 
+  <script src="{% static 'hodl_static/js/jquery.js' %}"></script>
+  <script>
+    
+    function submitform(){
+    
+    $.ajax({
+          type:"POST",
+          url :"{% url 'update_balance' %}",
+          data : $("#formUpdate").serialize(),
+          dataType:'json',
+          success:function(data){
+              if (data.msg === "Success"){
+                  const alert = document.getElementById("alertUpdate");
+                  alert.style.display = 'block';
+                  alert.style.background = "green";
+                  $("#alertUpdateMessage").text(data.response);
+                  const allForms = document.getElementsByClassName("UpdateFormClass");
+                  
+                  for (let i = 0; i < Object.keys(allForms).length; i++) {
+                    var newForm_id = allForms[i].id;
+                    const newform = document.getElementById(newForm_id);
+                    // var username = newform[3].value;
+                    var username = newform.elements["username"].value;
+                    var editedform_id = 'formUpdate-' + data.username;
+                    
+                    
+                    newform.reset();
+                    updateDiv(username);
+                    function updateDiv(username)
+                      { 
+                        var editedbal_div = "#editedbal_" + username;
+                        var currentbal_div = "#currentbal_" + username;
+                  
+                        $( editedbal_div ).load(window.location.href + " " + editedbal_div );
+                        $( currentbal_div ).load(window.location.href + " " + currentbal_div );
+                        
+                      }
+                     
+                    }
+                    }
+
+              else if (data.msg === "Invalid"){
+                  const alert = document.getElementById("alertUpdate");
+                  alert.style.display = 'block';
+                  alert.style.background = "red";
+                  $("#alertUpdateMessage").text(data.response)
+                  }
+              else if (data.msg === "Fail"){
+                  const alert = document.getElementById("alertUpdate");
+                  alert.style.display = 'block';
+                  alert.style.background = "red";
+                  $("#alertUpdateMessage").text(data.response)
+              }
+              else{
+                  const alert = document.getElementById("alertUpdate");
+                  alert.style.display = 'block';
+                  alert.style.background = "red";
+                  $("#alertUpdateMessage").text("An Unexpected Error Occured")
+
+                }
+          }
+      })
+
+  }
+
+
+
+ </script>
+
+
+</body>
+
+</html>

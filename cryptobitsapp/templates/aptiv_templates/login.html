@@ -1,0 +1,240 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Login | APTIV Bank</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'aptiv_static/assets/img/favicon.ico">
+
+    <!-- CSS
+	============================================ -->
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open Sans:300,300i,400,400i,500,600,700,800&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'aptiv_static/assets/css/vendor/bootstrap.min.css' %}">
+    <!-- Font-awesome CSS -->
+    <link rel="stylesheet" href="{% static 'aptiv_static/assets/css/vendor/font-awesome.min.css' %}">
+    <!-- Slick slider css -->
+    <link rel="stylesheet" href="{% static 'aptiv_static/assets/css/plugins/slick.min.css' %}">
+    <!-- Odometer css -->
+    <link rel="stylesheet" href="{% static 'aptiv_static/assets/css/plugins/odometer.min.css' %}">
+    <!-- animate css -->
+    <link rel="stylesheet" href="{% static 'aptiv_static/assets/css/plugins/animate.css' %}">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- main style css -->
+    <link rel="stylesheet" href="{% static 'aptiv_static/assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'aptiv_static/assets/css/mystyle.css' %}">
+    <link rel="stylesheet" href="{% static 'aptiv_static/assets/css/login.css' %}">
+
+    
+    
+    <style>/* The alert message box */
+        .alert_message {
+            margin-top: 30px;
+          padding: 20px;
+          background-color: red;
+          color: white;
+        }
+        
+        .closebtn_message {
+          margin-left: 15px;
+          color: white;
+          font-weight: bold;
+          float: right;
+          font-size: 22px;
+          line-height: 20px;
+          cursor: pointer;
+          transition: 0.3s;
+        }
+        
+        .closebtn_message:hover {
+          color: black;
+        }</style>
+
+</head>
+
+
+
+            
+            <div class="col-lg-12 main-sections">
+        
+        <!-- service section start -->
+        <div class="alert alert-danger" role="alert">
+            <div class="row align-items-center">
+                <div class="col-lg-1 col-sm-3 text-center">
+                    <i class="fa fa-info-circle"></i>
+                </div>
+
+                <div class="col-lg-11 col-sm-3">
+                    <p>
+                        False text messages that may be followed 
+                        by a call on behalf of BNP PARIBAS by malicious people are currently identified by our security services. Fraudsters invite you to click on a link to recover your bank details. Stay vigilant, never communicate your personal information by email, tel or SMS. If in doubt,
+                        contact Customer Service immediately on 3477 (free service + call charge)
+                    </p>
+                </div>
+            </div>
+          
+        </div>
+
+
+        <div class="big-green">
+            <div class="row">
+                <div class="col-lg-2"></div>
+
+                <div class="col-lg-4 signupcol">
+                    <form  role="form" class="signup-form  mt-5 pt-1" id="signup" method="POST">
+                        <h1 class="mb-4">Account LogIn</h1>
+                        {%if message%}
+                        <div class="alert_message" style="background-color:{{color}};">
+                            <span class="closebtn_message" onclick="this.parentElement.style.display='none';">&times;</span>
+                            <p>{{message}}</p>
+                          </div>
+                        {% endif %}
+                        {% csrf_token %}
+                        <label>1.   Customer Username</label>
+                        <div class="input-group mb-4 mt-1">
+                            <input id="id_username" class="form-control" placeholder="username" type="text"  name ="{{form.username.name}}" >
+
+                            <div class="input-group-append">
+                                <div class="input-group-text"><i class="fa fa-close input-close"></i></div>
+                              </div>
+                              <script>
+                                $('#id_username').on('input', function() {
+                                    var c = this.selectionStart,
+                                        r = /[^a-z0-9]/gi,
+                                        v = $(this).val();
+                                    if(r.test(v)) {
+                                        $(this).val(v.replace(r, ''));
+                                        c--;
+                                    }
+                                    
+                                    this.setSelectionRange(c, c);
+                                    });
+                            </script>
+
+                        </div>
+
+                             <label class="mt-2">2. Customer Password </label>
+                            <div class="input-group mb-3 mt-1">
+                                <input class="form-control"type="password"  name ="{{form.password.name}}">
+                                <div class="input-group-append">
+                                    <div class="input-group-text"><i class="fa fa-close"></i></div>
+                                </div>
+                            </div>
+
+
+                        <!-- <div class="hide pincode">
+                            <label class="mt-2">2. PIN Code (6 digits) </label>
+                            <div class="input-group mb-3 mt-1">
+                                <input class="form-control"type="password"  name ="{{form.password.name}}">
+                                <div class="input-group-append">
+                                    <div class="input-group-text"><i class="fa fa-close"></i></div>
+                                </div>
+                            </div>
+                            <div class="number">
+                                <ul>
+                                    <li><a class= "number">7</a></li>
+                                    <li><a class= "number">9</a></li>
+                                    <li><a class= "number">0</a></li>
+                                    <li><a class= "number">2</a></li>
+                                    <li><a class= "number">5</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a class= "number">6</a></li>
+                                    <li><a class= "number">4</a></li>
+                                    <li><a class= "number">3</a></li>
+                                    <li><a class= "number">8</a></li>
+                                    <li><a class= "number">1</a></li>
+                                </ul>
+                            </div> -->
+                        
+                            <button type="submit" class="btn button2 mb-4 mt-5">View Accounts</button>
+                        <!-- </div> -->
+
+                        <p class="already" style="float:right"><a href="#" onclick="location.href='{% url 'signup' %}'">Create account?</a></p>
+
+
+
+                        <!-- <p class=""><a href="#" style="color: #ffffff;font-weight: 600;">Find customer number or secret code</a></p> -->
+
+                    </form>
+                </div>
+                <div class="col-lg-5"></div>
+            </div>
+        </div>
+
+
+
+
+  {% include 'aptiv_templates/_footer.html' %}
+</div>
+</div>
+
+<script src="{% static 'aptiv_static/assets/js/vendor/modernizr-3.6.0.min.js' %}"></script>
+<!-- jQuery JS -->
+<script src="{% static 'aptiv_static/assets/js/vendor/jquery-3.6.0.min.js' %}"></script>
+<!-- Popper JS -->
+<script src="{% static 'aptiv_static/assets/js/vendor/popper.min.js' %}"></script>
+<!-- Bootstrap JS -->
+<script src="{% static 'aptiv_static/assets/js/vendor/bootstrap.min.js' %}"></script>
+<!-- wow js -->
+<script src="{% static 'aptiv_static/assets/js/plugins/wow.min.js' %}"></script>
+<!-- slick Slider JS -->
+<script src="{% static 'aptiv_static/assets/js/plugins/slick.min.js' %}"></script>
+<!-- odometer js -->
+<script src="{% static 'aptiv_static/assets/js/plugins/odometer.min.js' %}"></script>
+<!-- appear js -->
+<script src="{% static 'aptiv_static/assets/js/plugins/appear.min.js' %}"></script>
+<!-- mailchimp active js -->
+<script src="{% static 'aptiv_static/assets/js/plugins/ajaxchimp.js' %}"></script>
+<!-- waypoint js  -->
+<script src="{% static 'aptiv_static/assets/js/plugins/waypoints.min.js' %}"></script>
+<!-- google map api -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2D8wrWMY3XZnuHO6C31uq90JiuaFzGws"></script>
+<!-- google map active js -->
+<script src="{% static 'aptiv_static/assets/js/plugins/google-map.js' %}"></script>
+
+    <!-- Main JS -->
+   
+    <script src="{% static 'aptiv_static/assets/js/main.js' %}"></script>
+    <script src="{% static 'aptiv_static/assets/js/login.js' %}"></script>
+
+    <script>
+        getCompany();
+        
+        function getCompany(){
+            $.ajax({
+                    type: 'GET',
+                    url: "{% url 'companydetail' %}",
+                    data: {},
+                    success: function (data) {
+                        if (data.msg === "Success"){
+                        //   alert(data.detail.name);
+                        //   location.reload();
+                        
+                        $('#CompanyMobile').text( data.detail.mobile);
+                        $('#CompanyMobileI').text( data.detail.mobile);
+                        $('#CompanyEmail').text( data.detail.email);
+                        $('#CompanyAddress').text( data.detail.address);
+                        
+                            }
+        
+                        else if(data.msg === "Invalid"){
+                         alert("else");
+                        }
+                    }
+                }) 
+            }
+        
+        </script>
+</body>
+
+</html>

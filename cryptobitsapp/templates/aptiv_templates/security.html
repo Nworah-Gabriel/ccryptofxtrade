@@ -1,0 +1,254 @@
+
+{% extends 'aptiv_templates/base.html' %}
+{% load static %}
+    {% block content %}
+
+
+
+    <!-- Start Header Area -->
+   
+
+    {% include 'aptiv_templates/_header.html' %}
+   
+            
+
+            {% include 'aptiv_templates/_side__nav.html' %}
+
+                <div class="col-lg-10 main-sections">
+                    <!-- hero slider section start -->
+
+
+                    <section class="hero-slider  hero-transparent-bg grey-bg fix" style="background: url({% static 'aptiv_static//assets/img/banner/gu.jpg' %});background-position: center;background-size: cover;">
+                        <div class="overlay">
+                            <div class="hero-slider-active slick-arrow-style  slick-dot-style">
+                                <!-- single slider item start -->
+                                <div class="hero-single-slide">
+                                    <div class="hero-slider-item">
+                                        <div class="container">
+                                            <div class="row align-items-center">
+                                                <div class="col-xl-12 col-sm-6">
+                                                    <div class="hero-slider-content">
+                                                        <div class="hero-content">
+                                                            <h1 class="slide-title"
+                                                                style="color:white;width: 90%;font-weight: 400;">
+                                                                Working with you to keep your information Safe
+                                                            </h1>
+
+                                                           
+                                                            <p>
+                                                                We're dedicated to protecting your account, 
+                                                                and working with you to make it even more secure. 
+                                                               
+                                                            </p>
+
+                                                            <!-- <a onclick="location.href='{% url 'signup' %}'" href="#" class="btn btn-hero">Open an Account</a> -->
+                                                        
+                                                            <!-- <ul class="account-nav mt-4">
+                                                                Go to:
+                                                                <li><a href="product.html">Overview</a></li>
+                                                                <li><a href="Understand.html">Understanding Stocks</a></li>
+                                                            </ul> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="col-xl-7 col-sm-6">
+                                    <div class="slider-thumb moving-vertical">
+                                        <img src="{% static 'aptiv_static/assets/img/slider/slider-thumb1.png" alt="slider thumb">
+                                    </div>
+                                </div> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- single slider item start -->
+
+
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- hero slider section end -->
+
+
+
+                    <section class=" inner fix pt-5 mt-5 pb-5" style="width: 90%;margin: 0px auto;">
+                    
+                        <div class="row text-center">
+                          <div class="col-lg-4">
+                              <img src="{% static 'aptiv_static/assets/img/banner/how-we-protect-you_0.png" alt="" class="pb-4" width="80">
+                              <h4 class="pb-3"><b>How we protect you.</b></h4>
+                              <p>
+                                We combine advanced technology, high privacy standards, 
+                                and a strong culture of risk management.
+                              </p>
+                          </div>
+
+                          <div class="col-lg-4">
+                              <img src="{% static 'aptiv_static/assets/img/banner/do-your-part_0.png" alt="" class="pb-4" width="80">
+                              <h4 class="pb-3"><b>How to do your part.</b></h4>
+                              <p>
+                                Turn on additional security options for an extra layer of protection.
+
+                                
+                              </p>
+                          </div>
+
+                          <div class="col-lg-4">
+                              <img src="{% static 'aptiv_static/assets/img/banner/stay-safe-online-lock.png" alt="" class="pb-4" width="80">
+                              <h4 class="pb-3"><b> How to stay safe online.</b></h4>
+                              <p>
+                                See the simple measures you should always take to keep your
+                                sensitive information protected online.
+                              </p>
+                          </div>
+
+                       
+                        </div>
+              
+                  </section>
+                
+
+
+                    <section class="robo-wrapper robo-paddin inner fix pb-2 pt-5">
+                        <div class="container">
+                            <div class="robo-content">
+                            <div class="row align-items-center">
+                                <div class="col-xl-10  wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="team-content team-content--style_2 about-inner">
+                                        <span class="talk "> <img src="{% static 'aptiv_static/assets/img/banner/how-we-protect-you_0.png" alt=""  width="70"> How we protect you.</span>
+                                        
+                                        <p>We're always updating our technology, people, and protocols to keep your personal and financial information safe. 
+                                            While we can't share the details, here are some of the ways we protect you.</p>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-4">
+                                    <h3 class="pb-3"><b>Multi-layered technology</b></h3>
+                                    <p>Our sites feature encryption and risk-based security technology. These controls, combined with 
+                                    automated alerts, an identity verification process and rigorous monitoring, 
+                                    help defend against unauthorized account access.</p>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <h3 class="pb-3"><b>Highly-trained specialists</b></h3>
+                                    <p>Employees who handle sensitive information are trained in privacy and security. 
+                                        Our commitment to the privacy of your personal and financial information can be found </p>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <h3 class="pb-3"><b>Secure process and procedures</b></h3>
+                                    <p>Whether you call, visit a branch or go online, your identity will be verified before any sensitive information is discussed.</p>
+                                </div>
+                            </div>
+                        </div>
+                
+                        </div>
+                    </section>
+
+                    <section class="robo-wrapper robo-paddin inner fix pb-2 pt-5">
+                        <div class="container">
+                            <div class="robo-content">
+                            <div class="row align-items-center">
+                                <div class="col-xl-10  wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="team-content team-content--style_2 about-inner">
+                                        <span class="talk "> <img src="{% static 'aptiv_static/assets/img/banner/do-your-part_0.png" alt=""  width="70">How to do your part.</span>
+                                        
+                                        <p>To ensure your information is as safe as it can be, security has to be a partnership. 
+                                            Here's what you can do to make your account even more secure.</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <h3 class="pb-3"><b>Enroll in advanced authentication.</b></h3>
+                                    <p>
+                                        Make your APTIV Bank sign in more secure with two-step verification. 
+                                        After enrolling, you'll receive a one-time security code to use with your 
+                                        password each time you sign in for stronger account protection.
+                                    </p>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <h3 class="pb-3"><b>Set up security alerts.</b></h3>
+                                    <p>
+                                        Go to the APTIV Bank Security Center and sign up to receive notifications so 
+                                        you'll know immediately when activity occurs in your accounts
+                                    </p>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <h3 class="pb-3"><b>Sign up for Voice ID</b></h3>
+                                    <p>
+                                        Access your account over the phone by saying the passphrase when prompted. Voice ID is fast, convenient and secure.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                
+                        </div>
+                    </section>
+
+
+                    <section class="robo-wrapper robo-paddin inner fix pb-2 pt-5">
+                        <div class="container">
+                            <div class="robo-content">
+                            <div class="row align-items-center">
+                                <div class="col-xl-10  wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="team-content team-content--style_2 about-inner">
+                                        <span class="talk "> <img src="{% static 'aptiv_static/assets/img/banner/do-your-part_0.png" alt=""  width="70">How to stay safe online.</span>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 mt-4">
+                                    <h3 class="pb-3"><b>Be cautious of phishing attempts.</b></h3>
+                                    <p>
+                                        Don't open or accept communications from an unfamiliar source, including phone calls, emails, or texts. 
+                                        Instead, reach out to the individual or company using the contact information from their official website.
+                                    </p>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <h3 class="pb-3"><b>Don't share personal information.</b></h3>
+                                    <p>
+                                        Don't post personal sensitive information on social media. That includes details such as contact and 
+                                        personally identifiable information.
+                                    </p>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <h3 class="pb-3"><b>Verify payment requests.</b></h3>
+                                    <p>
+                                        Requests for payments using gift cards and prepaid debit cards are often associated with scams.
+                                    </p>
+                                </div>
+
+                                    
+                                <div class="col-lg-3 pt-5">
+                                    <h3 class="pb-3"><b>Check your account.</b></h3>
+                                    <p>
+                                        Regularly view your account activity and look out for suspicious transactions.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                
+                        </div>
+                    </section>
+
+
+                    {% include 'aptiv_templates/__call_section.html' %}
+
+
+
+      <!-- footer section start -->
+      {% include 'aptiv_templates/_footer.html' %}
+      <!-- footer section end -->
+          </div>
+          </div>
+       
+               
+              
+          
+          
+          {% endblock %}
+          

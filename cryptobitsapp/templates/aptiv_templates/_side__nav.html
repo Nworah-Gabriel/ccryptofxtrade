@@ -1,0 +1,107 @@
+
+<div class="col-lg-1 aside">
+    <div class="aside-nav">
+     <ul>
+        
+         <li id="headingOne" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> 
+             <a class="accordio-heading" > 
+                 <i class="fa fa-group mr-2"></i> 
+                 About Us
+             </a>
+         
+         </li>
+         <div class="dropdown collapse" id="collapseOne" aria-labelledby="headingOne">
+             <ul class="dropdown-list">
+                 <li onclick="location.href='{% url 'about' %}'"><a >About Us </a></li>
+                 <li onclick="location.href='{% url 'govern' %}'"><a >Governance</a></li>
+                 <li onclick="location.href='{% url 'regulatory' %}'"><a >Regulatory Information </a></li>
+             </ul>
+         </div>
+
+         <li onclick="location.href='{% url 'login' %}'" > <a> <i class="fa fa-credit-card mr-2"></i> Account </a></li>
+
+         <li id="headingTwo" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+             <a>  
+                 <i class="fa fa-gift mr-2"></i> Products
+             </a>
+             </li>
+             
+         <div class="dropdown  collapse" id="collapseTwo" aria-labelledby="headingTwo">
+             <ul class="dropdown-list">
+                 <li onclick="location.href='{% url 'product' %}'" ><a >Stocks</a></li>
+                 <li onclick="location.href='{% url 'product' %}'" ><a >Shares</a></li>
+                 <!-- <li><a href="">Digital Wallet</a></li> -->
+                 <li onclick="location.href='{% url 'cryptocurrency' %}'" ><a >Cryptocurrency</a></li>
+                 <li onclick="location.href='{% url 'product' %}'" ><a href="">Foreign Exchange</a></li>
+                 <li onclick="location.href='{% url 'real' %}'" ><a >Real Estate Market</a></li>
+             </ul>
+         </div>
+         <li id="headingThree" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+             <a> <i class="fa fa-tripadvisor mr-1"></i> Advice
+             </a>
+         </li>
+         <div class="dropdown  collapse" id="collapseThree" aria-labelledby="headingThree">
+         <ul class="dropdown-list">
+             <li id="headingFour" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                 <a>Advice Solutions</a>
+             </li>
+         <div class="dropdown ml-2 collapse" id="collapseFour" aria-labelledby="headingFour">
+             <ul class="dropdown-list">
+                 <li onclick="location.href='{% url 'advice' %}'"><a href="#">Automated Investing</a></li>
+                 <li onclick="location.href='{% url 'guidiance' %}'"><a href="#">Automated Investing with Guidance</a></li>
+                 <li onclick="location.href='{% url 'wealth' %}'"><a >APTIV Wealth Advisory™</a></li>
+             </ul>
+         </div>
+
+         <li id="headingFive" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+             <a>Financial Planning</a>
+         </li>
+     <div class="dropdown ml-2 collapse" id="collapseFive" aria-labelledby="headingFive">
+         <ul class="dropdown-list">
+             <li  onclick="location.href='{% url 'finplan' %}'"><a href="#">Financial Planning Offering</a></li>
+             <li  onclick="location.href='{% url 'calculator' %}'"><a href="#">Planning Calculators</a></li>
+             <li  onclick="location.href='{% url 'complimentary' %}'"> <a href="#">Complimentary Plan</a></li>
+         </ul>
+     </div>
+            
+           
+         </ul>
+     </div>
+         <li id="headingSix" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+             <a>  <i class="fa fa-money mr-2"></i> Pricing </a>
+         </li>
+         <div class="dropdown collapse" id="collapseSix" aria-labelledby="headingSix">
+             <ul class="dropdown-list">
+                 <li onclick="location.href='{% url 'pricing' %}'"> <a href="#">Commision and Fees</a></li>
+                 <li onclick="location.href='{% url 'investmentfee' %}'"><a href="#" >Understanding Investment Fees</a></li>
+             </ul>
+         </div>
+
+         <li id="headingSeven" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
+             <a><i class="fa fa-question-circle mr-2"></i> Why APTIV </a>
+         </li>
+         <div class="dropdown collapse" id="collapseSeven" aria-labelledby="headingSeven">
+             <ul class="dropdown-list">
+                 <li  id="headingEight" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
+                     <a>The APTIV Bank Difference</a>
+                 </li>
+
+                 <div class="dropdown ml-3 collapse" id="collapseEight" aria-labelledby="headingEight">
+                     <ul class="dropdown-list">
+                         <li onclick="location.href='{% url 'whychoose' %}'"><a href="#">Why Choose APTIV Bank</a></li>
+                         <li onclick="location.href='{% url 'satisfaction' %}'"><a href="#">Our Satisfaction Gurantee</a></li>
+                         <li onclick="location.href='{% url 'security' %}'"><a href="#">Our Security</a></li>
+                     </ul>
+                 </div>
+                 <li onclick="location.href='{% url 'ways' %}'"><a href="#">Ways To Invest with Us</a></li>
+                 <!-- <li><a href="">How We Comapre</a></li> -->
+             </ul>
+         </div>
+
+         
+         <li onclick="location.href='{% url 'contact' %}'">
+            <a href="#">  <i class="fa fa-mobile-phone mr-2"></i> Contact Us</a></li>
+         <li onclick="location.href='{% url 'contact' %}'"><a href="#">  <i class="fa fa-clock-o mr-2"></i> 24/7 Live Support</a></li>
+     </ul>
+    </div>
+ </div>

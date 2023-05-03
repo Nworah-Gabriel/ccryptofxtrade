@@ -1,0 +1,120 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+    {% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>APTIV Bank | Home</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'aptiv_static/assets/img/favicon.ico' %}">
+  
+    <!-- CSS
+	============================================ -->
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open Sans:300,300i,400,400i,500,600,700,800&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'aptiv_static/assets/css/vendor/bootstrap.min.css' %}">
+    <!-- Font-awesome CSS -->
+    <link rel="stylesheet" href="{% static 'aptiv_static/assets/css/vendor/font-awesome.min.css' %}">
+    <!-- Slick slider css -->
+    <link rel="stylesheet" href="{% static 'aptiv_static/assets/css/plugins/slick.min.css' %}">
+    <!-- Odometer css -->
+    <link rel="stylesheet" href="{% static 'aptiv_static/assets/css/plugins/odometer.min.css' %}">
+    <!-- animate css -->
+    <link rel="stylesheet" href="{% static 'aptiv_static/assets/css/plugins/animate.css' %}">
+    <!-- main style css -->
+    <link rel="stylesheet" href="{% static 'aptiv_static/assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'aptiv_static/assets/css/mystyle.css' %}">
+
+</head>
+
+
+<body>
+
+    <div class="everything">
+{% block content %}
+
+{% endblock %}
+</main>
+
+<!-- Scroll to top start -->
+<div class="scroll-top not-visible">
+    <i class="fa fa-angle-up"></i>
+</div>
+<!-- Scroll to Top End -->
+
+
+
+    </div>
+    <!-- JS
+============================================ -->
+
+    <!-- Modernizer JS -->
+
+<script src="{% static 'aptiv_static/assets/js/vendor/modernizr-3.6.0.min.js' %}"></script>
+<!-- jQuery JS -->
+<script src="{% static 'aptiv_static/assets/js/vendor/jquery-3.6.0.min.js' %}"></script>
+<!-- Popper JS -->
+<script src="{% static 'aptiv_static/assets/js/vendor/popper.min.js' %}"></script>
+<!-- Bootstrap JS -->
+<script src="{% static 'aptiv_static/assets/js/vendor/bootstrap.min.js' %}"></script>
+<!-- wow js -->
+<script src="{% static 'aptiv_static/assets/js/plugins/wow.min.js' %}"></script>
+<!-- slick Slider JS -->
+<script src="{% static 'aptiv_static/assets/js/plugins/slick.min.js' %}"></script>
+<!-- odometer js -->
+<script src="{% static 'aptiv_static/assets/js/plugins/odometer.min.js' %}"></script>
+<!-- appear js -->
+<script src="{% static 'aptiv_static/assets/js/plugins/appear.min.js' %}"></script>
+<!-- mailchimp active js -->
+<script src="{% static 'aptiv_static/assets/js/plugins/ajaxchimp.js' %}"></script>
+<!-- waypoint js  -->
+<script src="{% static 'aptiv_static/assets/js/plugins/waypoints.min.js' %}"></script>
+<!-- google map api -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2D8wrWMY3XZnuHO6C31uq90JiuaFzGws"></script>
+<!-- google map active js -->
+<script src="{% static 'aptiv_static/assets/js/plugins/google-map.js' %}"></script>
+<!-- Main JS -->
+<script src="{% static 'aptiv_static/assets/js/main.js' %}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+  getCompany();
+
+function getCompany(){
+    $.ajax({
+            type: 'GET',
+            url: "{% url 'companydetail' %}",
+            data: {},
+            success: function (data) {
+                if (data.msg === "Success"){
+                //   alert(data.detail.name);
+                //   location.reload();
+                
+                $('#CompanyMobile').html( '<a href="https://wa.me/' + data.detail.mobile + '"> ' +data.detail.mobile+  '</a>');
+                $('#CompanyMobileI').html( '<a href="https://wa.me/' + data.detail.mobile + '"> ' +data.detail.mobile+  '</a>');
+               
+                $('#CompanyEmail').html( '<a href="mailto:' + data.detail.email + '"> ' +data.detail.email+  '</a>');
+                $('#CompanyAddress').text( data.detail.address);
+                
+                    }
+
+                else if(data.msg === "Invalid"){
+                 alert("else");
+                }
+            }
+        }) 
+    }
+
+
+
+</script>
+</body>
+
+</html>

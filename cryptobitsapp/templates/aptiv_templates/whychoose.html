@@ -1,0 +1,261 @@
+
+{% extends 'aptiv_templates/base.html' %}
+{% load static %}
+    {% block content %}
+
+
+
+    <!-- Start Header Area -->
+   
+
+    {% include 'aptiv_templates/_header.html' %}
+   
+            
+
+            {% include 'aptiv_templates/_side__nav.html' %}
+
+                <div class="col-lg-10 main-sections">
+                    <!-- hero slider section start -->
+
+
+                    <section class="hero-slider  hero-transparent-bg grey-bg fix" style="background: url({% static 'aptiv_static/assets/img/banner/nas.jpg' %});background-position: center;background-size: cover;">
+                        <div class="overlay">
+                            <div class="hero-slider-active slick-arrow-style  slick-dot-style">
+                                <!-- single slider item start -->
+                                <div class="hero-single-slide">
+                                    <div class="hero-slider-item">
+                                        <div class="container">
+                                            <div class="row align-items-center">
+                                                <div class="col-xl-12 col-sm-6">
+                                                    <div class="hero-slider-content">
+                                                        <div class="hero-content">
+                                                            <h1 class="slide-title"
+                                                                style="color:white;width: 90%;font-weight: 400;">
+                                                                Why APTIV Bank? It's all about you.
+                                                            </h1>
+
+                                                           
+                                                            <p>
+                                                                We have one mission: to help you reach your financial goals.
+                                                            </p>
+
+                                                            <a onclick="location.href='{% url 'signup' %}'" href="#" class="btn btn-hero">Open an Account</a>
+                                                        
+                                                            <!-- <ul class="account-nav mt-4">
+                                                                Go to:
+                                                                <li><a href="product.html">Overview</a></li>
+                                                                <li><a href="Understand.html">Understanding Stocks</a></li>
+                                                            </ul> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="col-xl-7 col-sm-6">
+                                    <div class="slider-thumb moving-vertical">
+                                        <img src="{% static 'aptiv_static/assets/img/slider/slider-thumb1.png' %}" alt="slider thumb">
+                                    </div>
+                                </div> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- single slider item start -->
+
+
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- hero slider section end -->
+
+
+                    <section class="robo-wrapper robo-paddin inner fix pb-4 pt-5">
+                        <div class="container">
+                            <div class="robo-content">
+                            <div class="row align-items-center">
+                                <div class="col-xl-10 order-lg-last  wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="team-content team-content--style_2 about-inner">
+                                        <p class="talk">There's more than one way to achieve your financial goals.</p>
+                                        
+                                       <p>
+                                        APTIV Bank isn't a one-size-fits-all because everyone has unique financial goals. 
+                                        Whether you're working towards retirement, saving for college or a house, 
+                                        or looking to invest in the market on your own, 
+                                        we have investing options that meet your needs on your terms.  
+                                    </p>
+                                     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        </div>
+                    </section>
+
+
+                    
+                    <section class=" inner fix pt-5 mt-5 pb-5" style="width: 90%;margin: 0px auto;">
+                    
+                        <div class="row text-center">
+                          <div class="col-lg-4">
+                            <h4 class="pb-3"><b>Trade investments on your own.</b></h5>
+                              <img src="{% static 'aptiv_static/assets/img/banner/ali.jpg' %}" alt="" class="pb-4" >
+                             
+                              <p>
+                                Build, manage, and trade stocks in your portfolio with the latest innovative tools 
+                                and our most advanced desktop platform, StreetSmart Edge.
+                              </p>
+                          </div>
+
+                          <div class="col-lg-4">
+                            <h4 class="pb-3"><b>Let our robo-advisor do the work.</b></h5>
+                              <img src="{% static 'aptiv_static/assets/img/banner/lu.jpg' %}" alt="" class="pb-4" >
+                             
+                              <p>
+                                Our robo-advisor, APTIV  Intelligent Portfolios®, automates investing by building,
+                                managing, and even rebalancing your portfolio.
+                              </p>
+                          </div>
+
+                          <div class="col-lg-4">
+                            <h4 class="pb-3"><b>Work with an APTIV Bank advisor.</b></h5>
+                              <img src="{% static 'aptiv_static/assets/img/banner/bus.jpg' %}" alt="" class="pb-4" >
+                             
+                              <p>
+                                Build, manage, and trade stocks in your portfolio with the latest innovative tools 
+                                and our most advanced desktop platform, StreetSmart Edge.
+                              </p>
+                          </div>
+
+                        </div>
+              
+                  </section>
+                
+
+                    <section class="robo-wrapper robo-paddin inner fix pb-4 pt-5 mt-2">
+                        <div class="container">
+                            <div class="robo-content">
+                            <div class="row align-items-center">
+                                <div class="col-xl-6  order-md-last wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="robo-img">
+                                        <img src="{% static 'aptiv_static/assets/img/banner/expe.jpg' %}" alt="">
+                                    </div>
+                                </div>
+                
+                                <div class="col-xl-6 order-lg-first  wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="team-content team-content--style_2 about-inner">
+                                        <p class="talk">Expect transparent pricing and low costs.</p>
+                                        
+                                       <p>
+                                        We help make it easy for you to be an informed investor at APTIV Bank. 
+                                        We clearly explain the fees we charge and help you understand the common costs you can incur.
+                                    </p>
+                                     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        </div>
+                    </section>
+
+
+
+                    <section class="robo-wrapper robo-paddin inner fix pb-4 pt-4">
+                        <div class="container">
+                            <div class="robo-content">
+                            <div class="row align-items-center">
+                                <div class="col-xl-10 pb-3">
+                                    <p class="talk1 pb-3">Satisfaction and security guarantees? At APTIV Bank, the answer is: "Absolutely."</p>
+                            
+                                </div>
+                                <div class="col-xl-6  order-md-fist wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="team-content team-content--style_2 about-inner">
+                                        <img src="/assets/img/banner/ICN-Disclosures-2color_0.png' %}" alt="" class="pb-4">
+
+                                        <h3 class="pb-3"><b>Satisfaction guarantee</b></h3>
+                                        
+                                       <p>
+                                        If for any reason you're not completely satisfied, we'll refund your fee or 
+                                        commission and work with you to make things right. 
+                                        You won't find that kind of promise everywhere—but you will find it here.
+                                    </p>
+                                     
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-6  order-md-fist wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="team-content team-content--style_2 about-inner">
+                                        <img src="/assets/img/banner/ICN-Cyber-Resiliency-2color.png' %}" alt="" class="pb-4">
+
+                                        <h3 class="pb-3"><b>Security guarantee</b></h3>
+                                        
+                                       <p>
+                                        If for any reason you're not completely satisfied, we'll refund your fee or 
+                                        commission and work with you to make things right. 
+                                        You won't find that kind of promise everywhere—but you will find it here.
+                                    </p>
+                                     
+                                    </div>
+                                </div>
+                
+                                
+                            </div>
+                        </div>
+                
+                        </div>
+                    </section>
+
+                    <section class="robo-wrapper robo-paddin inner fix pb-4 pt-4">
+                        <div class="container">
+                            <div class="robo-content">
+                            <div class="row align-items-center">
+                                <div class="col-xl-6  order-md-last wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="robo-img">
+                                        <img src="{% static 'aptiv_static/assets/img/banner/explo.jpg' %}" alt="">
+                                    </div>
+                                </div>
+                
+                                <div class="col-xl-6 order-lg-first  wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="team-content team-content--style_2 about-inner">
+                                        <p class="talk">Expert insights to help you invest.</p>
+                                        
+                                       <p>
+                                        The world of investing is vast and nuanced, so we help you get your brain around it 
+                                        all with thousands of curated, easy-to-search articles on everything
+                                         from today's market and tomorrow's forecasts to investing and tax strategies.
+                                    </p>
+
+                                   
+                                        <li>Expert commentary</li>
+                                        <li>Investing strategies</li>
+                                        <li>Financial planning tools</li>
+                                
+                                     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        </div>
+                    </section>
+
+                
+
+                    {% include 'aptiv_templates/__call_section.html' %}
+
+
+
+
+
+      <!-- footer section start -->
+      {% include 'aptiv_templates/_footer.html' %}
+      <!-- footer section end -->
+          </div>
+          </div>
+       
+               
+              
+          
+          
+          {% endblock %}
+          

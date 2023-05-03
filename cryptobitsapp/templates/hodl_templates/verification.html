@@ -1,0 +1,444 @@
+{% extends 'hodl_templates/dashbase.html' %}
+{% load static %}
+  {% block content %}
+<!-- End Navbar -->
+<style>/* The alert message box */
+  .alert_message {
+      margin-top: 30px;
+    padding: 20px;
+    background-color: #173e43;
+    color: white;
+    /* display:none; */
+  }
+  
+  .closebtn_message {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .closebtn_message:hover {
+    color: black;
+  }</style>
+ <!-- End Navbar -->
+ 
+ <link rel="stylesheet" href="{% static 'hodl_static/imageupload.css' %}">
+ <link rel="stylesheet" href="{% static 'hodl_static/verification.css' %}">
+
+    <!-- End Navbar -->
+    <div class="container-fluid py-4">
+
+      <div class="veri-bg">
+        <div class="basic-modal">
+
+          <div class="modal-card">
+            <i class="fa fa-window-close close mr-auto"  aria-hidden="true"></i>
+              <form action="" class="mt-2 basic-form">
+               
+                <h5 class="modal-title">Basic Verification</h5>
+                <div class="row">
+             
+                  <div class="col-lg-12">
+                    <h6 class="modal-subtitle">Identity Information</h6>
+                    <div class="form-group">
+                      <label>Nationality</label>
+                      <input type="text" class="form-control" name="" aria-describedby="helpId" value="{{basic_information.country }}" readonly>
+                    </div>
+                  </div>
+
+                  <!-- <div class="col-lg-6 col-sm-3">
+                    <div class="form-group">
+                      <label>Nationality</label>
+                      <input type="text" class="form-control" name="" aria-describedby="helpId" value="{{basic_information.country }}" readonly>
+                    </div>
+                  </div> -->
+                  <div class="col-lg-6 col-sm-3">
+                    <div class="form-group">
+                      <label for="">First Name</label>
+                      <input type="text" class="form-control" name="" id="" aria-describedby="helpId" value="{{user.first_name }}" readonly>
+                    </div>
+                  </div>
+
+          
+
+                  <div class="col-lg-6 col-sm-3">
+                    <div class="form-group">
+                      <label for="">Last Name</label>
+                      <input type="text" class="form-control" name="" id="" aria-describedby="helpId" value="{{user.last_name }}" readonly>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-12">
+                    <div class="form-group">
+                      <label for="">Date of Birth</label>
+                      <input type="date" class="form-control" name="" id="" aria-describedby="helpId" value="{{basic_information.date_of_birth}}" readonly>
+                    </div>
+                  </div>
+                  
+                  <div class="col-lg-12 address-info">
+                    <h6 class="modal-subtitle">Address Information</h6>
+                    <div class="form-group">
+                      <label for="">Address</label>
+                      <input type="text" class="form-control" name="" id="" aria-describedby="helpId" value="{{basic_information.address}}" readonly>
+                    </div>
+                  </div>
+
+                  
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label for="">Postal Code</label>
+                  <input type="text" class="form-control" name="" id="" aria-describedby="helpId" value="{{basic_information.postal_code}}" readonly>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label for="">City</label>
+                  <input type="text" class="form-control" name="" id="" aria-describedby="helpId" value="{{basic_information.city}}" readonly>
+                </div>
+              </div>
+
+                </div>
+
+                <button type="submit" class="verify-submit btn btn-primary ">Done</button>
+              </form>
+
+         
+          </div>
+
+        </div>
+      </div>
+
+      <div class="inter-bg">
+        <div class="inter-modal">
+
+          <div class="modal-card">
+            <i class="fa fa-window-close close mr-auto"  aria-hidden="true"></i>
+            <form action="" class="mt-2 basic-form" action="#" method="POST" enctype="multipart/form-data">
+              {%csrf_token%}
+              
+                <h5 class="modal-title">Intermediate Verification</h5>
+
+                <div class="validid p-3">
+                  <div class="header"><h3 style="font-size: 1.3rem;color: black;margin-bottom: 0rem;">Facial Recognition</h3></div>
+
+                  <p>Please upload your Valid Id card</p>
+                
+                  <div class="drop-zone">
+                    <span class="drop-zone__prompt">
+                      <i class="fa fa-image"></i>
+                      Drag & Drop or click here to add Image
+                    </span>
+                    
+                    <input type="file" name="{{intermform.valid_id.name}}" class="drop-zone__input">
+                </div>
+        
+                </div>
+
+                <div class="header mt-5"><h3 style="font-size: 1.3rem;color: black;margin-bottom: 0rem;">Government-issued-ID</h3></div>
+                <p>Please Upload Front and Back of your ID</p>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="validid p-3">
+                      <div class="drop-zone">
+                        <span class="drop-zone__prompt">
+                          <i class="fa fa-image"></i>
+                          Drag & Drop or click here to add Image
+                        </span>
+                        
+                        <input type="file" name="{{intermform.gov_id_front.name}}" class="drop-zone__input">
+                      </div>
+            
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="validid p-3">
+                      <div class="drop-zone">
+                        <span class="drop-zone__prompt">
+                          <i class="fa fa-image"></i>
+                          Drag & Drop or click here to add Image
+                        </span>
+                        
+                        <input type="file" name="{{intermform.gov_id_back.name}}" class="drop-zone__input">
+                      </div>
+            
+                    </div>
+                  </div>
+                
+                </div>
+                <input type="hidden" name="form_name"  value="interm">
+
+                <button type="submit" class="verify-submit btn btn-primary ">Submit</button>
+              </form>
+
+         
+          </div>
+
+        </div>
+      </div>
+      
+      <div class="adva-bg">
+        <div class="adva-modal">
+          <div class="modal-card">
+            <i class="fa fa-window-close close mr-auto"  aria-hidden="true"></i>
+              <form action="" class="mt-2" method="POST" enctype="multipart/form-data">
+                {%csrf_token%}
+                <h5 class="modal-title">Advance Verification</h5>
+
+                <div class="validid p-3">
+                  <div class="header"><h3 style="font-size: 1.3rem;color: black;margin-bottom: 0rem;">Proof Of Address</h3></div>
+
+                  <p>Upload your proof of address. This could be an eletric bill, bank receipt</p>
+                
+                  <div class="drop-zone">
+                    <span class="drop-zone__prompt">
+                      <i class="fa fa-image"></i>
+                      Drag & Drop or click here to add Image
+                    </span>
+                    
+                    <input type="file" name="{{advform.proof_of_address.name}}" class="drop-zone__input">
+                  </div>
+        
+                </div>
+
+                <div class="form-group">
+                  <label for="">Type in your SSN</label>
+                  <input type="text"
+                    class="form-control" name="{{advform.SSN.name}}" id="" aria-describedby="helpId" placeholder="111-11-1111" maxlength="9">
+                </div>
+                <input type="hidden" name="form_name" value="adv">
+
+                <button type="submit" class="verify-submit btn btn-primary ">Submit</button>
+              </form>
+
+         
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row mb-4">
+        <div class="col-lg-12">
+          <div class="container">
+
+            <div class="verify-header">
+              <h3>Personal Verification</h3>
+            </div>
+  
+            <div class="row">
+              <div class="col-lg-4">
+
+                <div class="basic">
+                  <div class="head mb-2">
+                    <div class="div">
+                      <h3>Basic</h3>
+                      <h6>Quick and Easy</h6>
+                    </div>
+
+                    <div class="feature-icon">
+                      <i class="fa fa-edit" aria-hidden="true"></i>
+                    </div>
+                  </div>
+
+                  <!-- requirements -->
+                  <div class="requirement mt-4">
+                    <h6 style="font-size: 1rem;">Requirements</h6>
+                    <div class="list">
+                        <p>  <i class="fa fa-user" aria-hidden="true"></i> Personal Information</p>
+                        <p>  <i class="fa fa-clock" aria-hidden="true"></i> Review Time: 5days</p>
+                   
+                    </div>
+                  </div>
+                  <!-- requirements -->
+                  <div class="buttons">
+                    {%if basic_information%}
+                    <h6 class="verified "> <i class="fa fa-check-circle"></i> Verified</h6>
+                    <button type="button" id="basicbtn" class="verify-now btn btn-primary">Check data</button>
+                    {%else%}
+                    <button type="button" id="basicbtn" class="verify-now btn btn-primary">Verify Now</button>
+                    {%endif%}
+                    
+                    
+                  </div>
+                  <!-- features -->
+                  <div class="features">
+                    <h6 style="font-size: 1rem;">Features & Limit</h6>
+                    <div class="list">
+                      <p><i class="fa fa-check-circle" style="color: rgb(4, 211, 4);" aria-hidden="true"></i>Crypto Deposit</p>
+                      <p class="list-sub" style="font-size: .9rem;"> Unlimited</p>
+
+                      <p class="mt-3"><i class="fa fa-check-circle" style="color: rgb(4, 211, 4);" aria-hidden="true"></i>Crypto Withdrawal</p>
+                      <p class="list-sub" style="font-size: .9rem;">0.06 BTC Daily</p>
+                    </div>
+                  </div>
+                  <!-- features -->
+
+
+
+                </div>
+
+              </div>
+
+              <div class="col-lg-4">
+
+                <div class="intermmediate">
+                  <div class="head mb-2">
+                    <div class="div">
+                      <h3>Intermediate</h3>
+                      <h6>Most Popular</h6>
+                    </div>
+
+                    <div class="feature-icon">
+                      <i class="fa fa-user" aria-hidden="true"></i>
+                    </div>
+                  </div>
+
+                  <!-- requirements -->
+                  <div class="requirement mt-4">
+                    <h6 style="font-size: 1rem;">Requirements</h6>
+                    <div class="list">
+                        <p>  <i class="fa fa-th-large" aria-hidden="true"></i>  All Basic requirements</p>
+                        <p>  <i class="fa fa-id-card" aria-hidden="true"></i> Government-issued-ID</p>
+                        <p>  <i class="fa fa-id-badge" aria-hidden="true"></i> Facial Recognition</p>
+                        <p>  <i class="fa fa-clock" aria-hidden="true"></i> Review Time: 10 days</p>
+                   
+                    </div>
+                  </div>
+                  <!-- requirements -->
+                  <div class="buttons">
+               
+                    {% if interm_data_old.verified == True %}
+                    <h6 class="verified "> <i class="fa fa-check-circle"></i> Verified</h6>
+                    <button type="button " id="interbtn" class="verify-now btn btn-primary ">Update</button>
+                    {%else%}
+                    <button type="button " id="interbtn" class="verify-now btn btn-primary ">Verify Now</button>
+                    {%endif%}
+
+                    
+                    <h6 class="verified d-none"> <i class="fa fa-check-circle"></i> Verified</h6>
+                    <h6 class="verified dead d-none"> Requires Basic</h6>
+                  </div>
+                  <!-- features -->
+                  <div class="features">
+                    <h6 style="font-size: 1rem;">Features & Limit</h6>
+                    <div class="list">
+                      <p> Fiat Deposit & Withdrawal Limits</p>
+                      <div class="flexdiv">
+                      <p class="list-sub" style="font-size: .9rem;margin-right: 1rem;">$50K Daily  </p>
+                      <p class="list-sub" style="font-size: .9rem;">$500K Monthly</p>
+                    </div>
+
+                      <p class="mt-3"> P2P Transaction Limits</p>
+                      <p class="list-sub" style="font-size: .9rem;">Unlimited</p>
+
+                      <p class="mt-3"> Crypto Deposit</p>
+                      <p class="list-sub" style="font-size: .9rem;"> Unlimited</p>
+
+                      <p class="mt-3"> Crypto Withdrawal</p>
+                      <p class="list-sub" style="font-size: .9rem;">100 BTC Daily</p>
+
+                      <p class="mt-3"> Other Features</p>
+                      <p class="list-sub" style="font-size: .9rem;"> LPD/OTC/Binance card</p>
+
+                     
+                    </div>
+                  </div>
+                  <!-- features -->
+
+
+
+                </div>
+
+              </div>
+
+              <div class="col-lg-4">
+
+                <div class="advance">
+                  <div class="head mb-2">
+                    <div class="div">
+                      <h3>Advance</h3>
+                      <h6>Higher Fiat Limit</h6>
+                    </div>
+
+                    <div class="feature-icon">
+                      <i class="fa fa-map-marked" aria-hidden="true"></i>
+                    </div>
+                  </div>
+
+                  <!-- requirements -->
+                  <div class="requirement mt-4">
+                    <h6 style="font-size: 1rem;">Requirements</h6>
+                    <div class="list">
+                        <p>  <i class="fa fa-th-large" aria-hidden="true"></i>  All Intermmediate requirements</p>
+                        <p>  <i class="fa fa-map-marker" aria-hidden="true"></i>  Proof of address</p>
+                        <p>  <i class="fa fa-clock" aria-hidden="true"></i> Review Time: 10 days</p>
+                   
+                    </div>
+                  </div>
+                  <!-- requirements -->
+                  <div class="buttons">
+               
+                    {% if adv_data_old.verified == True %}
+                    <h6 class="verified "> <i class="fa fa-check-circle"></i> Verified</h6>
+                    <button type="button " id="advabtn" class="verify-now btn btn-primary ">Update</button>
+                    {%else%}
+                    <button type="button " id="advabtn" class="verify-now btn btn-primary ">Verify Now</button>
+                    {%endif%}
+
+                    
+                    <h6 class="verified d-none"> <i class="fa fa-check-circle"></i> Verified</h6>
+                    <h6 class="verified dead d-none"> Requires Basic</h6>
+                  </div>
+                  <!-- features -->
+                  <div class="features">
+                    <h6 style="font-size: 1rem;">Features & Limit</h6>
+                    <div class="list">
+                      <p>Fiat Deposit & Withdrawal Limits</p>
+                      <div class="flexdiv">
+                      <p class="list-sub" style="font-size: .9rem;margin-right: 1rem;">$200K Daily  </p>
+                      <p class="list-sub" style="font-size: .9rem;">$2M Monthly</p>
+                    </div>
+
+                      <p class="mt-3">P2P Transaction Limits</p>
+                      <p class="list-sub" style="font-size: .9rem;">Unlimited</p>
+
+                      <p class="mt-3">Crypto Deposit</p>
+                      <p class="list-sub" style="font-size: .9rem;"> Unlimited</p>
+
+                      <p class="mt-3">Crypto Withdrawal</p>
+                      <p class="list-sub" style="font-size: .9rem;">100 BTC Daily</p>
+
+                      <p class="mt-3">Other Features</p>
+                      <p class="list-sub" style="font-size: .9rem;"> LPD/OTC/Binance card</p>
+
+                     
+                    </div>
+                  </div>
+                  <!-- features -->
+
+
+
+                </div>
+
+              </div>
+           
+
+            </div>
+
+          </div>
+
+
+
+
+        </div>
+      </div>
+    </div>
+
+    <!--   Core JS Files   -->
+    <script src="{% static 'hodl_static/js/imageupload.js' %}"></script>
+    <script src="{% static 'hodl_static/js/verification.js' %}"></script>
+    {%endblock%}

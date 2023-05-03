@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en" class="light-theme">
+  {% load static %}
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--plugins-->
+  <link href="{% static 'aptiv_static/dashboard/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css' %}" rel="stylesheet" />
+
+  <!-- CSS Files -->
+  <link href="{% static 'aptiv_static/dashboard/assets/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'aptiv_static/dashboard/assets/css/bootstrap-extended.css' %}" rel="stylesheet">
+  <link href="{% static 'aptiv_static/dashboard/assets/css/style.css' %}" rel="stylesheet">
+  <link href="{% static 'aptiv_static/dashboard/assets/css/icons.css' %}" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open Sans:300,300i,400,400i,500,600,700,800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'aptiv_static/assets/css/vendor/font-awesome.min.css' %}">
+
+  <link href="{% static 'aptiv_static/dashboard/assets/css/header-colors.css' %}" rel="stylesheet" />
+  <link href="{% static 'aptiv_static/dashboard/assets/css/dashboard.css' %}" rel="stylesheet" />
+  <!-- <link href="{% static 'aptiv_static/dashboard/assets/css/investment.css' %}" rel="stylesheet" /> -->
+   
+
+  <title>APTIV Bank | Dashboard</title>
+
+  <!-- End Navbar -->
+<style>/* The alert message box */
+  .alert_message {
+      margin-top: 30px;
+    padding: 20px;
+    background-color: #173e43;
+    color: white;
+    display:none;
+  }
+  
+  .closebtn_message {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .closebtn_message:hover {
+    color: black;
+  }</style>
+</head>
+
+<body>
+  <!--start wrapper-->
+  <div class="wrapper">
+  {% block content %}
+
+{% endblock %}
+
+
+
+
+    <!--Start Back To Top Button-->
+    <a href="javaScript:;" class="back-to-top">
+      <ion-icon name="arrow-up-outline"></ion-icon>
+    </a>
+    <!--End Back To Top Button-->
+
+
+
+
+    <!--start overlay-->
+    <div class="overlay sidebar"></div>
+    <!--end overlay-->
+
+  </div>
+  <!--end wrapper-->
+
+
+  <!-- JS Files-->
+ 
+  <script src="{% static 'aptiv_static/dashboard/assets/js/jquery.min.js' %}"></script>
+  <script src="{% static 'aptiv_static/dashboard/assets/js/bootstrap.bundle.min.js' %}"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <!--plugins-->
+  <script src="{% static 'aptiv_static/dashboard/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js' %}"></script>
+  <script src="{% static 'aptiv_static/dashboard/assets/plugins/chartjs/chart.min.js' %}"></script>
+  <script src="{% static 'aptiv_static/dashboard/assets/js/index.js' %}"></script>
+  <!-- Main JS-->
+  <script src="{% static 'aptiv_static/dashboard/assets/js/main.js' %}"></script>
+  <script src="{% static 'aptiv_static/dashboard/assets/js/investment.js' %}"></script>
+
+
+
+
+    <!-- start footer-->
+    <footer class="dashboard-footer" style="
+    left: 80px;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 0.7rem;
+    color: #484444;
+    background-color: #fff;
+    border-top: 1px solid #e9ecef;
+    text-align: center;
+    transition: .3s all;">
+      <div class="footer-text">
+        Copyright © 2023. All right reserved.
+      </div>
+</footer>
+      <!--end footer -->
+</body>
+</html>

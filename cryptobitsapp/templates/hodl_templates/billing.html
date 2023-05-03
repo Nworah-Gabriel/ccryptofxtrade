@@ -1,0 +1,260 @@
+{% extends 'hodl_templates/dashbase.html' %}
+{% load static %}
+  {% block content %}
+
+    
+    <style>/* The alert message box */
+      .alert_message {
+          margin-top: 30px;
+        padding: 20px;
+        background-color: #173e43;
+        color: white;
+        display:none;
+      }
+      
+      .closebtn_message {
+        margin-left: 15px;
+        color: white;
+        font-weight: bold;
+        float: right;
+        font-size: 22px;
+        line-height: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      
+      .closebtn_message:hover {
+        color: black;
+      }</style>
+  <!-- Navbar -->
+     <!-- End Navbar -->
+     {% include 'hodl_templates/_transfer_modal.html' %}
+
+   
+
+      {% include 'hodl_templates/_balance.html' %}
+
+      <div class="row">
+        <div class="col-md-12 mt-4">
+          <div class="card">
+            <div class="card-header pb-0 px-3">
+              <h3 class="mb-0">Your Deposits</h3>
+            </div>
+            <div class="alert_message" id="alertDeposit" style="background-color:{{color}};">
+              <span class="closebtn_message" onclick="this.parentElement.style.display='none';">&times;</span>
+              <p id="alertDepositMessage"></p>
+            </div>
+            <div class="card-body pt-4 p-3">
+              <div class="table-responsive p-0">
+                <table class="table align-items-center justify-content-center mb-0">
+                  <thead>
+                    <tr>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Amount</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Payment Mode
+                      </th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Status</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Date Created
+                      </th>
+                    </tr>
+                  </thead>
+                    {% for deposit in user_deposit%}
+                  <tbody>
+                    <tr>
+                      <td>
+                        {{deposit.uuid}}
+                      </td>
+                      <td>
+                        <p class="text-sm font-weight-bold mb-0">${{deposit.amount}}</p>
+                      </td>
+                      <td>
+                        <span class="text-xs font-weight-bold">{{deposit.currency_coin.code}}</span>
+                      </td>
+                      <td>
+                        <span class="text-xs font-weight-bold" style="color:{% if deposit.status == 'APV' %}green{%else%} red{%endif%};">{% if deposit.status == 'APV' %}Approved{%else%} Submitted{%endif%}</span>
+
+                        
+                      </td>
+                      <td>
+                        <span class="text-xs font-weight-bold">{{deposit.date}}</span>
+                        
+                      </td>
+                    </tr>
+                  </tbody>
+                  {% endfor %}
+                  
+                </table>
+              </div>
+
+
+              <div class="createdeposit pt-5">
+                <div class="row">
+                  <div class="col-lg-4">
+                    <h3 class="mb-2">Make Deposit</h3>
+
+                    <form action="#" class="ml-2" id="formDeposit">
+                      {%csrf_token%}
+                      <div class="form-group">
+                        <label>Enter Amount: </label>
+                        <input type="number" class="form-control" name="{{depositform.amount.name}}" id="" aria-describedby="helpId"
+                          placeholder="">
+                      </div>
+                     
+                      <div class="form-group">
+                        <label for="">Select Coin</label>
+                        <select class="form-control" name="{{depositform.currency.name}}" id="selectcoin" onchange="stat()">
+                          {% for coin in accepted_coin%}
+                          <option value="{{coin.code}}">{{coin.name}}</option>
+                          {% endfor %}
+                         </select>
+                      </div>
+
+                     
+                      
+
+
+                      <div class="form-group">
+                        <label for="">Upload proof of payment</label>
+                        <input type="file" class="form-control-file" name="" id="" placeholder=""
+                          aria-describedby="fileHelpId">
+                      </div>
+
+                      <button type="submit" class="btn btn-primary">Submit Payment</button>
+                    </form>
+                  </div>
+                  <div class="col-lg-1"></div>
+                  <div class="col-lg-7">
+                    <h3>Address</h3>
+                    <ul class="address">
+                      {% for coin in accepted_coin%}
+                      <li id="{{coin.name}}" class="see" >
+                        {% if coin.qrcode %}
+                      
+                        <img src="{{coin.qrcode.url}}" alt="" width="220"><br>
+                        {%endif%}
+                        <br>
+                        <br>
+                        <p >NETWORK:<span style="color:purple">{{coin.network}} </span> </p>
+                        <Span> {{coin.address}} </Span> <button type="button"
+                          class="btn btn-primary">Copy</button>
+                      </li>
+                      {% endfor %}
+
+
+
+                    </ul>
+                  </div>
+                  <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/6161bd7386aee40a5735bd33/1fhiso3dt';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*'); 
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <!--End of Tawk.to Script-->
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+   
+    </div>
+
+  </main>
+  <!-- <script src="{% static 'hodl_static/js/king.js' %}"></script> -->
+  <script>
+  var BTC = document.getElementById("bitcoin")
+  BTC.classList.remove("see")
+  var coin = document.getElementById("selectcoin");
+  {% for coin in accepted_coin %}
+    var {{coin.code}} = document.getElementById("{{coin.name}}");
+  {% endfor %}
+  
+
+  
+function stat(){
+  switch (coin.value) {
+    {% for Acoin in accepted_coin %}
+    case '{{Acoin.code}}':
+      var caseCode = {{Acoin.code}};
+      {% for Mcoin in accepted_coin %}
+      if ({{Mcoin.code}} === caseCode){
+        
+        {{Mcoin.code}}.classList.remove("see")
+      }
+      else{
+        {{Mcoin.code}}.classList.add("see")
+      }
+      {%endfor%}
+      
+      
+      // id{{coin.code}}.classList.remove("see");
+      break;
+    {% endfor %}
+  
+    }
+  }
+
+
+
+
+  // for ajax submission
+  const form_deposit = document.getElementById("formDeposit");
+  form_deposit.addEventListener("submit", submitHandler);
+  function submitHandler(e){
+      e.preventDefault()
+      $.ajax({
+          type:"POST",
+          url :"{% url 'make_deposit' %}",
+          data :  $("#formDeposit").serialize(),
+
+          // data : $("#formWithdraw").serialize(),
+          dataType:'json',
+          success:function(data){
+              if (data.msg === "Success"){
+                  const alert = document.getElementById("alertDeposit");
+                  alert.style.display = 'block';
+                  alert.style.background = "green";
+                  $("#alertDepositMessage").text(data.response)
+                  
+                  }
+              else if (data.msg === "Invalid"){
+                  const alert = document.getElementById("alertDeposit");
+                  alert.style.display = 'block';
+                  alert.style.background = "red";
+                  $("#alertDepositMessage").text(data.response)
+                  }
+              else if (data.msg === "Fail"){
+                  const alert = document.getElementById("alertDeposit");
+                  alert.style.display = 'block';
+                  alert.style.background = "red";
+                  $("#alertDepositMessage").text(data.response)
+              }
+              else{
+                  const alert = document.getElementById("alertDeposit");
+                  alert.style.display = 'block';
+                  alert.style.background = "red";
+                  $("#alertDepositMessage").text("An Unexpected Error Occured")
+
+                }
+          }
+  
+
+        })
+  }
+
+
+  </script>
+ <!--   Core JS Files wee  -->
+  {%endblock%}
+   

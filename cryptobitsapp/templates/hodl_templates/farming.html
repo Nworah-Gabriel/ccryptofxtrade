@@ -1,0 +1,833 @@
+{% extends 'hodl_templates/dashbase.html' %}
+{% load static %}
+  {% block content %}
+  
+  <link rel="stylesheet" href="{% static 'hodl_static//coinfarm.css' %}">
+  <link rel="stylesheet" href="{% static 'hodl_static/3dicons.css' %}">
+
+  
+    
+  <style>/* The alert message box */
+    .alert_message {
+        margin-top: 30px;
+      padding: 20px;
+      background-color: #173e43;
+      color: white;
+      display:none;
+    }
+    
+    .closebtn_message {
+      margin-left: 15px;
+      color: white;
+      font-weight: bold;
+      float: right;
+      font-size: 22px;
+      line-height: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    
+    .closebtn_message:hover {
+      color: black;
+    }
+    
+    .farming_defi_on{
+      display:in-line;    }
+
+    .off_element{
+      display:none;
+    }
+    
+    </style>
+<!-- Navbar -->
+   <!-- End Navbar -->
+   {% include 'hodl_templates/_transfer_modal.html' %}
+
+ 
+
+    {% include 'hodl_templates/_farm_balance.html' %}
+
+
+
+      <div class="container mt-5">
+
+        <div class="tabs mb-2">
+          <ul>
+            <li class="tab1 line">Coin Farming</li>
+            <li class="tab2">Defi Yeild Farming</li>
+          </ul>
+        </div>
+
+        <div class="search">
+          <form action="">
+            <div class="form-group">       
+              <div class="input-group">
+                <input class="form-control" type="text" name="" placeholder="Choose/Search Coin" 
+                aria-label="Recipient's " aria-describedby="my-addon">
+                <div class="input-group-append ">
+                  <button class="input-group-text btn-primary sbtn" id="my-addon"><i class="fa fa-search"></i></button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      
+        <!-- modalside -->
+        <div class="stake-bg" id="stakeDivBig">
+          <div class="stake-modal">
+
+            <div class="stake-card">
+              <i class="fa fa-window-close close mr-auto" aria-hidden="true"
+              onclick="$( '#user_stock_div' ).load(window.location.href + ' ' + '#user_stock_div' );$( '#user_defi_div' ).load(window.location.href + ' ' + '#user_defi_div' );"
+              ></i>
+
+              <div class="modal-title">
+                <h5>Stake <p id="TokenName">.</p></h5>
+              </div>
+              <div class="progress_circle" id="progress_duration">
+                <div class="circular">
+                  <div class="inner">
+                    </div>
+                  <div class="number">  
+                   <b>
+                   
+                    <div class="icon-block" >
+                      <img src="https://img.icons8.com/ios-filled/50/7928CA/sketchfab.png"/>
+                      <!-- <i  class="fa fa-box fa-5 fa-3dicon" style="font-size: 30px; color: #7928CA;"></i>  -->
+                      
+                    </div>
+
+                    </b>
+                    
+                  </div>
+                    
+                   
+                  <div class="circle">
+                     <div class="bar left">
+                        <div class="progress"></div>
+                     </div>
+                     <div class="bar right">
+                        <div class="progress"></div>
+                     </div>
+                   </div>
+                </div>
+
+              </div>
+              
+
+              <style>
+               
+              </style>
+
+
+
+
+              <div class="duration pb-1 mt-4 dura " id="duration_stock">
+                <h6>Duration</h6>
+                <div class="days">
+                  <p class="day day1 clicked" id="shortTime" >7 Days</p>
+                  <p class="day day2" id="midTime" >14 Days</p>
+                  <p class="day day3" id="longTime" >30 Days</p>
+                 
+                   
+                </div>
+                  <div class="flexible d-none" style="display: none;">
+                    <p class="flex">Flexible</p>
+                  </div>
+                
+              </div>
+
+              <div class="duration pb-1 mt-4 dura " id="duration_defi" style="display: in-line !important;">
+                <h6>Duration</h6>
+                <div class="days">
+                  <p class="day " >Flexible</p>
+                 
+                </div>
+                
+              </div>
+
+              <div class="form-group lock" id="farming_stock" style = "display:none;">
+
+                <p style="align-items: center; ">
+                  <div class="coin-title pb-2 " style="text-align: center !important; place-items: center !important; display: block !important; ">
+                    <img id="modal_logo" src="" alt="" style="width:50px;">
+                    <b  style="font-size:34px; margin-left: 8px; padding-top:2px;" id="amountStock" >  0.00000</b>
+                    
+                  </div>
+                 
+                </p>
+                <p  style="margin-left: 4%;
+                text-align: center; place-items: center; font-size:14px;"><span id= "rateAnd">+0.0</span>  |<i class="fa fa-clock-o" style=" color:#c90da0;" aria-hidden="true"></i>
+                  <span id= "AndTime"> 
+                     
+                    {% include 'hodl_templates/_timer.html'%}
+                    
+                   
+                  </span>
+                </p>
+                
+
+              </div>
+
+              <div class="farming_defi_on lock" id="farming_defi" style = "display:none;">
+
+                <p style="align-items: center; " >
+                  <div class="coin-title pb-2 " id="defi_farming_on_div" style="text-align: center !important; place-items: center !important; display: block ; ">
+                    <img id="modal_logo_defi" src="" alt="" style="width:50px;">
+                    <b  style="font-size:34px; margin-left: 8px; padding-top:2px;" id="amountDefi" >  0.0000</b>
+                    
+                  </div>
+                 
+                </p>
+                <p  style="margin-left: 4%;
+                text-align: center; place-items: center; font-size:14px;" class="farming_defi_on"><span id= "rateAndDefi">+0.0</span>|<i class="fa fa-clock-o" style=" color:#c90da0;" aria-hidden="true"></i>
+                  <span id= "AndTimeDefi"> 
+                     
+                    {% include 'hodl_templates/_timer_defi.html'%}
+                    
+                   
+                  </span>
+                </p>
+                
+
+              </div>
+
+              <div class="form-group lock" id="no_farming_stock">
+                <label for="">Lock Amount <p class="TokenCode" id="stockName">COIN</p></label>
+                <input type="text" class="form-control" name="" id="stockingAmount" aria-describedby="helpId"
+                  placeholder="Please Enter the Quantity">
+
+                <p class="mt-3" style="font-size: .9rem;">Available: <span id="ownQuantity" >0.00000000<b></b></span></p>
+                <button class="input-group-text btn-primary" id="adderStock" onclick="create_user_stock();"><i class="fa fa-add">+</i></button>
+              <script>
+                
+function create_user_stock(){
+  // alert($('#stockName').text());
+  stock_name = $('#stockName').text();
+  // console.log(stock_name);
+  
+
+  $.ajax({
+        type:"GET",
+        url :"{% url 'create_user_stock' %}",
+        data : {'stock_name': stock_name, 'type':'stock'},
+        dataType:'json',
+        success:function(data){
+            if (data.msg === "Success"){
+                // alert(data.response);
+                $( '#user_stock_div' ).load(window.location.href + ' ' + '#user_stock_div' );
+                $( '#user_defi_div' ).load(window.location.href + ' ' + '#user_defi_div' );
+                $('#adderStock').attr('style', 'display:none;');
+              $('#ownQuantity').attr('style', 'display:in-line;');
+
+            }
+             
+              else{
+                    alert(data.response)
+
+                }
+         
+        }
+    })
+
+}
+
+
+              </script>
+
+                <h6 style=" font-size: 0.75rem;font-weight: 700;margin-bottom: 0rem! important;" class="mt-2">Locked
+                  Amount Limitation</h6>
+
+                <p class="min">Minimum: <span id= "TokenMinAmt">1.00000000<b class="TokenCode">COIN</b> </span></p>
+                <p class="max">Maximum: <span id= "TokenMaxAmt">40000.00000000<b class="TokenCode">COIN</b></span></p>
+              </div>
+              <hr>
+
+
+              
+              <!-- create defi -->
+              
+
+
+              <div class="form-group lock" id="no_farming_defi">
+                <label for="">Lock Amount <p class="TokenCode" id="stockName">COIN</p></label>
+                <input type="text" class="form-control" name="" id="stockingAmountDefi" aria-describedby="helpId"
+                  placeholder="Please Enter the Quantity">
+
+                <p class="mt-3" style="font-size: .9rem;">Available: <span id="ownQuantitydefi" >0.00000000<b></b></span></p>
+                <button class="input-group-text btn-primary" id="adderDefi" onclick="create_user_defi();"><i class="fa fa-add">+</i></button>
+              <script>
+                
+function create_user_defi(){
+  // alert($('#stockName').text());
+  stock_name = $('#stockName').text();
+  // console.log(stock_name);
+  
+
+  $.ajax({
+        type:"GET",
+        url :"{% url 'create_user_stock' %}",
+        data : {'stock_name': stock_name,'type':'defi'},
+        dataType:'json',
+        success:function(data){
+            if (data.msg === "Success"){
+                // alert(data.response);
+                $( '#user_stock_div' ).load(window.location.href + ' ' + '#user_stock_div' );
+                $( '#user_defi_div' ).load(window.location.href + ' ' + '#user_defi_div' );
+                $('#adderDefi').attr('style', 'display:none;');
+              $('#ownQuantityDefi').attr('style', 'display:in-line;');
+
+            }
+             
+              else{
+                    alert(data.response)
+
+                }
+         
+        }
+    })
+
+}
+
+
+              </script>
+
+
+
+
+                <h6 style=" font-size: 0.75rem;font-weight: 700;margin-bottom: 0rem! important;" class="mt-2">Locked
+                  Amount Limitation</h6>
+
+                <p class="min">Minimum: <span id= "TokenMinAmt">0.00000000<b class="TokenCode">BTC</b> </span></p>
+                <p class="max">Maximum: <span id= "TokenMaxAmt">0.00000000<b class="TokenCode">BTC</b></span></p>
+              </div>
+              <hr>
+              
+              <div class="sumdiv" id="user_stock_div" >
+                <div class="title" >
+                  <p>Stake Date</p>
+                  <p>Value Date</p>
+                  <p>Interest Period</p>
+                  <p>Interest End Date</p>
+                  <!-- <p>Redemption period</p>
+                  <p>Redemption Date</p> -->
+                </div>
+
+                <div class="value">
+                  <p id="iStakeDate">Stake Date</p>
+                  <p id="iValueDate">Value Date</p>
+                  <p id="iInterestPeriod">Interest Period</p>
+                  <p id="iInterestendDate">Interest End Date</p>
+                  <!-- <p id="iRedemptionPeriod"> Redemption period</p>
+                  <p id="iRedemptionDate">Redemption Date</p> -->
+                </div>
+              </div>
+              
+           
+              <div class="sumdiv" id="user_defi_div" >
+
+                <div class="title" >
+                  <p>Interest Period</p>
+                  <p>Redemption Period</p>
+                  <p id="TabiInterestdefiRate">Interest Rate</p>
+                </div>
+
+                <div class="value">
+                  <p id="iInterestdefiPeriod">Interest Period <b> day(s)</b></p>
+                  <p id="iRedemptiondefiPeriod"> Redemption period<b> day(s)</b></p>
+                  <p id="iInterestdefiRate"> Interest rate<b>%</b></p>
+                  
+                </div>
+              </div>
+
+               
+
+              <div class="estimate" id="estintrate">
+                <div class="left">
+                  <p>Est.APY <i class="fa fa-info-circle"></i></p>
+                  <p>Estimated Interests</p>
+                </div>
+
+                <div class="right">
+                  <p id="shortInt" >short period</p>
+                  <p id="midInt" style="display: none;">medium period</p>
+                  <p id="longInt" style="display: none;">long period</p>
+                  <p style="color: #c90da0;">estimated Interest <b>BTC</b></p>
+                </div>
+              </div>
+
+              <div class="form-check terms" id="form-check">
+        <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" name="" id="">
+            I have read and agree to Hodlvault’s <a href="terms.html"
+                style="color:#c90da0;font-weight: 600;">Terms of Service</a>
+        </label>
+    </div>
+
+
+              <button type="button" id="confirmand" onclick="submitform('stock')" class="btn btn-primary finish">Confirm</button>
+
+              <button type="button" id="confirmdefi" onclick="submitform('defi')" class="btn btn-primary finish">Confirm</button>
+
+            </div>
+
+          </div>
+        </div>
+         <!-- modalside-end-->
+
+        <div class="staking">
+          <div class="row">
+            {%for stock in hodl_stocks %}
+            <div class="col-lg-3 mb-4">
+              <div class="coin-card">
+                <div class="coin-title pb-2">
+                  {%if stock.logo %} <img src="{{stock.logo.url}}" alt="">{%endif%}
+                  <h5>{{stock.name}}</h5>
+                </div>
+                <div class="coin-body">
+                  <div class="div pb-2">
+                    <div class="annual intNow">
+                      <h5>Annualized Interest Rate</h5>
+                      <h6 id="shortIntNow" class="shortIntNowcl" style="display: block;">{{stock.short_interest_rate}}<small style="font-size: .7rem;">%</small></h6>
+                      <h6 id="midIntNow" class="midIntNowcl" style="display: none;">{{stock.med_interest_rate}}<small style="font-size: .7rem;">%</small></h6>
+                      <h6 id="longIntNow" class="longIntNowcl"  style="display: none;">{{stock.long_interest_rate}}<small style="font-size: .7rem;">%</small></h6>
+                    </div>
+                    <div class="minimum">
+                      <h5>Minimum Locked Amount</h5>
+                      <h6  id="midIntNow">{{stock.minimum_lock_amount}}<small style="font-size: .7rem;">{{stock.name}}</small></h6>
+                    </div>
+                  </div>
+
+                  <div class="duration pb-3">
+                    <h6>Duration</h6>
+                    <div class="days">
+                      <p class="day shortTimeNowcl clicked"id="shortTimeNow">7 Days</p>
+                      <p class="day midTimeNowcl" id="midTimeNow">14 Days</p>
+                      <p class="day longTimeNowcl" id="longTimeNow">30 Days</p>
+                    </div>
+                  </div>
+
+                  <button type="button" class="btn btn-primary stake" onclick="get_item_data('stock','{{stock.name}}')" >Stake Now</button>
+                </div>
+              </div>
+ 
+            </div>
+            {%endfor%}
+
+
+
+ 
+           
+          </div>
+        </div>
+
+        <div class="defistaking">
+          <span class="mb-5"> <i class="fa fa-info-circle"></i> Flexible deposit timeline</span>
+          <div class="row mt-2">
+            {%for hodl_defi in hodl_defi_coins %}
+            <div class="col-lg-3 mb-4">
+              <div class="coin-card">
+                <div class="coin-title pb-2">
+                  {%if hodl_defi.logo %} <img src="{{hodl_defi.logo.url}}" alt="">{%endif%}
+                   <h5>{{hodl_defi.name}}</h5>
+                </div>
+                <div class="coin-body">
+                  <div class="div pb-2">
+                    <div class="annual">
+                      <h5>Annualized Interest Rate</h5>
+                      <h6>{{hodl_defi.short_interest_rate}}<small style="font-size: .7rem;">%</small></h6>
+                    </div>
+                    <div class="minimum">
+                      <h5>Minimum Locked Amount</h5>
+                      <h6>{{hodl_defi.minimum_lock_amount}}<small style="font-size: .7rem;">{{hodl_defi.code}}</small></h6>
+                    </div>
+                  </div>
+
+                  <div class="duration pb-3">
+                    <h6>Duration</h6>
+                    <div class="flexible">
+                      <p class="flex">Flexible</p>
+                    </div>
+                  </div>
+
+                  <button type="button" class="btn btn-primary stake" onclick="get_item_data('defi','{{hodl_defi.name}}')">Stake Now</button>
+                </div>
+              </div>
+            </div>
+            
+            {%endfor%}
+          
+          
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+    <form action="#" class="ml-2" id="formstockUpdate">
+      {%csrf_token%}
+      
+  
+    <input type="hidden" name="{{userstockform.stake_date.name}}" id= "id_{{userstockform.stake_date.name}}"  >
+
+    <input type="hidden" name="{{userstockform.value_date.name}}" id="id_{{userstockform.value_date.name}}" value="">
+
+    <input type="hidden" name="{{userstockform.interest_end_date.name}}" id="id_{{userstockform.interest_end_date.name}}" value="">
+
+    <input type="hidden" name="{{userstockform.interest_period.name}}" id="id_{{userstockform.interest_period.name}}" value="">
+
+    <input type="hidden" name="{{userstockform.farm_quantity.name}}" id="id_{{userstockform.farm_quantity.name}}" value="0">
+
+    <input type="hidden" name="{{userstockform.farm_type.name}}" id="id_{{userstockform.farm_type.name}}" value="stock">
+
+    <input type="hidden" name="{{userstockform.stock_name.name}}" id="id_{{userstockform.stock_name.name}}" value="">
+
+    
+  </form>
+
+
+  </main>
+
+<script>
+    
+</script>
+
+  <script src="{% static 'hodl_static/js/coinfarm.js' %}"></script>
+
+
+  <script> 
+  function timer(stop_time){
+  
+  var deadline = new Date(stop_time).getTime(); 
+  
+  var x = setInterval(function() { 
+    
+  var now = new Date().getTime(); 
+  var t = deadline - now; 
+  var days = Math.floor(t / (1000 * 60 * 60 * 24)); 
+  var hours = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60)); 
+  var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60)); 
+  var seconds = Math.floor((t % (1000 * 60)) / 1000); 
+  document.getElementById("day").innerHTML =days ; 
+  document.getElementById("hour").innerHTML =hours; 
+  document.getElementById("minute").innerHTML = minutes;  
+  document.getElementById("second").innerHTML =seconds;  
+    if (t < 0) { 
+            clearInterval(x); 
+            document.getElementById("demo").innerHTML = "TIME UP"; 
+            document.getElementById("day").innerHTML ='00'; 
+            document.getElementById("hour").innerHTML ='00'; 
+            document.getElementById("minute").innerHTML ='00' ;  
+            document.getElementById("second").innerHTML = '00'; } 
+    }, 1000); 
+  }
+    
+    </script> 
+  <script>
+    
+    function get_item_data(item_type,item_name){
+      var item_type = item_type;
+      var item_name = item_name;
+      var data = { item_type: item_type, item_name: item_name };
+      
+      
+      $.ajax({
+
+
+          type:"GET",
+          url :"{% url 'get_stock_defi_value'%}",
+
+          data : data,
+          dataType:'json',
+          success:function(data){
+          console.log("success");
+            console.log(data.values.name,data.values.dollar );
+            console.log("check " ,data.values.user_token_type);
+            $('#TokenName').text(data.values.name);
+            $('#shortInt').text(data.values.short_interest + "%");
+            $('#midInt').text(data.values.med_interest + "%");
+            $('#longInt').text(data.values.long_interest + "%");
+            $('#TokenMinAmt').html(data.values.min_amount+ " " +"<b>" +data.values.name+ "</b>" );
+            $('#TokenMaxAmt').html(data.values.max_amount+ " " +"<b>" +data.values.name+ "</b>" );   
+           
+            $('.TokenCode').text(data.values.name);
+            // alert(data.values.user_token_defi_farming);
+            // console.log(data.values.user_token_type);
+
+
+
+            // date converter
+            function dateconv(current_date){
+              var current_date = new Date(current_date);
+            return  current_date.toLocaleString();
+            }
+
+            if (data.values.user_token_type === "stock"){
+
+              if (data.values.user_token_stake_farming === undefined || data.values.user_token_stake_farming === false ){
+                console.log(data.values.user_token_stake_farming);
+               
+               var d = new Date();
+
+               var value_date = new Date(d);
+               value_date.setDate(d.getDate() + 8);
+
+               var interest_end_date = new Date(d);
+
+               interest_end_date.setDate(d.getDate() + 8);
+
+
+
+            $('#iStakeDate').text(d.toLocaleString() );
+                  
+            $('#iValueDate').text(value_date.toLocaleString());
+            $('#iInterestPeriod').html( 7  + "<b> day(s)</b>");
+            $('#iInterestendDate').text(interest_end_date.toLocaleString());
+            $('#estintrate').attr('style', 'display:in-line;');
+            $('#form-check').attr('style', 'display:in-line;');
+            $('#confirmand').attr('style', 'display:in-line;');  
+            $('#confirmdefi').attr('style', 'display:none;');
+            $('#duration_defi').attr('style', 'display:none;');
+            $('#duration_stock').attr('style', 'display:in-line;');
+            $('#progress_duration').attr('style', 'display:none;');
+            $('#farming_stock').attr('style', 'display:none;');
+            $('#no_farming_stock').attr('style', 'display:in-line;');
+            $('#no_farming_defi').attr('style', 'display:none;');
+            // alert(data.values.user_token_stake_quantity_less);
+            if (data.values.user_token_stake_quantity_less === "None"){
+              $('#adderStock').attr('style', 'display:in-line;');
+              $('#ownQuantity').attr('style', 'display:none;');
+              
+            }
+            else{
+              $('#ownQuantity').html(data.values.user_token_stake_quantity_less+ " " +"<b>" +data.values.name+ "</b>" );
+              
+              $('#adderStock').attr('style', 'display:none;');
+              $('#ownQuantity').attr('style', 'display:in-line;');
+            };
+            setdates(7);
+              }   
+
+            else{
+            $( '#clockdiv' ).load(window.location.href + ' ' + '#clockdiv' );
+            timer(data.values.user_token_stake_interest_end_date_iso_dt);
+            $('#iStakeDate').text(dateconv(data.values.user_token_stake_stake_date) );
+            $('#modal_logo').attr("src", data.values.user_token_stake_logo_url);
+            $('#iValueDate').text(dateconv(data.values.user_token_stake_value_date) );
+            $('#iValueDate').text(dateconv(data.values.user_token_stake_value_date) );
+            $('#iInterestPeriod').html(data.values.user_token_stake_interest_period  + "<b> day(s)</b>");
+            $('#iInterestendDate').text(dateconv(data.values.user_token_stake_interest_end_date) );
+            $('#amountStock').text(data.values.newer_user_token_stake_farm_quantity_less);
+
+            $('#rateAnd').text(data.values.user_token_stake_rate_per_hour_in_stock_less + " " +data.values.name + "/hr " );
+            
+
+            $('#estintrate').attr('style', 'display:none;');
+            $('#form-check').attr('style', 'display:none;');
+            $('#duration_defi').attr('style', 'display:none;');
+            $('#duration_stock').attr('style', 'display:none;');
+            $('#progress_duration').attr('style', 'display:in-line;');
+            $('#farming_stock').attr('style', 'display:in-line;');
+            $('#no_farming_stock').attr('style', 'display:none;');
+            $('#no_farming_defi').attr('style', 'display:none;');
+            $('#form-check').attr('style', 'display:none;');
+            $('#confirmand').attr('style', 'display:none;');
+            // $('#confirmand').attr('style', 'display:in-line;');  
+            $('#confirmdefi').attr('style', 'display:none;');
+            }        
+            
+
+            document.getElementById("stakeDivBig").querySelector('.farming_defi_on').classList.add("off_element");
+            $('#user_defi_div').attr('style', 'display:none;');
+            $('#user_stock_div').attr('style', 'display:in-line;');
+            
+            }
+            
+          else if (data.values.user_token_type === "defi"){
+
+            if (data.values.user_token_defi_farming === undefined || data.values.user_token_defi_farming === false ){
+            
+            $('#iInterestdefiPeriod').html(1  + "<b> day(s)</b>");
+            $('#iRedemptiondefiPeriod').html(1  + "<b> day(s)</b>");
+            // $('farming_defi_on').attr('style', 'display:none;');
+            document.getElementById("stakeDivBig").querySelector('.farming_defi_on').classList.add("off_element");
+            $('#iInterestdefiRate').attr('style', 'display:none;');
+            $('#TabiInterestdefiRate').attr('style', 'display:none;');
+            $('#estintrate').attr('style', 'display:block;');
+            $('#no_farming_defi').attr('style', 'display:in-line;');
+            $('#confirmand').attr('style', 'display:none;');  
+            $('#confirmdefi').attr('style', 'display:in-line;');
+            $('#duration_defi').attr('style', 'display:inline;');
+            $('#duration_stock').attr('style', 'display:none;');
+            $('#progress_duration').attr('style', 'display:none;');
+            $('.min').html(
+              'Minimum: <span id= "TokenMinAmt">' + data.values.min_amount + '<b class="TokenCode">' +data.values.name + '</b></span>'
+            );  
+            
+            $('.max').html(
+              'Maximum: <span id= "TokenMaxAmt">' + data.values.max_amount + '<b class="TokenCode">' +data.values.name + '</b></span>'
+            );   
+            $('#farming_defi').attr('style', 'display:none;');
+
+
+            $('#defi_farming_on_div').attr('style', 'display:none;');
+            // $('#defi_farming_on_div').attr('style', 'display:none;');
+            // alert("fksht");
+            console.log(data.values.user_token_defi_quantity_less + 'values');
+            if (data.values.user_token_defi_quantity_less === "None"){
+              $('#adderDefi').attr('style', 'display:in-line;');
+              $('#ownQuantitydefi').attr('style', 'display:none;');
+              
+            }
+            else{
+              $('#ownQuantitydefi').html(data.values.user_token_defi_quantity_less+ " " +"<b>" +data.values.name+ "</b>" );
+              
+              $('#adderDefi').attr('style', 'display:none;');
+              $('#ownQuantityDefi').attr('style', 'display:in-line;');
+             
+            };
+            }
+
+            else{
+            $( '#clockdiv_defi' ).load(window.location.href + ' ' + '#clockdiv_defi' );
+            // alert(data.values.user_token_defi_interest_end_date_iso_dt);
+            timer_defi(data.values.user_token_defi_interest_end_date_iso_dt);
+            $('#iInterestdefiPeriod').html(data.values.user_token_defi_interest_period  + "<b> day(s)</b>");
+            $('#modal_logo_defi').attr("src", data.values.user_token_defi_logo_url);
+            $('#iRedemptiondefiPeriod').html(data.values.user_token_defi_redemption_period  + "<b> day(s)</b>");
+            $('#iInterestdefiRate').html(data.values.user_token_defi_interest_rate + "<b> %</b>");
+           
+            $('#amountDefi').text(data.values.newer_user_token_defi_farm_quantity_less);
+            $('#form-check').attr('style', 'display:none;');
+            document.getElementById("stakeDivBig").querySelector('.farming_defi_on').classList.remove("off_element");
+
+            $('#rateAndDefi').text(data.values.user_token_defi_rate_per_hour_in_stock_less+ " " +data.values.name + "/hr " );
+
+            
+
+
+
+
+            $('#TabiInterestdefiRate').attr('style', 'display:in-line;');
+            $('#estintrate').attr('style', 'display:none;');
+            $('#confirmand').attr('style', 'display:none;');  
+            $('#confirmdefi').attr('style', 'display:none;');
+            $('#iInterestdefiRate').attr('style', 'display:in-line;');
+            $('#no_farming_defi').attr('style', 'display:none;');
+            
+            $('#duration_defi').attr('style', 'display:none;');
+            $('#progress_duration').attr('style', 'display:in-line;');
+
+            $('#duration_stock').attr('style', 'display:none;');
+            $('#defi_farming_on_div').attr('style', 'display:in-line;');
+            $('#farming_defi').attr('style', 'display:in-line;');
+            
+            }
+            
+
+            $('#user_defi_div').attr('style', 'display:in-line;');
+            $('#user_stock_div').attr('style', 'display:none;');
+            
+            
+            
+            $('#farming_stock').attr('style', 'display:none;');
+            $('#no_farming_stock').attr('style', 'display:none;');
+
+
+
+          } 
+          else{
+            console.log("hi");
+          };
+            
+           
+
+
+        }
+
+        })
+    }
+    
+  </script>
+
+<script>
+    
+  function submitform(typeStock){
+    sub_farm_quantity = document.getElementById("id_farm_quantity");
+
+    if (typeStock === 'stock'){
+      sub_farm_quantity.value = document.getElementById("stockingAmount").value;
+    }
+    else{
+      // alert(document.getElementById("stockingAmountDefi").value === "")
+      if (document.getElementById("stockingAmountDefi").value === ""){
+        sub_farm_quantity.value = 0.0;
+      }
+      else{
+        sub_farm_quantity.value = document.getElementById("stockingAmountDefi").value;
+      }
+      
+      var d = new Date();
+      var value_date = new Date(d);
+      value_date.setDate(d.getDate() +2);
+
+      var interest_end_date = new Date(d);
+      interest_end_date.setDate(d.getDate() +2);
+      
+      sub_stake_date = document.getElementById("id_stake_date");
+      sub_value_date = document.getElementById("id_value_date");
+      sub_interest_end_date = document.getElementById("id_interest_end_date");  
+      sub_interest_period = document.getElementById("id_interest_period"); 
+      sub_stock_name = document.getElementById("id_stock_name");
+      sub_farm_type = document.getElementById("id_farm_type");
+      
+
+      sub_stake_date.value = d.getTime() / 1000;
+      sub_value_date.value = value_date.getTime() / 1000;
+      sub_interest_end_date.value = interest_end_date.getTime() / 1000;
+      sub_interest_period.value = 2;
+      sub_farm_type.value = 'defi';
+      sub_stock_name.value = $('#TokenName').text();
+   
+
+
+    
+    }
+    
+  $.ajax({
+        type:"POST",
+        url :"{% url 'stock_submit' %}",
+        data : $("#formstockUpdate").serialize(),
+        dataType:'json',
+        async: false,
+        success:function(data){
+            if (data.msg === "Success"){
+                alert("success");
+              
+
+            }
+            else if (data.msg === "Invalid"){
+                  alert(data.response);
+            }
+              else if (data.msg === "Fail"){
+                 
+              }
+              else{
+                 
+
+                }
+         
+        }
+    })
+
+}
+
+
+
+
+</script>
+
+  
+  
+  {%endblock%}

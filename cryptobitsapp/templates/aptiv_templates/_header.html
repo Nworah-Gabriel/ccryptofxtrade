@@ -1,0 +1,323 @@
+{%load static%}
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+  getCompany();
+
+function getCompany(){
+    $.ajax({
+            type: 'GET',
+            url: "{% url 'companydetail' %}",
+            data: {},
+            success: function (data) {
+                if (data.msg === "Success"){
+                //   alert(data.detail.name);
+                //   location.reload();
+                
+                $('#CompanyMobile').html( '<a href="https://wa.me/' + data.detail.mobile + '"> ' +data.detail.mobile+  '</a>');
+                $('#CompanyMobileI').html( '<a href="https://wa.me/' + data.detail.mobile + '"> ' +data.detail.mobile+  '</a>');
+               
+                $('#CompanyEmail').html( '<a href="mailto:' + data.detail.email + '"> ' +data.detail.email+  '</a>');
+                $('#CompanyAddress').text( data.detail.address);
+                
+                    }
+
+                else if(data.msg === "Invalid"){
+                 alert("else");
+                }
+            }
+        }) 
+    }
+
+
+
+</script>
+<header class="header-area">
+    <div class="main-header d-none d-lg-block">
+        <!-- header top start -->
+        <div class="header-top theme-bg">
+            <div class="container">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-sm-4">
+                        <div class="header-top-left text-center text-sm-left">
+                            Call us:<span id="CompanyMobile"> <a href="https://wa.me/44567890987"> mobile </a></span>
+                        </div>
+                    </div>
+                    <!-- <div class="col-sm-4">
+                    <div class="login-register text-center">
+                        <a href="#">Login/Register</a>
+                    </div>
+                </div> -->
+                    <div class="col-sm-8">
+                        <div class="header-settings-bar d-flex justify-content-end">
+                            <div class="header-social-link text-center text-sm-right">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                              
+                            </div>
+                            <div class="language pl-30">
+                                <img src="{% static 'aptiv_static/assets/img/icon/en.png' %}" alt="flag"> English
+                                <i class="fa fa-angle-down"></i>
+                                <ul class="dropdown-list">
+                                    <li><a href="#"><img src="{% static 'aptiv_static/assets/img/icon/en.png' %}" alt="flag"> English</a></li>
+                                    <li><a href="#"><img src="{% static 'aptiv_static/assets/img/icon/fr.png' %}" alt="flag"> French</a></li>
+                                </ul>
+                            </div>
+                            <!-- <div class="sign-in pl-30">
+                                <span><i class="fa fa-user"></i> </span><a>Sign In</a>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- header top start -->
+
+        <!-- main menu start -->
+        <div class="main-menu-wrapper sticky header-transparent">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-3">
+                        <!-- logo area start -->
+                        <div class="brand-logo">
+                            <a href="index.html">
+                                <img src="{% static 'aptiv_static/assets/img/logo/logo.png' %}" alt="brand logo" width="">
+                                <!-- <b style="color: #006b38;font-size:1.2em;font-weight:900;">APTIV</b> -->
+                            </a>
+                        </div>
+                        <!-- logo area end -->
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="main-menu-inner">
+                            <!-- main menu navbar start -->
+                            <nav class="main-menu">
+                                <ul>
+                                    <!-- <li class="active"><a href="about.html">Open an Account</a></li> -->
+                                    <li class="active"><a  href='#' onclick="location.href='{% url 'signup' %}'"  class="pr-4">Open an Account</a></li>
+                                    <li><a  href='#' onclick="location.href='{% url 'location' %}'">Find A Branch</a></li>
+                                    <li><a  href='#' onclick="location.href='{% url 'login' %}'">Log In</a></li>
+                                   
+                                    <!-- <li><a href="about.html" >Contact Us</a></li> -->
+                                </ul>
+                            </nav>
+                            <!-- main menu navbar end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- main menu end -->
+    </div>
+
+    <!-- mobile header start -->
+    <!-- mobile header start -->
+    <div class="mobile-header d-lg-none d-md-block sticky">
+        <!--mobile header top start -->
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12">
+                    <div class="mobile-main-header">
+                        <div class="mobile-logo">
+                            <a  href='#' onclick="location.href='{% url '' %}'">
+                                <img src="{% static 'aptiv_static/assets/img/logo/logo.png' %}" alt="Brand Logo">
+                                <!-- <b style="color: #006b38;font-size:1.2em;font-weight:900;">APTIV</b> -->
+                            </a>
+                        </div>
+                        <div class="mobile-menu-toggler">
+                            <button class="mobile-menu-btn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- mobile header top start -->
+    </div>
+    <!-- mobile header end -->
+    <!-- mobile header end -->
+
+    <!-- offcanvas mobile menu start -->
+    <!-- off-canvas menu start -->
+    <aside class="off-canvas-wrapper">
+        <div class="off-canvas-overlay"></div>
+        <div class="off-canvas-inner-content">
+            <div class="btn-close-off-canvas">
+                <i class="fa fa-close"></i>
+            </div>
+
+            <div class="off-canvas-inner">
+                
+                <!-- mobile menu start -->
+                <div class="">
+                    <!-- mobile menu navigation start -->
+                    <div class="mobile-aside">
+                        <div class="aside-nav">
+                            <ul>
+                                
+                                <li id="headingOne" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> 
+                                    <a class="accordio-heading" > 
+                                        <i class="fa fa-group mr-2"></i> 
+                                        About Us
+                                    </a>
+                                
+                                </li>
+                                <div class="dropdown collapse" id="collapseOne" aria-labelledby="headingOne">
+                                    <ul class="dropdown-list">
+                                        <li onclick="location.href='{% url 'about' %}'"><a href="#">About Us </a></li>
+                                        <li onclick="location.href='{% url 'govern' %}'"><a href="#">Governance</a></li>
+                                        <li onclick="location.href='{% url 'regulatory' %}'"><a href="#">Regulatory Information </a></li>
+                                    </ul>
+                                </div>
+            
+                                <li onclick="location.href='{% url 'account' %}'" > <a href="#"> <i class="fa fa-credit-card mr-2"></i> Account </a></li>
+            
+                                <li id="headingTwo" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                    <a>  
+                                        <i class="fa fa-gift mr-2"></i> Products
+                                    </a>
+                                    </li>
+                                    
+                                <div class="dropdown  collapse" id="collapseTwo" aria-labelledby="headingTwo">
+                                    <ul class="dropdown-list">
+                                        <li onclick="location.href='{% url 'product' %}'" ><a href="#">Stocks</a></li>
+                                        <li  onclick="location.href='{% url 'product' %}'"><a href="#">Shares</a></li>
+                                        <!-- <li><a href="">Digital Wallet</a></li> -->
+                                        <li onclick="location.href='{% url 'cryptocurrency' %}'" ><a href="#">Cryptocurrency</a></li>
+                                        <li  onclick="location.href='{% url 'product' %}'"><a href="#">Foreign Exchange</a></li>
+                                        <li onclick="location.href='{% url 'real' %}'" ><a href="#">Real Estate Market</a></li>
+                                    </ul>
+                                </div>
+                                <li id="headingThree" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                    <a> <i class="fa fa-tripadvisor mr-1"></i> Advice
+                                    </a>
+                                </li>
+                                <div class="dropdown  collapse" id="collapseThree" aria-labelledby="headingThree">
+                                <ul class="dropdown-list">
+                                    <li id="headingFour" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                        <a>Advice Solutions</a>
+                                    </li>
+                                <div class="dropdown ml-2 collapse" id="collapseFour" aria-labelledby="headingFour">
+                                    <ul class="dropdown-list">
+                                        <li onclick="location.href='{% url 'advice' %}'"><a href="#">Automated Investing</a></li>
+                                        <li onclick="location.href='{% url 'guidiance' %}'"><a href="#">Automated Investing with Guidance</a></li>
+                                        <li onclick="location.href='{% url 'wealth' %}'"><a href="#">APTIV Wealth Advisory™</a></li>
+                                    </ul>
+                                </div>
+            
+                                <li id="headingFive" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                                    <a>Financial Planning</a>
+                                </li>
+                            <div class="dropdown ml-2 collapse" id="collapseFive" aria-labelledby="headingFive">
+                                <ul class="dropdown-list">
+                                    <li  onclick="location.href='{% url 'finplan' %}'"><a href="#">Financial Planning Offering</a></li>
+                                    <li onclick="location.href='{% url 'calculator' %}'"><a href="#">Planning Calculators</a></li>
+                                    <li  onclick="location.href='{% url 'complimentary' %}'"><a href="#">Complimentary Plan</a></li>
+                                </ul>
+                            </div>
+                                   
+                                  
+                                </ul>
+                            </div>
+                                <li id="headingSix" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                                    <a>  <i class="fa fa-money mr-2"></i> Pricing </a>
+                                </li>
+                                <div class="dropdown collapse" id="collapseSix" aria-labelledby="headingSix">
+                                    <ul class="dropdown-list">
+                                        <li  onclick="location.href='{% url 'pricing' %}'"><a href="#">Commision and Fees</a></li>
+                                        <li onclick="location.href='{% url 'investmentfee' %}'"><a href="#">Understanding Investment Fees</a></li>
+                                    </ul>
+                                </div>
+            
+                                <li id="headingSeven" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
+                                    <a><i class="fa fa-question-circle mr-2"></i> Why APTIV </a>
+                                </li>
+                                <div class="dropdown collapse" id="collapseSeven" aria-labelledby="headingSeven">
+                                    <ul class="dropdown-list">
+                                        <li  id="headingEight" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
+                                            <a>The APTIV Bank Difference</a>
+                                        </li>
+            
+                                        <div class="dropdown ml-3 collapse" id="collapseEight" aria-labelledby="headingEight">
+                                            <ul class="dropdown-list">
+                                                <li onclick="location.href='{% url 'whychoose' %}'"><a href="#">Why Choose APTIV Bank</a></li>
+                                                <li onclick="location.href='{% url 'satisfaction' %}'"><a href="#">Our Satisfaction Gurantee</a></li>
+                                                <li onclick="location.href='{% url 'security' %}'"><a href="#">Our Security</a></li>
+                                            </ul>
+                                        </div>
+                                        <li onclick="location.href='{% url 'ways' %}'"><a href="#">Ways To Invest with Us</a></li>
+                                        <!-- <li><a href="">How We Comapre</a></li> -->
+                                    </ul>
+                                </div>
+            
+                                
+                                <li onclick="location.href='{% url 'contact' %}'"><a href="#">  <i class="fa fa-mobile-phone mr-2"></i> Contact Us</a></li>
+                                <li onclick="location.href='{% url 'contact' %}'"><a href="#">  <i class="fa fa-clock-o mr-2"></i> 24/7 Live Support</a></li>
+                               
+                               
+                                <li style="background-color: #28c3a9"  onclick="location.href='{% url 'signup' %}'"><a href="#">   Open an Account</a></li> 
+
+                                <li style="background-image: linear-gradient(to left,#248e59,#197647);"  onclick="location.href='{% url 'location' %}'"><a href="#">   Find a Branch</a></li>
+
+                                <li style="background-image: linear-gradient(to left,#248e59,#197647);"  onclick="location.href='{% url 'login' %}'"><a href="#">  Log In</a></li>
+
+                                
+                            </ul>
+
+                            
+                           </div>
+                           
+                    </div>
+                    <!-- mobile menu navigation end -->
+                </div>
+                <!-- mobile menu end -->
+                
+
+                <!-- language section start -->
+                <div class="mobile-top-dropdown">
+                    <a href="#" class="dropdown-toggle" id="currency" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="{% static 'aptiv_static/assets/img/icon/en.png' %}" alt="flag"> English
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="currency">
+                        <a class="dropdown-item" href="#"><img src="{% static 'aptiv_static/assets/img/icon/en.png' %}" alt="flag"> English</a>
+                        <a class="dropdown-item" href="#"><img src="{% static 'aptiv_static/assets/img/icon/fr.png' %}" alt="flag"> French</a>
+                    </div>
+                </div>
+                <!-- language section end -->
+
+                <!-- offcanvas widget area start -->
+                <div class="offcanvas-widget-area">
+                    <div class="off-canvas-contact-widget">
+                        <ul>
+                            <li><i class="fa fa-mobile"></i>
+                                <a href="#"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="off-canvas-social-widget">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa-youtube-play"></i></a>
+                    </div>
+                </div>
+                <!-- offcanvas widget area end -->
+            </div>
+        </div>
+    </aside>
+    <!-- off-canvas menu end -->
+    <!-- offcanvas mobile menu end -->
+
+</header>
+<!-- end Header Area -->
+
+<!-- begin main nav -->
+<main>
+    <div class="row main-row">

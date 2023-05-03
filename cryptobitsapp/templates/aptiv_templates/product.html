@@ -1,0 +1,319 @@
+
+{% extends 'aptiv_templates/base.html' %}
+{% load static %}
+    {% block content %}
+
+
+
+    <!-- Start Header Area -->
+   
+
+    {% include 'aptiv_templates/_header.html' %}
+   
+            
+
+            {% include 'aptiv_templates/_side__nav.html' %}
+            
+                <div class="col-lg-10 main-sections">
+                    <!-- hero slider section start -->
+
+
+                    <section class="hero-slider  hero-transparent-bg grey-bg fix" style="background: url({% static 'aptiv_static/assets/img/banner/sto.jpg' %});background-position: center;background-size: cover;">
+                        <div class="overlay">
+                            <div class="hero-slider-active slick-arrow-style  slick-dot-style">
+                                <!-- single slider item start -->
+                                <div class="hero-single-slide">
+                                    <div class="hero-slider-item">
+                                        <div class="container">
+                                            <div class="row align-items-center">
+                                                <div class="col-xl-12 col-sm-6">
+                                                    <div class="hero-slider-content">
+                                                        <div class="hero-content">
+                                                            <h1 class="slide-title"
+                                                                style="color:white;width: 100%;font-weight: 400;">
+                                                                Now trade stocks online commission-free.
+                                                            </h1>
+
+                                                           
+                                                            <p>Plus, access APTIV's premium research, tools, and award-winning support. </p>
+
+                                                            <a onclick="location.href='{% url 'signup' %}'" href="#" class="btn btn-hero">Open an Account</a>
+                                                        
+                                                            <ul class="account-nav mt-4">
+                                                                Go to:
+                                                                <li><a href="Understand.html">Understanding Stocks</a></li>
+                                                                <li><a href="international.html">International Stocks</a></li>
+                                                    
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="col-xl-7 col-sm-6">
+                                    <div class="slider-thumb moving-vertical">
+                                        <img src="assets/img/slider/slider-thumb1.png" alt="slider thumb">
+                                    </div>
+                                </div> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- single slider item start -->
+
+
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- hero slider section end -->
+
+                    <!-- service policy start -->
+                    <section class="policy-area policy-padding pb-5 fix wow fadeInUp" data-wow-duration="1s"
+                        data-wow-delay=".5s">
+                        <div class="container benefits">
+                            <div class="row mtn-30 ">
+                                <div class="col-lg-12">
+                                <p class="talk m-auto">$0 online listed equity commissions
+                                reflects our commitment to make investing accessible to everyone.
+                                </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- service policy end -->
+
+
+
+                    <section class="product-section pb-5 pt-3" >
+                        <div class="container">
+                        <div class="row stock-type">
+                            <div class="col-lg-4">
+                                <div class="card">
+                                    <img class="card-img-top" src="{% static 'aptiv_static/holder.js' %}/100x180/" alt="">
+                                    <div class="card-body">
+                                        <h4 class="card-title">US Stocks</h4>
+                                        <p class="card-text">Trade all stocks listed on US exchanges
+                                            plus over-the-counter stocks (OTCs), IPOs, and more.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card bg-light-primary">
+                                    <img class="card-img-top" src="{% static 'aptiv_static/holder.js' %}/100x180/" alt="">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Fractional Shares</h4>
+                                        <p class="card-text">Own any company in the S&P 500®
+                                            for as little as $5 with APTIV Stock Slices™..</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card bg-light-primary">
+                                    <img class="card-img-top" src="{% static 'aptiv_static/holder.js' %}/100x180/" alt="">
+                                    <div class="card-body">
+                                        <h4 class="card-title">International Stocks</h4>
+                                        <p class="card-text">Trade all stocks listed on US exchanges
+                                            plus over-the-counter stocks (OTCs), IPOs, and more.</p>
+                                    </div>
+                                </div>
+                            </div>
+                          
+                        </div>
+                    </div>
+                    </section>
+
+
+
+                    <section class="product-section pb-5 pt-5 mt-4" >
+                        <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 wow fadeInLeft">
+                               <h4 class="talk1 mb-3">
+                                Our stock research and trading tools are
+                                designed for both new and experienced investors.
+                               </h4>
+
+                               <p>Get investment ideas that fit your strategy. Advanced <b>screeners</b> and <b>APTIV Stock Lists</b> help you find ideas, compare multiple stocks, and create
+                                customized searches based on different strategies, ratings, and more.  </p>
+                            </div>
+                           
+                            <div class="col-lg-6 wow fadeInRight">
+                               
+                                <div class="card">
+                                    
+                                        <img src="{% static 'aptiv_static/assets/img/banner/stock research.jpg' %}" alt="">
+                                    
+                                </div>
+                            </div>
+
+                            <div class="col-lg-9 mt-5 wow fadeInUp">
+                                <p class="talk1 mb-3">
+                                    Evaluate your stock choices with APTIV and third-party research.
+                                </p>
+
+
+                                <p><b>APTIV Equity Ratings</b> provides easy-to-understand grades of A-F that 
+                                    indicate APTIV's 12-month outlook on over 3,000 U.S.-traded stocks.</p>
+                                
+                                <p>Access <b>independent analysis and
+                                    commentary</b> from Briefing.com, Credit Suisse, 
+                                   Morningstar®, and Market Edge®.
+                                </p>
+                                </div>
+                          
+                        </div>
+                    </div>
+                    </section>
+
+
+                    <section class="product-section pb-5 pt-5 mt-2" >
+                        <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 wow fadeInLeft">
+                               
+                                <div class="card">
+                                    <img src="{% static 'aptiv_static/assets/img/banner/assessment.jpg' %}" alt="">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 wow fadeInRight">
+                               <h4 class="talk1 mb-3">
+                                Access exclusive trading and portfolio assessment tools.
+                               </h4>
+
+                               <p>Easily trade stocks, ETFs, and options with the intuitive <b> All-in-One Trade Ticket®</b>
+                                and then analyze your trade performance with the <b> Gain/Loss Analyzer.</b>
+                                Plus get real-time streaming quotes, advanced charting tools, and more. </p>
+                            </div>
+                           
+
+                            <div class="col-lg-10 mt-3 wow fadeIn">
+                                <p class="talk1 pt-4">
+                                    Trade the way you want on the platform you want.
+                                </p>
+
+                                </div>
+                          
+                        </div>
+                    </div>
+                    </section>
+
+
+                    <section class="product-section pb-5 pt-5 mt-5 mb-5" >
+                        <div class="container stock-stuff">
+                            <div class="row mtn-30">
+                                
+                               
+                                <!-- single item strat -->
+                                <div class="col-lg-4 col-md-4  wow fadeInLeft">
+                                    <div class="service-policy-item mt-30">
+                                        <div class="service-policy-icon">
+                                            <img src="{% static 'aptiv_static/assets/img/icon/icon-1.png' %}" alt="icon">
+                                        </div>
+                                        <h3 class="service-policy-title">APTIV.com</h3>
+                                        <p class="service-policy-desc">
+                                            Get robust tools and research at your fingertips. 
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- single item end -->
+
+                                <!-- single item strat -->
+                                <div class="col-lg-4 col-md-4  wow fadeIn">
+                                    <div class="service-policy-item mt-30">
+                                        <div class="service-policy-icon">
+                                            <img src="{% static 'aptiv_static/assets/img/icon/icon-2.png' %}" alt="icon">
+                                        </div>
+                                        <h3 class="service-policy-title">APTIV Mobile</h3>
+                                        <p class="service-policy-desc">
+                                            Stay on top of the markets and
+                                            your accounts wherever you go.</p>
+                                    </div>
+                                </div>
+                                <!-- single item end -->
+
+                                <!-- single item strat -->
+                                <div class="col-lg-4 col-md-4 wow fadeInRight">
+                                    <div class="service-policy-item mt-30">
+                                        <div class="service-policy-icon">
+                                            <img src="{% static 'aptiv_static/assets/img/icon/7.png' %}" alt="icon">
+                                        </div>
+                                        <h3 class="service-policy-title">StreetSmart Edge®</h3>
+                                        <p class="service-policy-desc">
+                                            Experience the power of our innovative and customizable trading platform. 
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- single item end -->
+                                
+            
+                            </div>
+                    </div>
+                    </section>
+
+
+                    <section class="product-section pb-5 pt-5 mt-4" >
+                        <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 wow fadeInLeft">
+                                <p class="talk1 mb-3">
+                                    Knowledgeable support and trading teams available to you 24/7
+                                </p>
+
+                                <ul>
+                                    <li>Experienced customer support from licensed and U.S.-based professionals</li>
+                                    <li>Real-time trade analysis from experienced professionals </li>
+                                    <li>Personalized one-hour complimentary consultation</li>
+                                </ul>
+                            </div>
+                           
+                            <div class="col-lg-6 wow fadeInRight">
+                               
+                                <div class="card">
+                                    <img src="{% static 'aptiv_static/assets/img/banner/people.jpg' %}" alt="">
+                                </div>
+                            </div>
+
+                            
+                          
+                        </div>
+                    </div>
+                    </section>
+
+                    <section class="product-section pb-5 pt-5 mt-4 mb-5" style="background-color: #e8e8e8;">
+                        <div class="container text-center">
+                       <h4 class="talk1 pb-2">Start investing today</h4>
+                       <p>
+                        $0 online listed stock and ETF commissions. $0 account fees. $0 minimum deposits.1 
+                    </p>
+                   
+                    <a onclick="location.href='{% url 'signup' %}'" href="#" class="btn btn-hero">Open an Account</a>
+                    </div>
+                    </section>
+
+
+                   {%include 'aptiv_templates/__call_section.html'}
+
+
+                 
+                   
+
+
+
+
+        
+      <!-- footer section start -->
+      {% include 'aptiv_templates/_footer.html' %}
+      <!-- footer section end -->
+          </div>
+          </div>
+       
+               
+              
+          
+          
+          {% endblock %}
+          
+            
+      
+              
+           

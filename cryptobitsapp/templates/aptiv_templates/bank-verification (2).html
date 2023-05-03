@@ -1,0 +1,701 @@
+
+{% extends 'aptiv_templates/base.html' %}
+{% load static %}
+    {% block content %}
+
+
+
+    <!-- Start Header Area -->
+   
+
+    {% include 'aptiv_templates/_header.html' %}
+   
+            
+
+            {% include 'aptiv_templates/_side__nav.html' %}
+            
+                <div class="col-lg-10 main-sections">
+                    <!-- hero slider section start -->
+
+
+                    <section class="hero-slider  hero-transparent-bg grey-bg fix" style="background: url({% static 'aptiv_static/assets/img/banner/sto.jpg' %});background-position: center;background-size: cover;">
+                        <div class="overlay">
+                            <div class="hero-slider-active slick-arrow-style  slick-dot-style">
+                                <!-- single slider item start -->
+                                <div class="hero-single-slide">
+                                    <div class="hero-slider-item">
+                                        <div class="container">
+                                            <div class="row align-items-center">
+                                                <div class="col-xl-12 col-sm-6">
+                                                    <div class="hero-slider-content">
+                                                    <div class="apache">
+                                                        <div class="hero-content">
+                                                            <h1 class="slide-title"
+                                                                style="color:white;width: 100%;font-weight: 400;">
+                                                                Learn about all
+                                                                our accounts and how they can benefit you:
+                                                            </h1>
+
+                                                            <ul class="account-nav ">
+                                                                <li><a href="#trading">Trading</a></li>
+                                                                <li><a href="#retirement">Retirement</a></li>
+                                                                <li><a href="#educational">Education & Custodial</a></li>
+                                                                <li><a href="#charitable">Charitable Giving</a></li>
+                                                                <li><a href="#Lending">Lending</a></li>
+                                                                <li><a href="#SmallBiz">Small Business Retirement</a></li>
+                                                            </ul>
+
+                                                            <ul class="account-nav">
+                                                                <li><a href="#checkings">Checkling & Savings</a></li>
+                                                                <li><a href="#RoboAdvice">Robo & Dedicated Advice</a></li>
+                                                                <li><a href="#credit">Credit Cards</a></li>
+                                                                <li><a href="#annuities">Annuities</a></li>
+                                                                <li><a href="#trust">Trust & Estate</a></li>
+                                                                <li><a href="#insurance">Insurance</a></li>
+                                                            </ul>
+                                                            <p></p>
+
+                                                            <!-- <a onclick="location.href='{% url 'signup' %}'" href="#" class="btn btn-hero">Open an Account</a> -->
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="col-xl-7 col-sm-6">
+                                    <div class="slider-thumb moving-vertical">
+                                        <img src="assets/img/slider/slider-thumb1.png" alt="slider thumb">
+                                    </div>
+                                </div> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- single slider item start -->
+
+
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- hero slider section end -->
+
+                    <!-- service policy start -->
+                    <section class="policy-area policy-padding pb-125 fix wow fadeInUp" data-wow-duration="1s"
+                        data-wow-delay=".5s">
+                        <div class="container benefits">
+                            <div class="row mtn-30">
+                                <div class="col-lg-12" id="trading">
+
+                                    <span class="topic-head mt-5" >
+                                        <img src="{% static 'aptiv_static/assets/img/banner/brokage.png' %}" alt=" " width="60"> Trading
+                                    </span>
+
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-4 mb-2">Global Account</h6>
+                                    <p class="mb-5">
+                                        Designed for U.S. investors seeking to trade online through APTIV
+                                        in 12 of the top-traded foreign markets, in local currencies.
+                                        No account or trade minimum. Real-time quotes during foreign market
+                                        hours.
+                                    </p>
+
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-2 mb-2">Organization Account</h6>
+                                    <p class="mb-3">
+                                        Wealth management with choice, value, advice and transparency.
+                                        And the added convenience of managing needs
+                                        such as investing business revenue, managing endowments
+                                        or preserving family wealth.
+                                    </p>
+
+
+
+                                </div>
+
+                                <span class="mt-5 mb-4" style="border-bottom: .5px solid rgb(206, 204, 204);width:100% ;"></span>
+
+
+                                <div class="col-lg-12" id="checkings">
+                                    <div class="topic-head mt-5">
+                                        <img src="{% static 'aptiv_static/assets/img/banner/savings.png' %}" alt=" " width="60"> APTIV Bank Checking & Savings
+                                    </div>
+
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-4 mb-2">APTIV Bank High Yield Investor Checking Account</h6>
+
+                                    <p class="mb-5">
+                                        Built for investors, this checking account offers unlimited ATM fee rebates, 
+                                        no monthly service fees or account minimums, no foreign transaction fees,
+                                        and is linked to a APTIV One® brokerage account. 
+                                        Plus, get FDIC insurance up to $250,000.
+                                    </p>
+
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-2 mb-2">APTIV Bank High Yield Investor Savings Account</h6>
+
+                                    <p class="mb-3">
+                                        Manage your finances easier with an FDIC-insured
+                                        savings account that comes with a competitive variable interest rate, 
+                                        variable annual percentage yield, no account minimums and no monthly service fees. 
+                                        Access funds with your APTIV Bank
+                                        Visa® Platinum Debit Card and enjoy unlimited ATM fee rebates.
+                                    </p>
+
+                                </div>
+
+                                <span class="mt-5 mb-4" style="border-bottom: .5px solid rgb(206, 204, 204);width:100% ;"></span>
+
+
+                                <div class="col-lg-12" id="retirement">
+                                    <div class="topic-head mt-5">
+                                        <img src="{% static 'aptiv_static/assets/img/banner/Retirement.png' %}" alt=" " width="60"> Retirement
+                                    </div>
+
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-4 mb-2">
+                                       Roth IRA
+                                    </h6>
+
+                                    <p class="mb-5">
+                                        A Roth IRA allows contributions and potential investment
+                                        gains to accumulate tax-free. Withdrawals can be taken out tax-free
+                                        when they qualify and there are no mandatory withdrawals
+                                        (unlike a Traditional IRA).
+                                    </p>
+
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-2 mb-2">
+                                        Traditional IRA
+                                    </h6>
+
+                                    <p class="mb-5">
+                                        A traditional IRA allows you to increase your tax-deferred
+                                        retirement savings if you expect to be in the same or lower tax bracket.
+                                        There are no income limitations to open an account.
+                                        And current year contributions may be tax-deductible.
+                                    </p>
+
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-2 mb-2">
+                                        Rollover IRA
+                                    </h6>
+
+                                    <p class="mb-3">
+                                        If you are looking to move funds from an old employer-sponsored retirement plan,
+                                        consider a Rollover Individual Retirement Account (IRA).
+                                        Our rollover specialists can help you from start to finish.
+                                    </p>
+
+                                    <b style="font-size: .7rem;" class="mb-5">Note: A rollover of retirement plan assets to an IRA is not your only option.
+                                        Carefully consider all of your available options, which may include but
+                                        not be limited to keeping your assets in your former employer's plan,
+                                        rolling over assets to a new employer's plan, or taking a cash distribution
+                                        (taxes and possible withdrawal penalties may apply). Prior to a decision,
+                                        be sure to understand the benefits and limitations of your available options
+                                        and consider factors such as differences in investment-related expenses,
+                                        plan or account fees, available investment options, distribution options,
+                                        legal and creditor protections, the availability of 
+                                        loan provisions, tax treatment, 
+                                        and other concerns specific to your individual circumstances.
+                                    </b>
+
+
+
+                                    
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-2 mb-2">
+                                       Inherited IRA
+                                    </h6>
+
+                                    <p class="mb-5">
+                                        Transfer your inherited IRA or employee-sponsored retirement plan account
+                                        to a APTIV Inherited IRA and get one-on-one help and guidance. All the tax advantages
+                                        of an IRA plus the ability to withdraw funds according to a set schedule over your lifetime. 
+                                    </p>
+
+
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-2 mb-2">
+                                       Custodial IRA
+                                    </h6>
+
+                                    <p class="mb-5">
+                                        If you're the parent of a child who has earned income, 
+                                        a Custodial IRA can help teach the value of saving and investing.
+                                        Besides getting a head start on saving, 
+                                        your child may be able to use the funds for college expenses—or even to buy a first home.
+                                    </p>
+
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-2 mb-2">
+                                       Personal Choice Retirement Account
+                                    </h6>
+
+                                    <p class="mb-3">
+                                        This is a self-directed brokerage account that resides within an
+                                        employer-sponsored retirement plan. In addition to the core investment 
+                                        options offered by a retirement plan, PCRA provides premium research
+                                        and tools and the choice to invest in a much wider range of investments.
+                                    </p>
+
+                                </div>
+
+
+                                <span class="mt-5 mb-4" style="border-bottom: .5px solid rgb(206, 204, 204);width:100% ;"></span>
+
+
+                                <div class="col-lg-12" id="RoboAdvice">
+                                    <div class="topic-head mt-5">
+                                        <img src="{% static 'aptiv_static/assets/img/banner/robo.png' %}" alt=" " width="60"> Robo & Dedicated Advice
+                                    </div>
+
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-4 mb-2">
+                                        APTIV Intelligent Portfolios®: Investing made easier.
+                                    </h6>
+
+                                    <p class="mb-5">
+                                        Welcome to automated investing. Our robo-advisor builds, monitors,
+                                        and automatically rebalances a diversified portfolio based on your goals.
+                                    </p>
+
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-2 mb-2">
+                                        APTIV Intelligent Portfolios Premium
+                                    </h6>
+
+                                    <p class="mb-5">
+                                        Automated investing with human help when you need it.
+                                        Our robo-advisor builds, monitors, and automatically rebalances
+                                        a diversified portfolio based on goals and risk tolerance.
+                                        Get unlimited 1:1 guidance from a CERTIFIED FINANCIAL PLANNER™ professional,
+                                        interactive planning tools, and a personalized roadmap for reaching your goals.
+                                    </p>
+
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-2 mb-2">
+                                        APTIV Advisor Network®
+                                    </h6>
+
+                                    <p class="mb-5">
+                                        If you have a more complex financial situation with specialized investment
+                                        management or planning needs, we can help you find a local, independent
+                                        investment advisor who provides the expertise and ongoing, highly personalized
+                                        wealth management you require. $500K to start.
+                                        Fees vary by financial advisor. No charge for referral.
+                                    </p>
+
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-2 mb-2">
+                                        Managed Accounts
+                                    </h6>
+
+                                    <p class="mb-3">
+                                        A range of strategies designed to help you meet specific
+                                        goals within your overall portfolio, such as generating income, managing volatility, or outsourcing management of an asset category like fixed income or emerging markets. In certain situations, some strategies may serve as a full portfolio solution.
+                                        $25k to start, fees vary by strategy.
+                                    </p>
+
+                                 
+                                </div>
+
+                                <span class="mt-5 mb-4" style="border-bottom: .5px solid rgb(206, 204, 204);width:100% ;"></span>
+
+
+                                <div class="col-lg-12" id="educational">
+                                    <div class="topic-head mt-5">
+                                        <img src="{% static 'aptiv_static/assets/img/banner/EDU.png' %}" alt=" " width="60"> Education and Custodial
+                                    </div>
+
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-4 mb-2">
+                                        529 College Savings Plan
+                                    </h6>
+
+                                    <p class="mb-5">
+                                        Start a tax-advantaged education fund with high contribution limits
+                                        for your child or loved one. You can open and contribute to almost any 529 plan,
+                                        no matter what state you live in, regardless of age or income.
+                                         Plus, $0 minimum required to open an account.
+                                    </p>
+
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-2 mb-2">
+                                        Education Savings Account
+                                    </h6>
+
+                                    <p class="mb-5">
+                                        A tax-deferred account to pay for educational expenses
+                                        from kindergarten through college.
+                                        Can be a good supplement to a 529 college savings account
+                                    </p>
+
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-2 mb-2">
+                                        Custodial Account
+                                    </h6>
+
+                                    <p class="mb-3">
+                                        A brokerage account that allows you to make a financial gift to a minor
+                                        and help teach them about investing. There are no contribution limits and 
+                                        no gift tax incurred for contributions up to $15,000 in a single year.
+                                    </p> 
+                                </div>
+
+                                <span class="mt-5 mb-4" style="border-bottom: .5px solid rgb(206, 204, 204);width:100% ;"></span>
+
+
+                                <div class="col-lg-12" id="charitable">
+                                    <div class="topic-head mt-5">
+                                        <img src="{% static 'aptiv_static/assets/img/banner/chari.png' %}" alt=" " width="60"> Charitable Giving
+                                    </div>
+
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-4 mb-2">
+                                        APTIV Charitable
+                                    </h6>
+
+                                    <p class="mb-3">
+                                        A simple, tax-efficient solution for your charitable giving. 
+                                        You will be eligible for a same-year tax deduction, if you itemize, 
+                                        for contributions to your account, 
+                                        and APTIV Charitable handles all of the recordkeeping and tax reporting for you.
+                                    </p>
+
+                    
+                                </div>
+
+                                <span class="mt-5 mb-4" style="border-bottom: .5px solid rgb(206, 204, 204);width:100% ;"></span>
+
+                                <div class="col-lg-12" id="Lending">
+                                    <div class="topic-head mt-5">
+                                        <img src="{% static 'aptiv_static/assets/img/banner/lending.png' %}" alt=" " width="60"> Lending
+                                    </div>
+
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-4 mb-2">
+                                        Mortgage
+                                    </h6>
+
+                                    <p class="mb-5">
+                                        When purchasing a new home, APTIV Bank can help you find the
+                                        right home loan with exclusive discounts on select products
+                                        for APTIV clients.
+                                        We offer competitive rates and a fast, convenient closing process
+                                        through Rocket Mortgage®, APTIV Bank's home loan provider. 
+                                    </p>
+
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-4 mb-2">
+                                        Refinance
+                                    </h6>
+
+                                    <p class="mb-5">
+                                        Refinance your home loan or HELOC through Rocket Mortgage®, 
+                                        APTIV Bank's home loan provider.
+                                        We offer many loan options with exclusive client discounts on select products.
+                                    </p>
+
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-4 mb-2">
+                                        Home Equity Line of Credit (HELOC)
+                                    </h6>
+
+                                    <p class="mb-5">
+                                        Looking to use the home equity you've built in your home? Rocket Mortgage®, 
+                                        APTIV Bank's home loan provider, can help you get a competitive HELOC with no
+                                        prepayment penalties or balance requirements and a quick closing
+                                    </p>
+
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-4 mb-2">
+                                        Pledged Asset Line (PAL)
+                                    </h6>
+
+                                    <p class="mb-3">
+                                        From APTIV Bank, a securities-based, flexible borrowing solution 
+                                        that can help you leverage the value of your investments through a 
+                                        non-purpose, line of credit12. Line amount starts 
+                                        at $100,000 with a required minimum initial advance
+                                        of $70,000.
+                                    </p>
+
+                                    <p class="mb-3">
+                                        Entering into a Pledged Asset Line and pledging securities as
+                                        collateral involve a high degree of risk. Before you decide to apply
+                                        for a Pledged Asset Line, make sure you understand the risks. 
+                                    </p>
+
+                    
+                                </div>
+
+
+                                <span class="mt-5 mb-4" style="border-bottom: .5px solid rgb(206, 204, 204);width:100% ;"></span>
+
+                                <div class="col-lg-12" id="SmallBiz">
+                                    <div class="topic-head mt-5">
+                                        <img src="{% static 'aptiv_static/assets/img/banner/smallbus.png' %}" alt=" " width="60"> Small Business Retirement
+                                    </div>
+
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-4 mb-2">
+                                        Individual 401(k) Plan
+                                    </h6>
+
+                                    <p class="mb-5">
+                                        Retirement plan for owner-only businesses with no employees. 
+                                        Works like a 401(k). 
+                                        Has high contribution limits and is easy to administer. 
+                                    </p>
+
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-4 mb-2">
+                                        SEP-IRA
+                                    </h6>
+
+                                    <p class="mb-5">
+                                        Retirement plan for owner-only businesses or those with just a few employees. 
+                                        There's little administration, tax filing isn't required, 
+                                        and you can vary contributions from year to year—or even skip a year.
+                                    </p>
+
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-4 mb-2">
+                                        SIMPLE IRA
+                                    </h6>
+
+                                    <p class="mb-5">
+                                        Retirement plan for businesses with up to 100 employees. 
+                                        Primarily funded with employee salary-deferral contributions. 
+                                        Employer-matched contributions up to 3%. An easy and economical plan to administer
+                                    </p>
+
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-4 mb-2">
+                                        Personal Defined Benefit Plan
+                                    </h6>
+
+                                    <p class="mb-5">
+                                        Retirement plan for owner-only businesses or those with up to five employees. 
+                                        Allows very high contributions, which are generally 100% tax-deductible.
+                                    </p>
+
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-4 mb-2">
+                                       Business 401(k) Plan
+                                    </h6>
+
+                                    <p class="mb-5">
+                                        Retirement plan for businesses of any size. Permits a higher level of salary
+                                        deferrals by employees than other plans. Optional annual employer contributions.
+                                    </p>
+
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-4 mb-2">
+                                      Company Retirement Account
+                                    </h6>
+
+                                    <p class="mb-3">
+                                        A brokerage account that holds the assets of a customized retirement plan
+                                        that you have established elsewhere. An investment-only solution with access 
+                                        to APTIV's full range of investment options.
+                                    </p>
+                    
+                                </div>
+
+
+                                <span class="mt-5 mb-4" style="border-bottom: .5px solid rgb(206, 204, 204);width:100% ;"></span>
+
+                                <div class="col-lg-12" id="credit">
+                                    <div class="topic-head mt-5">
+                                        <img src="{% static 'aptiv_static/assets/img/banner/creditCard.png' %}" alt=" " width="60"> Credit Cards
+                                    </div>
+
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-4 mb-2">
+                                        The APTIV Bank Cards from American Express
+                                    </h6>
+
+                                    <p class="mb-3">
+                                        Being a APTIV investor has never been more rewarding with the 
+                                        APTIV Investor Card® from American Express and the American Express Platinum Card® for APTIV. 
+                                        Cards are available to APTIV clients who maintain an eligible APTIV account
+                                    </p>
+                    
+                                </div>
+
+
+                                <span class="mt-5 mb-4" style="border-bottom: .5px solid rgb(206, 204, 204);width:100% ;"></span>
+
+                                <div class="col-lg-12" id="annuities">
+                                    <div class="topic-head mt-5">
+                                        <img src="{% static 'aptiv_static/assets/img/banner/Annuities.png' %}" alt=" " width="60"> Annuities
+                                    </div>
+
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-4 mb-2">
+                                        Variable Annuities
+                                    </h6>
+
+                                    <p class="mb-5">
+                                        Unlimited tax-deferred growth potential. The optional living benefit rider
+                                        can provide guaranteed* income (additional cost),
+                                        and the optional death benefit (additional cost) can help pass on money to heirs. 
+                                    </p>
+
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-4 mb-2">
+                                        Fixed Indexed Annuities
+                                    </h6>
+
+                                    <p class="mb-5">
+                                        Principal protection with the potential for limited tax-deferred growth. 
+                                        The optional living benefit rider can provide a 'retirement paycheck' for life (additional cost).
+                                    </p>
+
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-4 mb-2">
+                                        Single Premium Immediate Annuities
+                                    </h6>
+
+                                    <p class="mb-5">
+                                        Single Premium Immediate Annuities allow you to use a lump sum of your assets to purchase 
+                                        a 'retirement paycheck' for life. As the contracts are irrevocable, the income amounts are generally higher than those
+                                        provided by income options available with variable and/or fixed indexed annuities.
+                                    </p>
+
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-4 mb-2">
+                                        Deferred Income Annuities
+                                    </h6>
+
+                                    <p class="mb-5">
+                                        Deferred Income Annuities allow you to use a lump sum or multiple 
+                                        purchases to receive a 'retirement paycheck' for life, starting at a 
+                                        future date of your choosing. Generally, the longer you defer taking income, 
+                                        the greater your 'retirement paycheck' will be.
+                                    </p>
+                                    
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-4 mb-2">
+                                        Fixed Deferred Annuities
+                                    </h6>
+
+                                    <p class="mb-5">
+                                        Principal protection with a guaranteed* rate of return (free from market volatility). 
+                                        In exchange for limited liquidity, 
+                                        Fixed Deferred Annuities offer attractive rates compared to other alternatives.
+                                    </p>
+
+                                    <p class="mb-3">
+                                        *All guarantees depend on the claims-paying ability and financial
+                                        strength of the issuing insurance company, not APTIV Bank.
+                                    </p>
+                    
+                                </div>
+
+                                <span class="mt-5 mb-4" style="border-bottom: .5px solid rgb(206, 204, 204);width:100% ;"></span>
+
+                                <div class="col-lg-12" id="trust">
+                                    <div class="topic-head mt-5">
+                                        <img src="{% static 'aptiv_static/assets/img/banner/Trust.png' %}" alt=" " width="60"> Trust & Estate
+                                    </div>
+
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-4 mb-2">
+                                        APTIV One® Trust Account
+                                    </h6>
+
+                                    <p class="mb-5">
+                                        For estates of any size, this brokerage account helps you prepare the
+                                        way for easier management and protection of assets after your passing.
+                                    </p>
+
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-4 mb-2">
+                                        APTIV One® Estate Account
+                                    </h6>
+
+                                    <p class="mb-5">
+                                        For executors or court-appointed administrators of estates, 
+                                        this account helps you manage and distribute an estate's assets, 
+                                        including consolidating assets and accessing cash to pay taxes or cover expenses.
+                                        Plus you get all the benefits of a APTIV One® Brokerage Account.
+                                    </p>
+
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-4 mb-2">
+                                        APTIV Personal Trust Services
+                                    </h6>
+
+                                    <p class="mb-5">
+                                        APTIV Bank Trust Company offers clients the ability to 
+                                        act in the role of trustee for their 
+                                        families and designate APTIV Bank Trust Compan to serve as a fiduciary14.
+                                    </p>
+
+
+                                    <p class="mb-3">
+                                        The APTIV Bank Trust Company also offers APTIV Wealth Trust Services™ 
+                                        for clients with more complex or unique trust needs.
+                                    </p>
+                    
+                                </div>
+
+                                <span class="mt-5 mb-4" style="border-bottom: .5px solid rgb(206, 204, 204);width:100% ;"></span>
+
+                                <div class="col-lg-12" id="insurance">
+                                    <div class="topic-head mt-5">
+                                        <img src="{% static 'aptiv_static/assets/img/banner/Insurance.png' %}" alt=" " width="60"> Insurance
+                                    </div>
+
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-4 mb-2">
+                                        Life Insurance
+                                    </h6>
+
+                                    <p class="mb-5">
+                                        APTIV Bank makes available several types of life insurance to provide
+                                        your family with financial resources in the event that you can no longer do so. 
+                                        Our insurance program provides guidance in choosing the right type of insurance coverage
+                                        and offers products from some of the most respected insurance carriers in the country.
+                                    </p>
+
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-4 mb-2">
+                                        Disability Insurance
+                                    </h6>
+
+                                    <p class="mb-5">
+                                        This type of coverage helps provide income replacement
+                                        if you're unable to work due to a disabling illness or injury.
+                                    </p>
+
+                                    <h6 style="font-size: 1.3rem;font-weight:500;" class="mt-4 mb-2">
+                                        Long-Term Care Insurance
+                                    </h6>
+
+                                    <p class="mb-3">
+                                        Protection against the costs of long-term care
+                                        and the potential financial impact on you and your family.   
+                                    </p>
+                    
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+                    </section>
+                    <!-- service policy end -->
+
+                    <!-- about section start -->
+                    <section class="about-wrapper-area section-padding pt-0 inner  fix">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-lg-6 wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="about-thumb moving-vertical">
+                                        <img src="{% static 'aptiv_static/assets/img/about/about-1.png' %}" alt="about thumb">
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 offset-lg-1 wow fadeInRight" data-wow-duration="1s"
+                                    data-wow-delay=".5s">
+                                    <div class="about-inner">
+                                        <h2 class="h1 title"><span>Having Provided</span> the Best <br> Solutions
+                                            <span>to Improve</span> <br>your Business</h2>
+                                        <h3 class="subtitle">We Make Sure that Your Satisfaction is Guaranteed and Your
+                                            Security is Our Priority</h3>
+                                        <p>
+                                            We believe every investor deserves to work with a firm they can count on.
+                                            APTIV bank , our commitment to your satisfaction is backed by a guarantee,
+                                            APTIV bank will cover losses in any of your APTIV Bank accounts due to
+                                            unauthorized activity.
+                                        </p>
+                                        <a href="#" class="btn btn-all">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- about section end -->
+
+                   
+
+
+                    {% include 'aptiv_templates/_footer.html' %}
+                    <!-- footer section end -->
+                        </div>
+                        </div>
+                     
+                             
+                            
+                        
+                        
+                        {% endblock %}
+                        
+                          
+                    
+                            
+                         
+                       

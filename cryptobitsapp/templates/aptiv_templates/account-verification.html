@@ -1,0 +1,291 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+    {% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Verify Account | APTIV Bank</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+    <!-- CSS
+	============================================ -->
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open Sans:300,300i,400,400i,500,600,700,800&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'aptiv_static/assets/css/vendor/bootstrap.min.css' %}">
+    <!-- Font-awesome CSS -->
+    <link rel="stylesheet" href="{% static 'aptiv_static/assets/css/vendor/font-awesome.min.css' %}">
+    <!-- Slick slider css -->
+    <link rel="stylesheet" href="{% static 'aptiv_static/assets/css/plugins/slick.min.css' %}">
+    <!-- Odometer css -->
+    <link rel="stylesheet" href="{% static 'aptiv_static/assets/css/plugins/odometer.min.css' %}">
+    <!-- animate css -->
+    <link rel="stylesheet" href="{% static 'aptiv_static/assets/css/plugins/animate.css' %}">
+    <!-- main style css -->
+    <link rel="stylesheet" href="{% static 'aptiv_static/assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'aptiv_static/assets/css/mystyle.css' %}">
+    <link rel="stylesheet" href="{% static 'aptiv_static/assets/css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'aptiv_static/assets/css/imageupload.css' %}">
+
+</head>
+
+
+<style>/* The alert message box */
+    .alert_message {
+        margin-top: 30px;
+      padding: 20px;
+      background-color: #173e43;
+      color: white;
+      /* display:none; */
+    }
+    
+    .closebtn_message {
+      margin-left: 15px;
+      color: white;
+      font-weight: bold;
+      float: right;
+      font-size: 22px;
+      line-height: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    
+    .closebtn_message:hover {
+      color: black;
+    }</style>
+   <!-- End Navbar -->
+
+
+
+
+<body>
+
+<div class="everything">
+    <!-- Start Header Area -->
+    <header class="header-area" >
+        <div class="main-header d-none d-lg-block">
+
+            <!-- main menu start -->
+            <div class="main-menu-wrapper  header-transparent" style="background-color:#006b38;">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-3">
+                            <!-- logo area start -->
+                            <div class="brand-logo">
+                                <a href='#' onclick="location.href='{% url '' %}">
+                                    <!-- <img src="assets/img/logo/logo.png" alt="brand logo"> -->
+                                    <b style="color: #fff;font-size:1.2em;font-weight:900;">APTIV</b>
+                                </a>
+                            </div>
+                            <!-- logo area end -->
+                        </div>
+                        <div class="col-lg-9">
+                            <div class="main-menu-inner">
+                                <!-- main menu navbar start -->
+                                <nav class="main-menu">
+                                    <ul>
+                                        <li class="active"><ahref='#' onclick="location.href='{% url 'signup' %} class="pr-4">Open an Account</a></li>
+                        
+                                    </ul>
+                                </nav>
+                                <!-- main menu navbar end -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- main menu end -->
+        </div>
+
+        <!-- mobile header start -->
+        <!-- mobile header start -->
+        <div class="mobile-header d-lg-none d-md-block sticky">
+            <!--mobile header top start -->
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12">
+                        <div class="mobile-main-header">
+                            <div class="mobile-logo">
+                                <a href="index.html">
+                                    <!-- <img src="assets/img/logo/logo.png" alt="Brand Logo"> -->
+                                    <b style="color: #006b38;font-size:1.2em;font-weight:900;">APTIV</b>
+                                </a>
+                            </div>
+                            <!-- <div class="mobile-menu-toggler">
+                                <button class="mobile-menu-btn">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </button>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- mobile header top start -->
+        </div>
+        <!-- mobile header end -->
+        <!-- mobile header end -->
+
+       
+
+    </header>
+    <!-- end Header Area -->
+    <main>
+        <div class="row main-row">
+            <div class="col-lg-12 main-sections">
+        <div class="verification-card">
+        <div class="page-head">
+            <h4>Id Verification</h4>
+        </div>
+
+        <div class="step-bar">
+            <!-- Progress bar -->
+            <div class="progressbar">
+                <div class="progress" id="progress"></div>
+                
+                <div class="progress-step progress-step-active" data-title="Identification"></div>
+                
+                <div class="progress-step" data-title="Completion"></div>
+                
+            </div>
+        </div>
+    <!-- steps -->
+      
+         <form action="" class="verification-content" action="#" method="POST" enctype="multipart/form-data">
+                {%csrf_token%}
+        <!-- ID upload start -->
+        <div class="step-1 steps step-active">
+            <h4>Identification Card</h4>
+            <p>Please Upload a clear picture of your valid Identification Card. </p>
+           
+            <div class="row">
+                <div class="col-lg-6 col-12  order-md-last">
+                <div class="imageupload p-3">
+                    <div class="drop-zone">
+                      <span class="drop-zone__prompt">
+                        <i class="fa fa-image"></i>
+                        Upload the document
+                        <p style="font-size:.9rem;color:#8e8e8e;font-weight:400;margin-top:.7rem;">jpg or pdf.
+                        <br>should be more than 500kb or 300dpi
+                        </p>
+                      </span>
+                      
+                      
+                      <input type="file" name="{{idform.valid_id.name}}" class="drop-zone__input">
+          
+                    </div>
+          
+                  </div>
+  
+                    
+                </div>
+                <div class="col-lg-6 col-12  order-md-first">
+                <div class=" p-3">
+                 <div class="upload-desc">
+                    <img src="{% static 'aptiv_static/assets/img/banner/209.png' %}" alt="" width="450">
+                 </div>
+                  </div>
+                    
+                </div>
+            </div>
+            <input type="hidden" name="form_name"  value="iddy">
+
+            <div class="step-button mb-2">
+                <ul>
+                    <li class="btn-next" ><button type="submit" style="color:white; " class="">Submit</button><span class="ml-4"> <i class="fa fa-arrow-right"></i></span></li> 
+                </ul>
+            </div>
+        </div>
+            <!-- ID upload end -->
+
+        
+        <!-- thank you start -->
+        <div class="step-3 steps">
+            
+            <h2 class="head">Thank You for submiting your documents, It is being reviewed</h2>
+
+            
+        </div>
+            <!-- thank you end -->
+
+      
+
+
+
+        </form>
+
+
+    </div>
+
+
+
+
+     <!-- footer section start -->
+     <!-- <footer class="pt-5 ">
+       
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="copyright-text text-center">
+                    <p>&copy; 2021 <b>APTIV BANK</b></p>
+                </div>
+            </div>
+        </div>
+    </footer> -->
+    <!-- footer section end -->
+        </div>
+        </div>
+     
+    </main>
+
+    <!-- Scroll to top start -->
+    <div class="scroll-top not-visible">
+        <i class="fa fa-angle-up"></i>
+    </div>
+    <!-- Scroll to Top End -->
+
+    
+</div>
+
+    <!-- JS
+============================================ -->
+
+<script src="{% static 'aptiv_static/assets/js/vendor/modernizr-3.6.0.min.js' %}"></script>
+<!-- jQuery JS -->
+<script src="{% static 'aptiv_static/assets/js/vendor/jquery-3.6.0.min.js' %}"></script>
+<!-- Popper JS -->
+<script src="{% static 'aptiv_static/assets/js/vendor/popper.min.js' %}"></script>
+<!-- Bootstrap JS -->
+<script src="{% static 'aptiv_static/assets/js/vendor/bootstrap.min.js' %}"></script>
+<!-- wow js -->
+<script src="{% static 'aptiv_static/assets/js/plugins/wow.min.js' %}"></script>
+<!-- slick Slider JS -->
+<script src="{% static 'aptiv_static/assets/js/plugins/slick.min.js' %}"></script>
+<!-- odometer js -->
+<script src="{% static 'aptiv_static/assets/js/plugins/odometer.min.js' %}"></script>
+<!-- appear js -->
+<script src="{% static 'aptiv_static/assets/js/plugins/appear.min.js' %}"></script>
+<!-- mailchimp active js -->
+<script src="{% static 'aptiv_static/assets/js/plugins/ajaxchimp.js' %}"></script>
+<!-- waypoint js  -->
+<script src="{% static 'aptiv_static/assets/js/plugins/waypoints.min.js' %}"></script>
+    <!-- google map api -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2D8wrWMY3XZnuHO6C31uq90JiuaFzGws"></script>
+    <!-- google map active js -->
+    <script src="{% static 'aptiv_static/assets/js/plugins/google-map.js' %}"></script>
+    <!-- Main JS -->
+    <script src="{% static 'aptiv_static/assets/js/main.js' %}"></script>
+    <script src="{% static 'aptiv_static/assets/js/imageupload.js' %}"></script>
+    <script src="{% static 'aptiv_static/assets/js/verificaton.js' %}"></script>
+
+
+
+
+
+</body>
+
+</html>

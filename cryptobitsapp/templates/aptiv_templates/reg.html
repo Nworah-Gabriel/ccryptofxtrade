@@ -1,0 +1,183 @@
+
+{% extends 'aptiv_templates/base.html' %}
+{% load static %}
+    {% block content %}
+
+
+
+    <!-- Start Header Area -->
+   
+
+    {% include 'aptiv_templates/_header.html' %}
+   
+            
+
+            {% include 'aptiv_templates/_side__nav.html' %}
+            <div class="col-lg-10 main-sections">
+                          <!-- hero slider section start -->
+
+               
+        <section class="hero-slider  hero-transparent-bg grey-bg fix">
+            <div class="overlay">
+            <div class="hero-slider-active slick-arrow-style  slick-dot-style">
+                <!-- single slider item start -->
+                <div class="hero-single-slide">
+                    <div class="hero-slider-item">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-xl-12 col-sm-6">
+                                    <div class="hero-slider-content">
+                                        <div class="hero-content">
+                                        <h1 class="slide-title" style="color:white;">Regulatory Information</h1>
+        
+                                        <p>
+                                            Find out more about our different regulatory schemes.
+                                        </p>
+                                    </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="col-xl-7 col-sm-6">
+                                    <div class="slider-thumb moving-vertical">
+                                        <img src="assets/img/slider/slider-thumb1.png" alt="slider thumb">
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- single slider item start -->
+        
+               
+            </div>
+        </div>
+        </section>
+        
+        <!-- hero slider section end -->
+    
+        
+      
+            <!-- page main wrapper start -->
+        <section class="faq-main-wrapper section-padding">
+            <div class="container custom-container">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- <div class="section-title section-title--style_2 text-center mb-4">
+                            <h2 class="h1 title">Freaquently Asked questions</h2>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-10 offset-lg-1">
+                        <div class="faq-inner regtabs">
+                            <div class="accordion" id="general-question">
+                                <div class="card">
+                                    <div class="card-header" id="headingOne">
+                                        <h5 class="mb-0">
+                                            <button class="accordio-heading" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                <i class="ion-ribbon-b"></i>
+                                                MFID
+                                            </button>
+                                        </h5>
+                                    </div>
+
+                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#general-question">
+                                        <div class="card-body">
+                                            <p class="p-3">The Market in Financial Instruments Directive (MiFID) has been effective since 1 November 2007. The directive’s objective
+                                            is to ensure the transparency of information that the Company discloses to its clients.
+                                        </p>
+                                            <a href="#" class="button btn">EXPLANATIONS OF THE COMPANY CURRENT PRACTICES AND POLICY</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingTwo">
+                                        <h5 class="mb-0">
+                                            <button class="accordio-heading" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-controls="collapseTwo">
+                                                <i class="ion-android-car"></i>
+                                                Policies
+                                            </button>
+                                        </h5>
+                                    </div>
+
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#general-question">
+                                        <div class="card-body">
+                                            <p class="p-3">Learn more about the policies applied by APTIV Bank.</p>
+                                            <a href="#" class="button btn">REMUNERATION POLICY</a>
+                                            <a href="#" class="button btn">CLASS ACTIONS POLICY</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingThree">
+                                        <h5 class="mb-0">
+                                            <button class="accordio-heading" type="button" data-toggle="collapse" data-target="#collapseThree" aria-controls="collapseThree">
+                                                <i class="ion-university"></i>
+                                               Governance
+                                            </button>
+                                        </h5>
+                                    </div>
+
+                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#general-question">
+                                        <div class="card-body">
+                                            <p class="p-3">Discover the documentation related to governance..</p>
+                                            <a href="#" class="button btn">SHAREHOLDER RIGHTS DIRECTIVE II</a>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingfive">
+                                        <h5 class="mb-0">
+                                            <button class="accordio-heading" type="button" data-toggle="collapse" data-target="#collapseFour" aria-controls="collapseFour">
+                                                <i class="ion-android-car"></i>
+                                                SFDR
+                                            </button>
+                                        </h5>
+                                    </div>
+
+                                    <div id="collapseFour" class="collapse" aria-labelledby="headingfive" data-parent="#general-question">
+                                        <div class="card-body">
+                                            <p class="p-3">The Sustainable Finance Disclosure Regulation (SFDR) came into force on the 10th of March 2021. All financial entities who sell products into the EU have to classif
+                                                 the products they manufacture or advise on into three categories:
+                                                 <li>Products with a sustainable investment objective</li>
+                                                 <li>Products promoting environmental or social characteristics</li>
+                                                 <li>Non-sustainable products</li>
+                                                </p>
+
+
+                                            <a href="#" class="button btn">SUSTAINABLE FINANCE REGULATION</a>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- faq main wrapper end -->
+
+
+
+
+
+
+
+        
+       
+        
+       
+     <!-- footer section start -->
+     {% include 'aptiv_templates/_footer.html' %}
+     <!-- footer section end -->
+         </div>
+         </div>
+      
+              
+             
+         
+         
+         {% endblock %}
+         html>

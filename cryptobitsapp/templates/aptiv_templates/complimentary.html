@@ -1,0 +1,272 @@
+
+{% extends 'aptiv_templates/base.html' %}
+{% load static %}
+    {% block content %}
+
+
+
+    <!-- Start Header Area -->
+   
+
+    {% include 'aptiv_templates/_header.html' %}
+   
+            
+
+            {% include 'aptiv_templates/_side__nav.html' %}
+
+                <div class="col-lg-10 main-sections">
+                    <!-- hero slider section start -->
+
+
+                    <section class="hero-slider  hero-transparent-bg grey-bg fix" style="background: url({% static 'aptiv_static/assets/img/banner/fut.jpg' %});background-position: center;background-size: cover;">
+                        <div class="overlay">
+                            <div class="hero-slider-active slick-arrow-style  slick-dot-style">
+                                <!-- single slider item start -->
+                                <div class="hero-single-slide">
+                                    <div class="hero-slider-item">
+                                        <div class="container">
+                                            <div class="row align-items-center">
+                                                <div class="col-xl-12 col-sm-6">
+                                                    <div class="hero-slider-content">
+                                                        <div class="hero-content">
+                                                            <h1 class="slide-title"
+                                                                style="color:white;width: 90%;font-weight: 400;">
+                                                                Take control of your tomorrow with a financial plan.
+                                                            </h1>
+
+                                                           
+                                                            <p>
+                                                                At APTIV Bank, every client can get a complimentary financial plan 
+                                                                to help reach their retirement goals. 
+                                                                You can get access to a complimentary plan with any APTIV Bank account.
+                                                            </p>
+
+                                                            <a href="sign_up.html" class="btn btn-hero">Open an Account</a>
+                                                        
+                                                            <!-- <ul class="account-nav mt-4">
+                                                                Go to:
+                                                                <li><a href="product.html">Overview</a></li>
+                                                                <li><a href="Understand.html">Understanding Stocks</a></li>
+                                                            </ul> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="col-xl-7 col-sm-6">
+                                    <div class="slider-thumb moving-vertical">
+                                        <img src="{% static 'aptiv_static/assets/img/slider/slider-thumb1.png' %}" alt="slider thumb">
+                                    </div>
+                                </div> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- single slider item start -->
+
+
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- hero slider section end -->
+
+
+
+                    <section class=" inner fix pt-5 mt-5 pb-5" style="width: 90%;margin: 0px auto;">
+                    
+                        <div class="row text-center">
+                          <div class="col-lg-4">
+                              <img src="{% static 'aptiv_static/assets/img/banner/RetirementGoals-ICN@1x.png' %}" alt="" class="pb-4" width="50">
+                              <h5 class="pb-3">Retirement Goals</h5>
+                              <p>Tell us when you plan to retire and what you need 
+                                for expenses to support your lifestyle.
+                              </p>
+                          </div>
+
+                          <div class="col-lg-4">
+                              <img src="{% static 'aptiv_static/assets/img/banner/Finances-ICN@1x.png' %}" alt="" class="pb-4" width="85">
+                              <h5 class="pb-3">Finances</h5>
+                              <p>Include your income, investments, and assets.
+                              </p>
+                          </div>
+                          
+                          <div class="col-lg-4">
+                              <img src="{% static 'aptiv_static/assets/img/banner/Steps-ICN@1x.png' %}" alt="" class="pb-4" width="35">
+                              <h5 class="pb-3">Results & Action Steps</h5>
+                              <p>
+                                You'll get your probability of reaching your goals and steps to take action. 
+                              </p>
+                          </div>
+                        </div>
+              
+                  </section>
+                
+
+                    <section class="robo-wrapper robo-paddin inner fix pb-4 pt-5">
+                        <div class="container">
+                            <div class="robo-content">
+                            <div class="row align-items-center">
+                                <div class="col-xl-10 order-lg-last  wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="team-content team-content--style_2 about-inner">
+                                        <p class="talk">Create your financial plan and see the probability of your success—in three easy steps.</p>
+                                        
+                                       <p>
+                                        Because we believe saving for retirement is one of the most important goals, 
+                                        your complimentary plan will help you see what it will take to retire the way you want.
+                                    </p>
+                                     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        </div>
+                    </section>
+
+
+
+                    <section class="robo-wrapper robo-paddin inner fix pb-4 pt-5 mt-2">
+                        <div class="container">
+                            <div class="robo-content">
+                            <div class="row align-items-center">
+                                <div class="col-xl-6  order-md-last wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="robo-img">
+                                        <img src="{% static 'aptiv_static/assets/img/banner/ques.jpg' %}" alt="">
+                                    </div>
+                                </div>
+                
+                                <div class="col-xl-6 order-lg-first  wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="team-content team-content--style_2 about-inner">
+                                        <p class="talk">Fill out a short questionnaire.</p>
+                                        
+                                       <p>
+                                        Start by entering your goals, like when you plan to retire 
+                                        and how much you'll need for expenses to support your lifestyle. 
+                                        Then input your financial information like your income, investments and assets.
+                                    </p>
+                                     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        </div>
+                    </section>
+
+
+
+                    <section class="robo-wrapper robo-paddin inner fix pb-4 pt-4">
+                        <div class="container">
+                            <div class="robo-content">
+                            <div class="row align-items-center">
+                                <div class="col-xl-6  order-md-fist wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="robo-img">
+                                        <img src="{% static 'aptiv_static/assets/img/banner/prob.jpg' %}" alt="">
+                                    </div>
+                                </div>
+                
+                                <div class="col-xl-6 order-lg-last  wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="team-content team-content--style_2 about-inner">
+                                        <p class="talk">See your probability of reaching your goals.</p>
+                                        
+                                       <p>
+                                        Advanced technology runs 1,000 simulated market projections 
+                                        with your input to generate the probability you will reach your goals. 
+                                        Stress test your plan with an interactive 
+                                        tool that lets you see the impact of adjusting your retirement age, expenses, and more.
+                                    </p>
+                                     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        </div>
+                    </section>
+
+                    <section class="robo-wrapper robo-paddin inner fix pb-4 pt-4">
+                        <div class="container">
+                            <div class="robo-content">
+                            <div class="row align-items-center">
+                                <div class="col-xl-6  order-md-last wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="robo-img">
+                                        <img src="{% static 'aptiv_static/assets/img/banner/acti.jpg' %}" alt="">
+                                    </div>
+                                </div>
+                
+                                <div class="col-xl-6 order-lg-first  wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="team-content team-content--style_2 about-inner">
+                                        <p class="talk">Review your plan and take action.</p>
+                                        
+                                       <p>
+                                        We'll help you understand your probability of reaching your goals 
+                                        and what steps you could take next to put your plan into action. 
+                                        You can update your plan as life changes so you stay on track.
+                                    </p>
+                                     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        </div>
+                    </section>
+
+                    <section class="product-section pb-5 pt-5 mt-4 mb-5" style="background-color: #e8e8e8;">
+                        <div class="container text-center">
+                       <h4 class="talk1 pb-2">Ready to start planning and investing?</h4>
+                       <p>No account fees or minimum deposit required</p>
+                   
+                    <a href="sign_up.html" class="btn btn-hero mb-3">Open an Account</a>
+                            <br>
+                    Already a client? <a href="login.html">Log in</a>
+
+                   
+                    </div>
+                    </section>
+
+                    <section class="product-section pb-5 pt-5 mb-5">
+                        <div class="container text-center">
+
+                       <h4 class="talk1 pb-2">Have questions? We're here to help.</h4>
+
+                       <div class="row" style="font-size: 1.5rem;">
+
+                        <div class="col-lg-2"></div>
+
+                        <div class="col-lg-4 text-center  mt-5">
+                            <img src="{% static 'aptiv_static/assets/img/banner/call.png' %}" alt="" width="30">
+                            <p class="mb-0">Call</p>
+                            <a href="">000-000-0000 </a>
+                        </div>
+
+                        <div class="col-lg-4 text-center  mt-5">
+                          
+                            <img src="{% static 'aptiv_static/assets/img/banner/chat.png' %}" alt="" width="30">
+                            <p class="mb-0">Chat</p>
+                            <a href="#">000-000-0000<i class="fa fa-chevron-right"></i></a>
+                        </div>
+
+                        <div class="col-lg-2"></div>
+
+                       </div>
+                
+                    </div>
+                    </section>
+
+
+
+
+
+     
+      <!-- footer section start -->
+      {% include 'aptiv_templates/_footer.html' %}
+      <!-- footer section end -->
+          </div>
+          </div>
+       
+               
+              
+          
+          
+          {% endblock %}
+          

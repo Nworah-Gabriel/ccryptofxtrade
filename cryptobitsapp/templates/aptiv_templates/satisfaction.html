@@ -1,0 +1,218 @@
+
+{% extends 'aptiv_templates/base.html' %}
+{% load static %}
+    {% block content %}
+
+
+
+    <!-- Start Header Area -->
+   
+
+    {% include 'aptiv_templates/_header.html' %}
+   
+            
+
+            {% include 'aptiv_templates/_side__nav.html' %}
+                <div class="col-lg-10 main-sections">
+                    <!-- hero slider section start -->
+
+
+                    <section class="hero-slider  hero-transparent-bg grey-bg fix" style="background: url({% static 'aptiv_static/assets/img/banner/old.jpg' %});background-position: center;background-size: cover;">
+                        <div class="overlay">
+                            <div class="hero-slider-active slick-arrow-style  slick-dot-style">
+                                <!-- single slider item start -->
+                                <div class="hero-single-slide">
+                                    <div class="hero-slider-item">
+                                        <div class="container">
+                                            <div class="row align-items-center">
+                                                <div class="col-xl-12 col-sm-6">
+                                                    <div class="hero-slider-content">
+                                                        <div class="hero-content">
+                                                            <h1 class="slide-title"
+                                                                style="color:white;width: 90%;font-weight: 400;">
+                                                                Satisfaction Guarantee
+                                                            </h1>
+
+                                                           
+                                                            <p>
+                                                                At APTIV Bank, 
+                                                                our commitment to your satisfaction is backed by a guarantee. 
+                                                                If for any reason you're not completely satisfied, we'll refund your fee or 
+                                                                commission and work with you to make things right. 
+                                                               
+                                                            </p>
+
+                                                            <a onclick="location.href='{% url 'signup' %}'" href="#" class="btn btn-hero">Open an Account</a>
+                                                        
+                                                            <!-- <ul class="account-nav mt-4">
+                                                                Go to:
+                                                                <li><a href="product.html">Overview</a></li>
+                                                                <li><a href="Understand.html">Understanding Stocks</a></li>
+                                                            </ul> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="col-xl-7 col-sm-6">
+                                    <div class="slider-thumb moving-vertical">
+                                        <img src="{% static 'aptiv_static/assets/img/slider/slider-thumb1.png" alt="slider thumb">
+                                    </div>
+                                </div> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- single slider item start -->
+
+
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- hero slider section end -->
+
+
+                    <section class="robo-wrapper robo-paddin inner fix pb-2 pt-5">
+                        <div class="container">
+                            <div class="robo-content">
+                            <div class="row align-items-center">
+                                <div class="col-xl-10 order-lg-last  wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <div class="team-content team-content--style_2 about-inner">
+                                        <p class="talk">Questions about Satisfaction Guarantee</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        </div>
+                    </section>
+
+
+
+
+                    <section class="product-section pb-5 pt-5" >
+                        <div class="container">
+                            <div class="faq-inner regtabs">
+                                <div class="accordion" id="general-question">
+
+                                    <div class="card">
+                                        <div class="card-header" id="headingOne">
+                                            <h5 class="mb-0">
+                                                <button class="accordio-heading" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    <i class="ion-ribbon-b"></i>
+                                                    Are any fees not covered by the guarantee?
+                                                </button>
+                                            </h5>
+                                        </div>
+    
+                                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#general-question">
+                                            <div class="card-body">
+                                                <p class="p-3">
+                                                    While the guarantee covers a wide range of fees and commissions, there are services to which it does not apply. These include accounts managed by investment advisors who are not affiliated with APTIV Bank, such as through APTIV Bank Advisor Network® and Managed Account Select®. The guarantee also does not apply to operating expenses charged by mutual funds and ETFs, or interest paid on margin loans.
+                                            If you have questions on whether the guarantee applies to any particular fee, please call a APTIV Bank investment professional for assistance.
+                                            </p>
+                                              
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card">
+                                        <div class="card-header" id="headingTwo">
+                                            <h5 class="mb-0">
+                                                <button class="accordio-heading" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-controls="collapseTwo">
+                                                    <i class="ion-android-car"></i>
+                                                    How long do I have to request a refund under the guarantee?
+                                                </button>
+                                            </h5>
+                                        </div>
+    
+                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#general-question">
+                                            <div class="card-body">
+                                                <p>
+                                                    Refund requests must be received within 90 days of the date the fee was charged. 
+                                            </p>       
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card">
+                                        <div class="card-header" id="headingThree">
+                                            <h5 class="mb-0">
+                                                <button class="accordio-heading" type="button" data-toggle="collapse" data-target="#collapseThree" aria-controls="collapseThree">
+                                                    <i class="ion-university"></i>
+                                                    How long will it take to receive my refund?
+                                                </button>
+                                            </h5>
+                                        </div>
+    
+                                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#general-question">
+                                            <div class="card-body">
+                                                <p>
+                                                    Funds will be credited to the account charged in approximately four weeks of a valid request.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="card-header" id="headingfive">
+                                            <h5 class="mb-0">
+                                                <button class="accordio-heading" type="button" data-toggle="collapse" data-target="#collapseFour" aria-controls="collapseFour">
+                                                    <i class="ion-android-car"></i>
+                                                    What is covered by the Satisfaction Guarantee?
+                                                </button>
+                                            </h5>
+                                        </div>
+    
+                                        <div id="collapseFour" class="collapse" aria-labelledby="headingfive" data-parent="#general-question">
+                                            <div class="card-body">
+                                                <p>
+                                                    We believe every investor deserves to work with a firm they can count on. At APTIV Bank, o
+                                                    ur commitment to your satisfaction is backed by a guarantee. If for any reason you're not completely satisfied, 
+                                                    we'll refund your eligible fee or commission and work with you to make things right.
+                                                    You won't find that kind of promise everywhere—but you will find it here.
+                                            </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                          
+                    </div>
+                    </section>
+
+
+
+
+
+                    <section class="product-section pb-5 pt-5 mt-4 mb-5" style="background-color: #e8e8e8;">
+                        <div class="container text-center">
+                       <h4 class="talk1 pb-2">Ready to start investing?</h4>
+                     
+                   
+                    <a onclick="location.href='{% url 'signup' %}'" href="#" class="btn btn-hero">Open an Account</a>
+                    </div>
+                    </section>
+
+                
+
+                    {% include 'aptiv_templates/__call_section.html' %}
+
+
+
+
+
+
+
+                         <!-- footer section start -->
+      {% include 'aptiv_templates/_footer.html' %}
+      <!-- footer section end -->
+          </div>
+          </div>
+       
+               
+              
+          
+          
+          {% endblock %}
+          

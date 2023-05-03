@@ -1,0 +1,211 @@
+{% extends 'hodl_templates/dashbase.html' %}
+{% load static %}
+  {% block content %}
+    <!-- End Navbar -->
+    <div class="container-fluid py-4">
+      <div class="modal-bg">
+        <div class="modals">
+         
+          <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+              <div class="card p-5">
+                <i class="fa fa-window-close close" style="color: red" aria-hidden="true"></i>
+               <h3 style="color: #b312c2">BUY PLAN</h3>
+              
+                  <p class="p-0 m-0" >go to deposit page to complete registeration</b></p> 
+                  <ul>
+                    <!-- <li>Bank name: <b>XXXXXXXX</b></li>
+                    <li>Account Number: <b>XXXXXXXX</b></li>
+                    <li>Account Name: <b>XXXXXXXX</b></li>
+                    <li>When you are done take a screenshot and upload</li>
+                  </ul>
+                  <form action="">
+                    <div class="form-group">
+                      <label for="">Upload proof of payment</label>
+                      <input type="file" class="form-control-file" name="" id="" placeholder=""
+                        aria-describedby="fileHelpId">
+                    </div> -->
+
+                    <button type="button" class="btn btn-primary" onclick="location.href='{% url 'deposit' %}'">Deposit </button>
+                  </form>
+
+             
+              </div>
+            </div>
+            <div class="col-lg-2"></div>
+          </div>
+          
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="card mb-4">
+            <div class="card-header pb-0">
+              <h3>Trading packages</h3>
+            </div>
+            <div class="card-body px-0 pt-0 pb-2">
+              <div class="package-card">
+                <div class="row">
+                  <div class="col-lg-3">
+                    <div class="card">
+                      <div class="card-body">
+
+                        <h3 class="card-title">Basic</h3>
+                        <p class="mt-5">Get 40% for</p>
+                        <p class="amount">$3000</p>
+
+                        <button class="btn card-btn mt-5">ORDER NOW</button>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3">
+
+
+                    <div class="card">
+                      <div class="card-body">
+
+                        <h3 class="card-title">Standard</h3>
+                        <p class="mt-5">Get 50% for</p>
+                        <p class="amount">$5,000</p>
+
+                        <button class="btn card-btn mt-5">ORDER NOW</button>
+
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="col-lg-3">
+                    <div class="card">
+                      <div class="card-body">
+
+                        <h3 class="card-title">Premium</h3>
+                        <p class="mt-5">Get 70% for</p>
+                        <p class="amount">$10,000</p>
+
+                        <button class="btn card-btn mt-5">ORDER NOW</button>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3">
+
+                    <div class="card">
+                      <div class="card-body">
+
+                        <h3 class="card-title">Ultimate</h3>
+                        <p class="mt-5">Get 80% for</p>
+                        <p class="amount">$20,000</p>
+
+                        <button class="btn card-btn mt-5">ORDER NOW</button>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="card mb-4">
+            <div class="card-header pb-0">
+              <h3>Exclusive packages</h3>
+            </div>
+            <div class="card-body px-0 pt-0 pb-2">
+              <div class="package-card">
+                <div class="row">
+                  <div class="col-lg-3">
+
+                    <div class="card">
+                      <div class="card-body">
+
+                        <h3 class="card-title">Silver</h3>
+                        <p class="mt-5">Get 2% for</p>
+                        <p class="amount">$1,500</p>
+
+                        <button class="btn card-btn mt-5">ORDER NOW</button>
+
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="col-lg-3">
+
+
+                    <div class="card">
+                      <div class="card-body">
+
+                        <h3 class="card-title">Gold</h3>
+                        <p class="mt-5">Get 5% for</p>
+                        <p class="amount">$2,000</p>
+
+                        <button class="btn card-btn mt-5">ORDER NOW</button>
+
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="col-lg-3">
+
+                    <div class="card">
+                      <div class="card-body">
+
+                        <h3 class="card-title">PLATINUM</h3>
+                        <p class="mt-5">Get 15% for</p>
+                        <p class="amount">$3,000</p>
+
+                        <button class="btn card-btn mt-5">ORDER NOW</button>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3">
+
+                    <div class="card">
+                      <div class="card-body">
+
+                        <h3 class="card-title">DIAMOND</h3>
+                        <p class="mt-5">Get 25% for</p>
+                        <p class="amount">$4,500</p>
+
+                        <button class="btn card-btn mt-5">ORDER NOW</button>
+
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/6161bd7386aee40a5735bd33/1fhiso3dt';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <!--End of Tawk.to Script-->
+  </main>
+
+  <!--   Core JS Files   -->
+  <script src="{% static 'hodl_static/js/package.js' %}"></script>
+  {%endblock%}
+   

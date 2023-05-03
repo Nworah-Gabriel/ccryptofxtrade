@@ -1,0 +1,45 @@
+<span id="clockdiv-defi" style=" color:#c90da0;"> 
+    <i id="demo-defi">                  
+    <span class="days" id="day_defi" style="display: inline;"></span>D:
+     <span class="hours" id="hour_defi" style="font-size: x-large;"></span>H :
+     <span class="minutes" id="minute_defi" style="font-size: x-large;"></span>M:
+     <span class="seconds" id="second_defi" style="font-size: small;"></span>s
+  
+  
+  </i> 
+  
+  </span>
+
+
+
+
+  
+ 
+  <script> 
+    function timer_defi(stop_time_defi){
+    
+    var deadline_defi = new Date(stop_time_defi).getTime(); 
+    // console.log(deadline);
+    var x_defi = setInterval(function() { 
+      
+    var now_defi = new Date().getTime(); 
+    var t_defi = deadline_defi - now_defi; 
+    var days_defi = Math.floor(t_defi / (1000 * 60 * 60 * 24)); 
+    var hours_defi = Math.floor((t_defi%(1000 * 60 * 60 * 24))/(1000 * 60 * 60)); 
+    var minutes_defi = Math.floor((t_defi % (1000 * 60 * 60)) / (1000 * 60)); 
+    var seconds_defi = Math.floor((t_defi % (1000 * 60)) / 1000); 
+    document.getElementById("day_defi").innerHTML =days_defi ; 
+    document.getElementById("hour_defi").innerHTML =hours_defi; 
+    document.getElementById("minute_defi").innerHTML = minutes_defi;  
+    document.getElementById("second_defi").innerHTML =seconds_defi;  
+      if (t_defi < 0) { 
+              clearInterval(x_defi); 
+              document.getElementById("demo_defi").innerHTML = "TIME UP"; 
+              document.getElementById("day_defi").innerHTML ='00'; 
+              document.getElementById("hour_defi").innerHTML ='00'; 
+              document.getElementById("minute_defi").innerHTML ='00' ;  
+              document.getElementById("second_defi").innerHTML = '00'; } 
+      }, 1000); 
+    }
+      
+      </script> 

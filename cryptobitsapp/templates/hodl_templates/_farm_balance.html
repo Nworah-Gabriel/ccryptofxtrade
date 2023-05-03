@@ -1,0 +1,114 @@
+
+<div class="container-fluid py-4">
+    <div class="row align-items-center">
+    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+      <div class="card">
+        <div class="card-body p-3">
+          <div class="row align-items-center">
+            <div class="col-8">
+              <div class="numbers">
+                <p class="text-sm mb-0 text-capitalize font-weight-bold">Yeild Equity Value</p>
+                <h5 class="font-weight-bolder mb-0">
+                  ${{total_balance|floatformat:2 }} <span style="font-size: .9rem;color: #c90da0;">- <span id="btcVal"> Total</span><b>BTC</b></span>
+                  <!-- <span class="text-success text-sm font-weight-bolder">+55%</span> -->
+                </h5>
+                <p class="text-sm mb-0 text-capitalize font-weight-bold">1btc = <span id="btcRate">BTCRATE </span><b>USD</b></p>
+              </div>
+            </div>
+            <div class="col-4 text-end">
+              <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
+                <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <!-- <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+        <div class="card">
+          <div class="card-body p-3">
+            <div class="row align-items-center">
+              <div class="col-8">
+                <div class="numbers">
+                  <p class="text-sm mb-0 text-capitalize font-weight-bold">Available</p>
+                  <h5 class="font-weight-bolder mb-0">
+                    $ {{information.amount_available}}
+  
+                  </h5>
+                  <p class="text-sm mb-0 text-capitalize font-weight-bold"> 0.000000<b>BTC</b></p>
+                </div>
+              </div>
+              <div class="col-4 text-end">
+                <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
+                  <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <!-- <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+        <div class="card">
+          <div class="card-body p-3">
+            <div class="row align-items-center">
+              <div class="col-8">
+                <div class="numbers">
+                  <p class="text-sm mb-0 text-capitalize font-weight-bold">Withdrawable</p>
+                  <h5 class="font-weight-bolder mb-0">
+                    ${{information.amount_withdrawable}}
+                  </h5>
+                  <p class="text-sm mb-0 text-capitalize font-weight-bold"> 0.000000<b>BTC</b></p>
+                </div>
+              </div>
+              <div class="col-4 text-end">
+                <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
+                  <i class="ni ni-diamond text-lg opacity-10" aria-hidden="true"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+        <div class="card">
+          <div class="card-body p-3">
+            <div class="row align-items-center">
+              <div class="col-12">
+                <button type="button" class="btn transfer" onclick=" fund_transfer_get();" > <i class="fa fa-exchange"></i> Transfer</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  
+    <script>
+      // $.get(URL,callback);
+      window.onload = function coinValue(){
+        $.ajax({
+            type:"GET",
+            url :"{% url 'get_coin_value' %}",
+  
+            // data : $("#formWithdraw").serialize(),
+            dataType:'json',
+            success:function(data){
+              var btc_rate = data.values.btc;
+              // alert(data);
+              // console.log(btc_rate);
+              $("#btcRate").text(btc_rate);
+              var balequibal = '{{total_balance}}';
+              var balbtcval = parseFloat(balequibal) / parseFloat(btc_rate) ;
+              $("#btcVal").text(balbtcval.toFixed(4));
+  
+              
+  
+  
+  
+            }
+  
+          })
+      }
+      
+    </script>
+    

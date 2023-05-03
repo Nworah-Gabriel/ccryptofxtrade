@@ -1,0 +1,363 @@
+{% extends 'hodl_templates/dashbase.html' %}
+{% load static %}
+  {% block content %}
+<!-- TradingView Widget BEGIN -->
+<!-- <div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com" rel="noopener" target="_blank"><span class="blue-text">Ticker Tape</span></a> by TradingView</div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+  {
+  "symbols": [
+    {
+      "proName": "FOREXCOM:SPXUSD",
+      "title": "S&P 500"
+    },
+    {
+      "proName": "FOREXCOM:NSXUSD",
+      "title": "Nasdaq 100"
+    },
+    {
+      "proName": "FX_IDC:EURUSD",
+      "title": "EUR/USD"
+    },
+    {
+      "proName": "BITSTAMP:BTCUSD",
+      "title": "BTC/USD"
+    },
+    {
+      "proName": "BITSTAMP:ETHUSD",
+      "title": "ETH/USD"
+    }
+  ],
+  "showSymbolLogo": true,
+  "colorTheme": "dark",
+  "isTransparent": false,
+  "displayMode": "adaptive",
+  "locale": "en"
+}
+  </script>
+</div> -->
+<!-- TradingView Widget END -->
+{% include 'hodl_templates/_transfer_modal.html' %}
+      
+      {% include 'hodl_templates/_balance.html' %}
+      <div class="row mt-4">
+        <div class="col-lg-7 mb-lg-0 mb-4">
+          <div class="card">
+            <div class="card-body p-3">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="d-flex flex-column h-100">
+                    <h2 class="font-weight-bolder">Welcome to Hodlvault</h2>
+                    <p class="mb-5">We are here because we are passionate,
+                      transparent markets and aim to be a major driving force in widespread adoption.</p>
+                   
+                  </div>
+                </div>
+                <div class="col-lg-5 ms-auto text-center mt-5 mt-lg-0">
+                  <div class="bg-gradient-primary border-radius-lg h-100 welcome-img">
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="card h-100 p-3">
+            <div class="overflow-hidden position-relative border-radius-lg bg-cover h-100"
+              style="background-image: url('{% static 'hodl_static/assets/img/ivancik.jpg' %}');">
+              <span class="mask bg-gradient-dark"></span>
+              <div class="card-body position-relative z-index-1 d-flex flex-column h-100 p-3">
+                <h3 class="text-white font-weight-bolder mb-4 pt-2">Work with the us</h3>
+                <p class="text-white">                  understand the world of #1 cryptocurrency and avoid any issues you may encounter.</p>
+</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="row my-4">
+        <div class="col-lg-12 col-md-6 mb-md-0 mb-4">
+          <div class="card">
+            <div class="card-header pb-0">
+              <div class="row">
+                <div class="col-lg-6 col-7">
+                  <h4>Announcements</h4>
+                  {% if verify_level != 'advance' %}
+                  <p style="color: red;">Please verify your account now!</p> 
+                  <button  class="btn btn-primary" href="" onclick="location.href='{% url 'verification' %}'">
+                    <a  style="color: white;">Verify</a>
+                  </button>
+                  <br>
+                  <p>You are currently on {{verify_level}} level of your verification</p>
+                  {% endif%}
+                  <button type="submit" class="btn btn-primary" href="#" onclick="location.href='{% url 'update' %}'">
+                    <a  style="color: white;">Update</a>
+                  </button>
+
+                </div>
+              </div>
+            </div>
+            <div class="card-body px-0 pb-2">
+
+            </div>
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="row my-4 chart">
+        <div class="col-lg-12 col-md-6 mb-md-0 mb-4">
+          <div class="card" style="height: 800px;">
+            <div class="card-header pb-2">
+
+              <h3>Personal Trading Chart</h3>
+
+            </div>
+            <div class="card-body">
+              <!-- TradingView Widget BEGIN -->
+              <div class="tradingview-widget-container">
+                <div id="tradingview_32e5e"></div>
+                <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/"
+                    rel="noopener" target="_blank"><span class="blue-text">AAPL Chart</span></a> by TradingView</div>
+                <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                <script type="text/javascript">
+                  new TradingView.widget(
+                    {
+                      "autosize": true,
+                      "symbol": "BTC",
+                      "interval": "1",
+                      "timezone": "Etc/UTC",
+                      "theme": "dark",
+                      "style": "1",
+                      "locale": "en",
+                      "toolbar_bg": "#f1f3f6",
+                      "enable_publishing": false,
+                      "hide_side_toolbar": false,
+                      "allow_symbol_change": true,
+                      "details": true,
+                      "hotlist": true,
+                      "calendar": true,
+                      "container_id": "tradingview_32e5e"
+                    }
+                  );
+                </script>
+              </div>
+              <!-- TradingView Widget END -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+     
+
+ 
+    <script>
+      var ctx = document.getElementById("chart-bars").getContext("2d");
+  
+      new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+          datasets: [{
+            label: "Sales",
+            tension: 0.4,
+            borderWidth: 0,
+            borderRadius: 4,
+            borderSkipped: false,
+            backgroundColor: "#fff",
+            data: [450, 200, 100, 220, 500, 100, 400, 230, 500],
+            maxBarThickness: 6
+          },],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: false,
+            }
+          },
+          interaction: {
+            intersect: false,
+            mode: 'index',
+          },
+          scales: {
+            y: {
+              grid: {
+                drawBorder: false,
+                display: false,
+                drawOnChartArea: false,
+                drawTicks: false,
+              },
+              ticks: {
+                suggestedMin: 0,
+                suggestedMax: 500,
+                beginAtZero: true,
+                padding: 15,
+                font: {
+                  size: 14,
+                  family: "Open Sans",
+                  style: 'normal',
+                  lineHeight: 2
+                },
+                color: "#fff"
+              },
+            },
+            x: {
+              grid: {
+                drawBorder: false,
+                display: false,
+                drawOnChartArea: false,
+                drawTicks: false
+              },
+              ticks: {
+                display: false
+              },
+            },
+          },
+        },
+      });
+  
+  
+      var ctx2 = document.getElementById("chart-line").getContext("2d");
+  
+      var gradientStroke1 = ctx2.createLinearGradient(0, 230, 0, 50);
+  
+      gradientStroke1.addColorStop(1, 'rgba(203,12,159,0.2)');
+      gradientStroke1.addColorStop(0.2, 'rgba(72,72,176,0.0)');
+      gradientStroke1.addColorStop(0, 'rgba(203,12,159,0)'); //purple colors
+  
+      var gradientStroke2 = ctx2.createLinearGradient(0, 230, 0, 50);
+  
+      gradientStroke2.addColorStop(1, 'rgba(20,23,39,0.2)');
+      gradientStroke2.addColorStop(0.2, 'rgba(72,72,176,0.0)');
+      gradientStroke2.addColorStop(0, 'rgba(20,23,39,0)'); //purple colors
+  
+      new Chart(ctx2, {
+        type: "line",
+        data: {
+          labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+          datasets: [{
+            label: "Mobile apps",
+            tension: 0.4,
+            borderWidth: 0,
+            pointRadius: 0,
+            borderColor: "#cb0c9f",
+            borderWidth: 3,
+            backgroundColor: gradientStroke1,
+            fill: true,
+            data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
+            maxBarThickness: 6
+  
+          },
+          {
+            label: "Websites",
+            tension: 0.4,
+            borderWidth: 0,
+            pointRadius: 0,
+            borderColor: "#3A416F",
+            borderWidth: 3,
+            backgroundColor: gradientStroke2,
+            fill: true,
+            data: [30, 90, 40, 140, 290, 290, 340, 230, 400],
+            maxBarThickness: 6
+          },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: false,
+            }
+          },
+          interaction: {
+            intersect: false,
+            mode: 'index',
+          },
+          scales: {
+            y: {
+              grid: {
+                drawBorder: false,
+                display: true,
+                drawOnChartArea: true,
+                drawTicks: false,
+                borderDash: [5, 5]
+              },
+              ticks: {
+                display: true,
+                padding: 10,
+                color: '#b2b9bf',
+                font: {
+                  size: 11,
+                  family: "Open Sans",
+                  style: 'normal',
+                  lineHeight: 2
+                },
+              }
+            },
+            x: {
+              grid: {
+                drawBorder: false,
+                display: false,
+                drawOnChartArea: false,
+                drawTicks: false,
+                borderDash: [5, 5]
+              },
+              ticks: {
+                display: true,
+                color: '#b2b9bf',
+                padding: 20,
+                font: {
+                  size: 11,
+                  family: "Open Sans",
+                  style: 'normal',
+                  lineHeight: 2
+                },
+              }
+            },
+          },
+        },
+      });
+    </script>
+    <script>
+      var win = navigator.platform.indexOf('Win') > -1;
+      if (win && document.querySelector('#sidenav-scrollbar')) {
+        var options = {
+          damping: '0.5'
+        }
+        Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+      }
+    </script>
+    <!-- Github buttons -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+
+    
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+          crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+          integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+          crossorigin="anonymous"></script>
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="{% static 'hodl_static/js/script.js' %}"></script>
+  
+  
+      <script>
+          $(window).on("load",function(){
+            $(".loader-wrapper").fadeOut("slow");
+  
+          //   $(".hero-image").slidein("slow");
+          });
+      </script>
+  
+    {%endblock%}

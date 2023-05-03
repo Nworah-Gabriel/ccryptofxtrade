@@ -1,0 +1,350 @@
+
+{% extends 'aptiv_templates/Dashboard/__dash_base.html' %}
+{% load static %}
+  {% block content %}
+  
+
+    {% include 'aptiv_templates/Dashboard/__side_bar_mini.html' %}
+
+
+
+    {% include 'aptiv_templates/Dashboard/_header.html' %}
+ 
+
+
+    <!-- start page content wrapper-->
+    <div class="page-content-wrapper">
+      <!-- start page content-->
+      <div class="page-content">
+
+
+        <div class="row" >
+          <div class="col-12 col-lg-6 col-xl-6">
+            <div class="card saving-card radius-10" style="background-color: #e0f5e3bd;">
+              <div class="card-body m-3">
+                <div class="d-flex align-items-start justify-content-between">
+                  <div>
+                    <h6 class="mb-3">Main Account</h6>
+                    <h5 class="mb-2">APTIV Savings Account</h5>
+                    <p class="">{{ customer_id }}</p> 
+                    
+                    <!-- for mobile view only -->
+                    <div class=" saving-card-right no-pc-display">
+                      <h6 class="mb-1 mt-4">Available Funds</h6>
+                      <h3 class="mb-3"><span style="font-size: 1.3rem;font-weight: 500;"></span> $ {{information.amount_available}}<span style="font-size: 1.3rem;font-weight: 500;"></span><small style="font-weight: 700;"> $</small></h3>
+                    </div>
+                     <!-- for mobile view only -->
+
+                    <button class="accnt-btn" onclick="location.href='{% url 'wallet' %}'">Fund My Account</button>
+                  </div>
+
+                  <div class="text-center saving-card-right no-phone-display">
+                    <h6 class="mb-3">Available Funds</h6>
+                    <h3 class="mb-3"><span style="font-size: 1.3rem;font-weight: 500;"></span> <small style="font-weight: 700;"> $</small>{{information.amount_available}}<span style="font-size: 1.3rem;font-weight: 500;"></span></h3>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6 col-xl-6">
+
+           
+            <div class="card welcome-card radius-10">
+              <div class="row">
+                <div class="col-lg-2 welcome-image">
+                  <img src="../../../static/aptiv_static/dashboard/assets/images/avatars/50.png" alt="" width="159">
+                </div>
+                <div class="col-lg-10">
+                  <div class="card-body m-3">
+                    <div class="d-flex align-items-start justify-content-between">
+                     
+                      <div>
+                        <h2 class="mb-2">Welcome To APTIV Bank</h2>
+                       <p class="about">To comply with Customer Due Diligence (CDD), and Anti Money 
+                        Laundering (AML) laws and We must ensure that clients are not engaged 
+                        in identity theft, money laundering, 
+                        financial fraud, terrorism financing, 
+                        and other financial crimes using our services. 
+                      </p>
+    
+                        <button class="about-btn">Learn More</button>
+                      </div>
+                      <!-- <div class="text-center saving-card-right">
+                      aaasassssss
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+             
+            </div>
+          </div>
+          
+         
+        </div>
+
+
+        
+        <!--end row-->
+
+      
+
+        <div class="row">
+          <div class="col-12 col-lg-6 col-xl-6 d-flex mt-2">
+            <div class="card radius-10 w-100">
+              <div class="card-body">
+                <div class="d-flex align-items-center">
+                  <h6 class="transaction-header">Latest Transaction</h6>
+                  <div class="fs-5 ms-auto dropdown">
+                    <div class="arrow">
+                      <a href="transaction.html">
+                      <ion-icon name="arrow-forward-outline"></ion-icon>
+                    </a>
+                    </div>
+                    <div class="dropdown-toggle dropdown-toggle-nocaret cursor-pointer" data-bs-toggle="dropdown"><i
+                        class="bi bi-three-dots"></i></div>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li>
+                        <hr class="dropdown-divider">
+                      </li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="table-responsive mt-2">
+                  <table class="table align-middle mb-0">
+                    <thead class="">
+                      <tr>
+                        <th>Date</th>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Status</th>
+                        <!-- <th>Action</th> -->
+                       
+                      </tr>
+                    </thead>
+                    <tbody>
+
+                      {% for transaction in all_transactions %}
+                      <tr>
+                        <td>{{ transaction.date }}</td>
+                        <td>
+                          <div class="gap-3">
+                              <h6 class="product-name m-3">{{ transaction.currency_coin }}</h6>
+                          </div>
+                        </td>
+                       
+                        <td>${{ transaction.amount }}</td>
+                        <td><span class="badge alert-success">{{ transaction.status }}</span></td>
+                        
+                        <!-- <td>
+                          <div class="d-flex align-items-center gap-3 fs-6">
+                            <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                              title="" data-bs-original-title="View detail" aria-label="Views">
+                              <ion-icon name="eye-sharp"></ion-icon>
+                            </a>
+                            <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                              title="" data-bs-original-title="Edit info" aria-label="Edit">
+                              <ion-icon name="pencil-sharp"></ion-icon>
+                            </a>
+                            <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                              title="" data-bs-original-title="Delete" aria-label="Delete">
+                              <ion-icon name="trash-sharp"></ion-icon>
+                            </a>
+                          </div>
+                        </td> -->
+                      </tr>
+                     {% endfor %}
+                      
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+    
+          </div>
+          <div class="col-12 col-lg-6 col-xl-6 d-flex mt-2">
+            <div class="card radius-10 w-100 traffic">
+              <div class="card-body">
+
+                <div class="d-flex align-items-center mb-3">
+                  <h6 class="mb-0">Select any level that fits your budget</h6>
+                  <!-- <div class="dropdown options ms-auto">
+                    <div class="dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown">
+                      <ion-icon name="ellipsis-horizontal-sharp"></ion-icon>
+                    </div>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div> -->
+                </div>
+
+                <div class="row row-cols-1 row-cols-md-2 g-3 mt-2 align-items-center levsection">
+                  <!-- <div class="col-lg-7 col-xl-7 col-xxl-8">
+                    <div class="chart-container3">
+                      <div class="piechart-legend">
+                        <h2 class="mb-1">85%</h2>
+                        <h6 class="mb-0">Total Visitors</h6>
+                      </div>
+                      <canvas id="chart1"></canvas>
+                    </div>
+                  </div>
+                  <div class="col-lg-5 col-xl-5 col-xxl-4">
+                    <div class="lev">
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item border-0 d-flex align-items-center gap-2">
+                          <ion-icon name="ellipse-sharp" class="text-info"></ion-icon><span>Electronics</span>
+                        </li>
+                        <li class="list-group-item border-0 d-flex align-items-center gap-2">
+                          <ion-icon name="ellipse-sharp" class="text-danger"></ion-icon><span>Furniture</span>
+                        </li>
+                        <li class="list-group-item border-0 d-flex align-items-center gap-2">
+                          <ion-icon name="ellipse-sharp" class="text-success"></ion-icon><span>Fashion</span>
+                        </li>
+                        <li class="list-group-item border-0 d-flex align-items-center gap-2">
+                          <ion-icon name="ellipse-sharp" class="text-primary"></ion-icon><span>Accessories</span>
+                        </li>
+                        <li class="list-group-item border-0 d-flex align-items-center gap-2">
+                          <ion-icon name="ellipse-sharp" class="text-warning"></ion-icon><span>Mobiles</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div> -->
+               
+                  <div class="col-lg-4">
+                    <div class="novice ">
+                    <div class="card radius-10 d-flex">
+                      <a href="investments"><div class="card-body">
+                         <img src="{% static 'aptiv_static/dashboard/assets/images/icons/1.png' %}" width="45">
+                      
+                          <div class="level-head">
+                            <h5>Novice</h5>
+                          </div>
+        
+                          
+                      
+                      </div></a>
+                    </div>
+                  </div>
+                  </div>
+
+                  <div class="col-lg-4">
+                    <div class="amateur ">
+                    <div class="card radius-10 d-flex">
+                      <a href="investments"><div class="card-body">
+      
+                 
+                          <img src="{% static 'aptiv_static/dashboard/assets/images/icons/2.png' %}" width="45">
+                        
+                        
+                          <div class="level-head">
+                            <h5>Amateur</h5>
+                          </div>
+                      
+                    </div></a>
+                  </div>
+                  </div>
+  
+               
+               
+                </div>
+
+                <div class="col-lg-4">
+                  <div class="senior ">
+                  <div class="card radius-10 d-flex">
+                    <a href="investments"><div class="card-body">
+    
+                       <img src="{% static 'aptiv_static/dashboard/assets/images/icons/3.png' %}" width="45">
+                     
+
+                      
+                        <div class="level-head">
+                          <h5>Senior</h5>
+                        </div>
+                   
+                  </div></a>
+                </div>
+                </div>
+
+              </div>
+
+              <div class="col-lg-4">
+                <div class="enthu ">
+                <div class="card radius-10 d-flex">
+                  <a href="investments"><div class="card-body">
+  
+                     <img src="{% static 'aptiv_static/dashboard/assets/images/icons/4.png' %}" width="45">
+                   
+
+                      <div class="level-head">
+                        <h5>Enthusiast</h5>
+                      </div>
+    
+                     
+                   
+                </div></a>
+              </div>
+              </div>
+
+
+            </div>
+
+            <div class="col-lg-4">
+              <div class="pro ">
+              <div class="card radius-10 d-flex">
+                <a href="investments"><div class="card-body">
+                   <img src="{% static 'aptiv_static/dashboard/assets/images/icons/5.png' %}" width="45">
+                
+                 
+                    <div class="level-head">
+                      <h5>Professional</h5>
+                    </div>
+  
+              
+              </div></a>
+            </div>
+            </div>
+
+
+
+          </div>
+
+          <div class="col-lg-4">
+            <div class="expert">
+            <div class="card radius-10 d-flex">
+              <a href="investments"><div class="card-body">
+                 <img src="{% static 'aptiv_static/dashboard/assets/images/icons/6.png' %}" width="45">
+                  <div class="level-head">
+                    <h5>Expert</h5>
+                  </div>
+
+                 
+             
+            </div></a>
+          </div>
+          </div>
+        </div>
+
+
+
+
+  
+        <!--end row-->
+      </div>
+      <!-- end page content-->
+    </div>
+    <!--end page content wrapper-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {%endblock%}
+
+
