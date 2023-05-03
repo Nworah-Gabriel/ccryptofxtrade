@@ -1,0 +1,469 @@
+body{
+    background-color: #ebf3ec;
+    /* background-color: #e2f2e5; */
+}
+
+.footer {
+    left: 0px;
+   position: relative;
+    
+    
+}
+
+.wrapper {
+    padding: 4rem 4rem;
+    letter-spacing: 0px;
+    background-image: url("{% static 'aptiv_static/Dashboard/assets/images/World_map_green.png' %}");
+    background-position:center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* height: 100vh; */
+}
+
+.heading h6 {
+font-size: 1rem;
+font-weight: 600;
+padding: 25px;
+color: #010a08;
+}
+
+.heading h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 15px;
+}
+
+.investment-levels .card-body {
+    /* flex-direction: column; */
+    /* align-items: center; */
+    /* justify-content: center;      */
+}
+
+.investment-levels .card {
+    /* height: 400px; */
+    width: 100%;
+}
+
+.investment-levels .card:hover {
+    border: 1px solid #45a293;
+    cursor: pointer;
+}
+
+.enroll {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.enroll-btn {
+    color: #fff;
+    padding: 10px default !important;
+}
+
+
+/* .novice .number p{
+    color: white;
+    background-color: #137d6c;
+    font-size: 18px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+.level-head h5 {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 0rem;
+    color: #010a08;
+}
+
+.level-price {
+    margin-top: 1rem;
+}
+
+.level-price h6 {
+    /* text-align: center; */
+    margin-bottom: 0rem;
+    color: #2ea390;
+}
+
+.level-price p {
+    font-size: 1.2rem;
+    font-weight: 700;
+    /* margin-top:.3rem; */
+    color: rgb(36, 35, 35);
+}
+
+.novice .enroll .enroll-btn {
+    color: #fff;
+    padding: 10px 60px;
+    background-color: #2ea390;
+    font-weight: 600;
+    border: 1px solid #2ea390;
+    border-radius: 5px;
+    transition: all ease .3s;
+}
+
+.novice .enroll .enroll-btn:hover {
+    background-color: #238e7c;
+    border: 1px solid #2ea390;
+}
+
+
+/* AMATEUR */
+/* .amateur .number p{
+    color: white;
+    background-color: #137d6c;
+    font-size: 18px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.amateur .level-head h5{
+    font-size: 1.9em;
+    font-weight: 700;
+    margin-bottom: 0rem;
+    color: #2ea390;
+}
+
+.amateur .level-price h6 {
+   text-align: center;
+   margin-bottom: 0rem;
+   color: #2ea390;
+}  */
+
+
+.amateur .enroll .enroll-btn {
+    color: #fff;
+    padding: 10px 60px;
+    background-color: #2ea390;
+    font-weight: 600;
+    border: 1px solid #2ea390;
+    border-radius: 5px;
+    transition: all ease .3s;
+}
+
+.amateur .enroll .enroll-btn:hover {
+    background-color: #238e7c;
+    border: 1px solid #2ea390;
+}
+
+
+/* SENIOR */
+/* .senior .number p{
+    color: white;
+    background-color: #137d6c;
+    font-size: 18px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.senior .level-head h5{
+    font-size: 1.9em;
+    font-weight: 700;
+    margin-bottom: 0rem;
+    color: #2ea390;
+}
+
+.senior .level-price h6 {
+   text-align: center;
+   margin-bottom: 0rem;
+   color: #2ea390;
+} */
+
+
+.senior .enroll .enroll-btn {
+    color: #fff;
+    padding: 10px 60px;
+    background-color: #2ea390;
+    font-weight: 600;
+    border: 1px solid #2ea390;
+    border-radius: 5px;
+    transition: all ease .3s;
+}
+
+.senior .enroll .enroll-btn:hover {
+    background-color: #238e7c;
+    border: 1px solid #2ea390;
+}
+
+
+/* enthu */
+/* .enthu .number p{
+    color: white;
+    background-color: #137d6c;
+    font-size: 18px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.enthu .level-head h5{
+    font-size: 1.9em;
+    font-weight: 700;
+    margin-bottom: 0rem;
+    color: #2ea390;
+}
+
+.enthu .level-price h6 {
+   text-align: center;
+   margin-bottom: 0rem;
+   color: #2ea390;
+} */
+
+
+.enthu .enroll .enroll-btn {
+    color: #fff;
+    padding: 10px 60px;
+    background-color: #2ea390;
+    font-weight: 600;
+    border: 1px solid #2ea390;
+    border-radius: 5px;
+    transition: all ease .3s;
+}
+
+.enthu .enroll .enroll-btn:hover {
+    background-color: #238e7c;
+    border: 1px solid #2ea390;
+}
+
+
+/* pro */
+/* .pro .number p{
+    color: white;
+    background-color: #137d6c;
+    font-size: 18px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pro .level-head h5{
+    font-size: 1.9em;
+    font-weight: 700;
+    margin-bottom: 0rem;
+    color: #2ea390;
+}
+
+.pro .level-price h6 {
+   text-align: center;
+   margin-bottom: 0rem;
+   color: #2ea390;
+} */
+
+.pro .enroll .enroll-btn {
+    color: #fff;
+    padding: 10px 60px;
+    background-color: #2ea390;
+    font-weight: 600;
+    border: 1px solid #2ea390;
+    border-radius: 5px;
+    transition: all ease .3s;
+}
+
+.pro .enroll .enroll-btn:hover {
+    background-color: #1d7c6c;
+    border: 1px solid #2ea390;
+}
+
+/* expert */
+/* .expert .number p{
+    color: white;
+    background-color: #137d6c;
+    font-size: 18px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.expert .level-head h5{
+    font-size: 1.9em;
+    font-weight: 700;
+    margin-bottom: 0rem;
+    color: #2ea390;
+}
+
+.expert .level-price h6 {
+   text-align: center;
+   margin-bottom: 0rem;
+   color: #2ea390;
+} */
+
+
+.expert .enroll .enroll-btn {
+    color: #fff;
+    padding: 10px 60px;
+    background-color: #2ea390;
+    font-weight: 600;
+    border: 1px solid #2ea390;
+    border-radius: 5px;
+    transition: all ease .3s;
+}
+
+.expert .enroll .enroll-btn:hover {
+    background-color: #238e7c;
+    border: 1px solid #2ea390;
+}
+
+
+.modal-content {
+    padding: 2rem;
+}
+
+.modal-header .modal-title {
+    font-weight: 700;
+    font-size: 2rem;
+    color: #137d6c;
+}
+
+.modal-content .deposit-form {
+    flex-direction: column;
+}
+
+.modal-content .deposit-form label {
+    margin-bottom: .5rem;
+    font-weight: 600;
+
+}
+
+
+
+.modal-content .deposit-form .deposit {
+    color: #fff;
+    padding: 10px 100px;
+    background-color: #137d6c;
+    font-weight: 600;
+    border: 1px solid #137d6c;
+    border-radius: 5px;
+    transition: all ease .3s;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.modal-content .deposit-form .deposit:hover {
+    background-color: #076d5c;
+    border: 1px solid #137d6c;
+}
+
+
+.newoption ul {
+    background-color: #fff;
+    height: 385px;
+    padding: 5px;
+    list-style-type: none;
+}
+
+.newoption ul .optionlist {
+    padding: 25px 15px 35px;
+}
+.newoption ul .optionlist i{
+    padding: 5px;
+    position: relative;
+    /* left: 170px; */
+    float: right;
+    font-weight: 800;
+    font-size: 1.3rem;
+}
+.newoption ul .optionlist img {
+    float: left;
+}
+
+.newoption ul .optionlist h6 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-left: 10px;
+    margin-top: 4px;
+    float: left;
+    color: #0a0a0a;
+}
+
+
+.investoption{
+    background-color: #fff;
+    height: 385px;
+    padding: 0px;
+    list-style-type: none;
+}
+
+.investoption .optionlist {
+    padding: 20px 5px 50px;
+    border-bottom: 1px solid #08584b25;
+}
+.investoption .optionlist:hover {
+    background-color: #84eedd;
+    cursor: pointer;
+    color: #0f0f0f;
+}
+
+.investoption .optionlist i{
+    padding: 5px;
+    position: relative;
+    /* left: 170px; */
+    float: right;
+    font-weight: 800;
+    font-size: 1.3rem;
+}
+
+.investoption .optionlist img {
+    float: left;
+}
+
+
+.investoption .optionlist h6 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-left: 10px;
+    margin-top: 4px;
+    float: left;
+    color: #0a0a0a;
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .heading h3 {
+        font-size: 1.4rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding: 25px;
+        color: #010a08;
+        text-align: center;
+    }
+
+    .heading h2 {
+        font-size: 1.4rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .wrapper {
+        padding: 0rem;
+    }
+}

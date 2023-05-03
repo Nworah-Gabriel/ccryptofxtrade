@@ -1,0 +1,1097 @@
+/* FOR THE CRYPTO PAGE VIEW */
+.heading h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 25px;
+    color: #010a08;
+    }
+    
+.heading h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 15px;
+}
+
+.wrapper {
+    /* padding: 4rem 9rem; */
+    letter-spacing: 0px;
+    /* background-image: url("/Dashboard/assets/images/World_map_green.png");
+    background-position:center top;
+    background-size: contain;
+    background-repeat: no-repeat; */
+}
+
+.wrappers{
+    padding-top: 20px;
+    padding-right: 0px;
+}
+
+
+.footer {
+
+    left: 0px;
+    
+}
+
+.welcome-bg{
+    background-image: url("/Dashboard/assets/images/50.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top right;
+
+}
+
+a{
+    color: #1e9481;
+}
+
+.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #1e9481;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(62, 185, 119, 0.3);
+}
+ .btn-primary:focus {
+   
+    box-shadow: 0 0 0 0.25rem rgba(62, 185, 119, 0.3);
+}
+
+.mini-sidebar-wrapper {
+    left: -200px;
+    z-index: 4;
+}
+
+.top-header {
+    top: 0;
+    left: 80px;
+    right: 0;
+    height: 65px;
+    padding: 0rem 3rem;
+    z-index: 5;
+    transition: 0.3s all;
+    margin-top: 40px;
+}
+
+
+.wrapper .page-content-wrapper {
+    margin-left: 0px;
+    margin-top: 45px;
+    padding: 0 0rem 2em 0rem !important;
+    transition: .3s all;
+}
+
+.navbar .nav-menu ul {
+    margin-left: 7rem;
+}
+
+.navbar .nav-menu ul li {
+    display: inline-block;
+    padding: 0rem 3rem 0rem 0rem;
+}
+
+.navbar .nav-menu ul li a {
+    color: #434343;
+    font-weight: 500;
+    font-family: "Open Sans", sans-serif !important;
+}
+
+.navbar .nav-menu ul li a:hover {
+    color: #1e9481;
+    transition: ease .3s;
+}
+
+.navbar .nav-menu ul li .active {
+    font-weight: 700;
+    color: #1e9481;
+}
+
+.top-navbar-right .navbar-nav .nav-item {
+    margin-left: 1rem;
+}
+
+.log-out {
+    font-size: 1.3rem;
+    cursor: pointer;
+    margin-left: 2rem;
+}
+
+.setting {
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.saving-card {
+    height: 284px;
+    padding-top: 25px;
+}
+
+.saving-card h6 {
+    font-size: .8rem;
+}
+
+.saving-card h5 {
+    font-weight: 700;
+    color: #100f0f;
+}
+
+.saving-card p {
+    margin-bottom: 0rem;
+    color: #9a9a9a;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.saving-card-right h3 {
+    color: #100f0f;
+    font-weight: 800;
+}
+
+.saving-card-right h6 {
+    margin-left: 2.7rem;
+    font-size: .8rem;
+}
+
+.accnt-btn {
+    padding: 13px 30px;
+    margin-top: 3rem;
+    border-radius: 10px;
+    background-color: #137d6c;
+    border: none;
+    color: #fff;
+    text-align: center;
+    font-weight: 600;
+}
+
+.accnt-btn:hover {
+    color: #fff;
+    background-image: none;
+    background-color: #1e9481;
+    border-color: #1e9481;
+}
+
+.welcome-card {
+    background-color: #137d6c;
+    color: #fff;
+    height: 284px;
+}
+
+.welcome-card h2 {
+    
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.welcome-card .about {
+    width: 80%;
+}
+
+
+.about-btn {
+    padding: 13px 30px;
+    margin-top: .4rem;
+    border-radius: 10px;
+    background-color: #f6f6f6;
+    border: none;
+    color: #011713;
+    text-align: center;
+    font-weight: 600;
+}
+
+.about-btn:hover {
+    background-color: #dcdcdc;
+    border-color: #1e9481;
+    transition: ease .3s;
+}
+
+.transaction-header {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin: 1rem .4rem;
+}
+
+
+.no-pc-display {
+    display: none;
+}
+
+/* wallet */
+
+.wallet-card p,
+.wallet-card h6 {
+    margin-bottom: 0rem;
+}
+
+.wallet-card .asset-value {
+    background-color: #137d6c;
+    color: white;
+    padding: 25px 30px;
+    border-radius: 5px;
+}
+
+.wallets {
+    border-radius: 7px 7px 0px 0px;
+}
+
+.wallets .wallets-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: 0px;
+    background-color: rgb(235, 236, 240);
+    padding: 15px 20px;
+    border-radius: 5px 5px 0px 0px;
+}
+.wallets .wallets-head p{
+   font-size: 1.2rem;
+}
+.wallets .wallets-head a{
+    background-color: #fff;
+    border: 1.5px solid #137d6c;
+    color: #111111;
+    padding: 10px 11px;
+    border-radius: 5px;
+}
+
+
+.wallet-coin {
+    background-color: #fff;
+    padding: 15px;
+    border-top: 1px solid rgb(235, 236, 240);
+    border-bottom: 1px solid rgb(235, 236, 240);
+    border-left: 3px solid rgb(235, 236, 240);
+    border-right: 3px solid rgb(235, 236, 240);
+
+
+}
+
+.wallet-coin ul {
+    width: 400px;
+    padding-left: 0rem;
+}
+
+.wallet-coin ul li {
+    display: inline-block;
+    padding: 10px 11px;
+    margin-right: 3px;
+    border-radius: 5px;
+    cursor: pointer;
+    letter-spacing: 0px;
+
+}
+
+.wallet-coin ul .deposit {
+    background-color: #137d6c;
+    color: #fff;
+}
+
+.wallet-coin ul .withdraw {
+    background-color: #fff;
+    border: 1.5px solid #2d2d2d;
+    color: #111111;
+}
+
+.wallet-coin ul .swap{
+    background-color: #3e3e3e;
+    color: #fff;
+}
+
+.wallet-coin ul .option {
+    background-color: #dcdcdc;
+    color: #111111;
+}
+
+.wallet-coin ul .option[data-title]:hover:after {
+    opacity: 1;
+    transition: all 0.1s ease 0.5s;
+    visibility: visible;
+}
+
+.wallet-coin ul .option[data-title]:after {
+    content: attr(data-title);
+    color: #111;
+    font-size: .7rem;
+    position: absolute;
+    padding: 4px 5px 4px 5px;
+    bottom: 1.6em;
+    left: 110%;
+    white-space: nowrap;
+    opacity: 0;
+    background-color: #dcdcdc;
+    z-index: 99999;
+    visibility: hidden;
+}
+.wallet-coin ul .option[data-title] {
+    position: relative;
+}
+
+
+
+.form-check-input:checked {
+    background-color: #137d6c;
+    border-color: #137d6c;
+}
+
+.form-check-input:focus {
+    border-color: #137d6c;
+    outline: 0;
+    box-shadow: none;
+}
+
+
+.modal-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: 0px;
+    background-color: rgb(235, 236, 240);
+    padding: 19px 20px;
+    border-radius: 5px 5px 0px 0px;
+    margin-bottom: 1rem;
+}
+
+.withdraw-modal .modal-content .card,
+.swap-modal .modal-content .card{
+    box-shadow: none;
+}
+
+.display{
+    display: block !important;
+}
+
+.deposit-modal, .withdraw-modal,.swap-modal,
+ .option-modal{
+    transform-origin: top;
+    display: none;
+    animation: animate .5s;
+    
+}
+
+@keyframes animate{
+    from{
+        transform: scale(1, 0);
+        opacity:0;
+    }
+    to{
+        transform: scale(1,1);
+        opacity:1;
+    }
+}
+
+/* styling deposit-modal  */
+
+.deposit-modal .modal-head{
+    background-color: #1e9481;
+    color: #fff;
+    padding-left:30px ;
+    padding-right:30px ;
+}
+ .modal-head .close{
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.deposit-modal .modal-content{
+    padding: 35px;
+    border-radius: 0px;
+    border: 1px solid #fff;
+}
+.deposit-modal .modal-content h5{
+    font-weight: 600;
+    color: #111;
+    font-size: 1rem;
+}
+.deposit-modal .modal-content select{
+   width: 80%;
+}
+.deposit-modal .modal-content select option{
+    font-size: .9rem;
+}
+
+.notes{
+   font-size: .8rem;
+   color:#2d2d2d;
+   font-weight: 500;
+}
+ .notes h6{
+    font-weight: 600;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+}
+
+.notes ion-icon{
+    background-color: #2c7de7;
+    color: #fff;
+    border-radius: 50px;
+    padding: 2px;
+    margin-right: 5px;
+}
+
+.deposit-modal .deposit-address h6{
+    font-size: 1rem;
+    color: #111111;
+    font-weight: 600;
+}
+
+.deposit-address .address{
+    margin-top: 1rem;
+    padding: 20px 15px;
+    border: .1rem solid #929292;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.deposit-address .address-code{
+    font-size:1rem ;
+}
+.deposit-address .copy{
+    font-size:1rem ;
+    background-color: #1e9481;
+    padding: 6px 20px;
+    color: #fff;
+    border-radius: 4px;
+    border: #1e9481;
+}
+
+.trans{
+    margin-top: 1rem;
+    text-align: right;
+}
+ .transHist{
+    font-size:.9rem ;
+    margin-top: 1.4rem;
+    border-radius: 4px;
+    padding: 9px 10px;
+    border:1px solid #2d2d2d;
+    color: #fff;
+    cursor: pointer;
+    background-color: #2d2d2d;
+    transition: all ease .3s;
+   
+}
+ .transHist:hover{
+    background-color: #4f4f4f;
+    border:1px solid #4f4f4f;
+}
+
+
+
+.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+    border-color: #fff #fff #fff;
+    isolation: isolate;
+}
+.nav-primary.nav-tabs .nav-link.active {
+    color: #137d6c;
+    border-color: #fff #fff #137d6c;
+    border-width: 2px;
+    border-radius:none ;
+
+}
+.nav-primary.nav-tabs .nav-link .tab-title {
+   color: #2d2d2d;
+   font-weight: 600;
+   font-size: 1rem;
+
+}
+/* withdraw deposit-modal  */
+
+.withdraw-modal .modal-head{
+    background-color: #1e9481;
+    color: #fff;
+    padding-left:30px ;
+    padding-right:30px ;
+}
+
+
+.withdraw-modal .modal-content{
+    padding: 25px;
+    border-radius: 0px;
+    border: 1px solid #fff;
+}
+.withdraw-modal .modal-content .tab-pane h5{
+    font-weight: 600;
+    color: #111;
+    font-size: 1.1rem;
+}
+
+.withdraw-modal .modal-content .tab-pane h6{
+    font-weight: 600;
+    color: #111;
+    font-size: 1.1rem;
+    margin-bottom: 1.3rem;
+}
+
+
+.withdraw-modal .tab-pane .btn-primary{
+    margin-top: 1rem;
+        color: #fff;
+        background-color: #1e9481;
+        border-color: #137d6c;
+        width: 100%;
+}
+
+.withdraw-modal .network ul{
+    padding-left: 0rem;
+    position: relative;
+}
+.withdraw-modal .network ul li{
+    display: inline-block;
+    font-weight: 700;
+    font-size: 1rem;
+    border: 1px solid #4f4f4f;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 8px;
+    margin-right: 5px;
+   
+}
+.withdraw-modal .network ul li:hover{
+    border: 1px solid #137d6c;
+}
+
+.networkStroke{
+    border: 1px solid #137d6c !important;
+}
+
+ .networkStroke:after{
+    content: " ";
+    padding: 6px;
+    border-radius: 50px;
+    position: absolute;
+    bottom: 77%;
+    background-color: #137d6c;
+}
+
+
+#username h6{
+    font-size: 1rem;
+    margin-bottom: .9rem;
+    margin-top: 1.3rem;
+}
+#phoneNumber h6{
+    font-size: 1rem;
+    margin-bottom: .9rem;
+    margin-top: 1.3rem;
+}
+
+
+
+/* swap modal */
+.swap-modal .modal-head{
+    background-color: #1e9481;
+    color: #fff;
+    padding-left:30px ;
+    padding-right:30px ;
+}
+.swap-modal .modal-content{
+    padding: 25px;
+    border-radius: 0px;
+    border: 1px solid #fff;
+}
+
+.swap-modal .tab-pane .btn-primary{
+        color: #fff;
+        background-color: #1e9481;
+        border-color: #137d6c;
+        width: 100%;
+}
+.swap-modal .tab-pane .coinBtn,
+.swap-modal .tab-pane .coinBtn2{
+   
+    font-size: .8rem;
+}
+
+
+#marketPrice h6, #yourPrice h6{
+    font-size: 1rem;
+    margin-bottom: .5rem;
+    margin-top: 1.1rem;
+    font-weight: 600;
+}
+
+.modal-backdrop.fade {
+   display: none;
+}
+.modal-backdrop.show {
+   display: block;
+   z-index: 1;
+}
+
+
+/* option modal */
+.option-modal .modal-head{
+    background-color: #1e9481;
+    color: #fff;
+    padding-left:30px ;
+    padding-right:30px ;
+}
+.option-modal .modal-content{
+    border-radius: 0px;
+    border: 1px solid #fff;
+}
+
+
+
+
+
+
+.coinlist-modal .modal-body ul {
+/* width: 500px; */
+padding-left: .8rem;
+}
+.coinlist-modal .modal-body ul li{
+    display: inline-block;
+    font-size: 1rem;
+    border: 1px solid #d8d9de;
+    padding: 12px 16px;
+    margin: 0px 16px 16px 0px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+/* verify css */
+
+.verify-head{
+    font-weight: 700;
+}
+.verify-item{
+    background-color: #ededef;
+    padding: 20px;
+    width: 100%;
+    margin-bottom: 1.3rem;
+}
+
+
+.verify-item .level span{
+    background-image: linear-gradient(to left,#1ccf76,#0e9451);
+    padding: 2px 7px;
+    border-radius: 50%;
+    color: white;
+    font-weight: 700;
+    font-size: .7rem;
+}
+
+.verify-item .level-title h5{
+    font-weight: 700;
+    margin-bottom: .1rem;
+    color: #137d6c;
+}
+
+.verify-item .level-title p{
+    font-weight: 600;
+    margin-bottom: .1rem;
+}
+
+.verify-item .level-right .level-badge{
+    color: #4f4f4f;
+    font-weight: 700;
+    background-color: #4e4e4e2d;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: .75rem;
+    margin-bottom: .6rem; 
+}
+
+.verify-item .level-right .level-badge-success{
+    color: #08ab5a;
+    font-weight: 700;
+    background-color: #15980e2d;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: .75rem;
+    margin-bottom: .6rem; 
+}
+.verify-item .level-right a{
+    color: #0c0c0c;
+    margin-bottom: 0rem;
+    margin-top: .4rem;
+    text-decoration: underline;
+}
+
+
+.traffic{
+    background-image: url("/Dashboard/assets/images/World_map_green2.png");
+    background-position:center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #ebf3ec;
+}
+
+.lev .list-group-item{
+    background-color: #00000000;
+}
+
+
+.levsection .card {
+    height: 0%;
+    width: 100%;
+}
+
+.levsection img{
+    /* width: 2px ; */
+}
+
+.levsection  .card:hover {
+    border: 1px solid #45a293;
+    cursor: pointer;
+}
+.level-price h6 {
+    /* text-align: center; */
+    margin-bottom: 0rem;
+    color: #2ea390;
+}
+
+.level-price p {
+    font-size: .9rem;
+    font-weight: 700;
+    /* margin-top:.3rem; */
+    color: rgb(36, 35, 35);
+}
+
+
+
+
+
+@media only screen and (max-width: 1024px) {
+
+    .mini-sidebar-wrapper {
+        left: -200px;
+        z-index: 4;
+    }
+
+    .welcome-card .welcome-image img{
+        /* display: none; */
+        width: 130px;
+       
+    }
+    .welcome-card .welcome-image{
+        /* display: none; */
+        position: absolute;
+        bottom: 0px;
+        left: 180px;
+    }
+
+
+    .wrapper .page-content-wrapper {
+        margin-top: 5px;
+    }
+
+    .no-phone-display {
+        display: none;
+    }
+
+    .no-pc-display {
+        display: block;
+    }
+
+    .log-out {
+        font-size: 1.3rem;
+        cursor: pointer;
+        margin-left: -.5rem;
+    }
+
+
+    .saving-card h6 {
+        font-size: .9rem;
+        color: #1e9481;
+    }
+
+    .saving-card h5 {
+        /* font-size: 1.5rem; */
+        font-weight: 700;
+        color: #100f0f;
+
+    }
+
+    .saving-card-right h3 {
+        color: #100f0f;
+        font-weight: 800;
+        font-size: 2rem;
+    }
+
+    .saving-card-right h6 {
+        margin-left: 0rem;
+        font-size: .9rem;
+    }
+
+    .accnt-btn {
+        margin-top: 1rem;
+
+    }
+
+    /*navbar side*/
+    
+    .mini-sidebar-wrapper {
+        width: 200px;
+        padding: 35px 0px;
+    }
+
+    .mini-sidebar-wrapper ul {
+        padding-left: 0rem;
+    }
+
+    .mini-sidebar-wrapper ul li {
+        list-style-type: none;
+        margin-bottom: 1rem;
+        padding: 1rem;
+    }
+
+    .mini-sidebar-wrapper ul li .actives {
+        color: #1e9481;
+    }
+
+    .mini-sidebar-wrapper ul li a {
+        color: #100f0f;
+    }
+
+   .modal-show{
+        position: absolute;
+        padding: 70px 10px;
+        top: 0;
+        background-color: #100f0f80;
+        z-index: 20;
+        height: 100%;
+       
+    }
+
+   
+    .modal-backdrop.show {
+        display: block;
+        z-index: -1;
+     }
+     
+    .swap-modal .modal-content button{
+        margin: .7rem auto;
+    }
+
+    .deposit-modal .deposit-address .address{
+        flex-direction: column;
+    }
+    .deposit-modal .deposit-address .address-code{
+        font-size: .92rem;
+        margin-bottom: .8rem;
+        font-weight: 600;
+    }
+    .deposit-modal .deposit-address button{
+        padding: 6px 90px;
+    }
+
+    .wallet-coin ul {
+        width: 260px;
+    }
+    .wallet-coin ul li:last-child{
+       margin-top: 1rem;
+    }
+
+    .withdraw-modal .modal-content .nav{
+        flex-wrap: nowrap;
+        align-items: flex-end;
+    }
+
+    .saving-card{
+        height: 350px;
+        padding-top: 25px;
+    }
+
+    .welcome-card{
+        height: 400px;
+        width: 100%;
+    }
+    
+}
+
+
+@media only screen and (max-width: 767.98px) {
+    .wrapper {
+        padding: 1rem 0rem;
+    }
+
+
+    .top-navbar-right .navbar-nav .nav-item {
+        margin-left: .5rem;
+    }
+}
+
+
+/* FOR THE CRYPTO VIEW PAGE */
+.investoption{
+    background-color: #fff;
+    /* height: 385px; */
+    padding: 0px;
+    list-style-type: none;
+}
+
+.investoption .optionlist {
+    padding: 20px 5px 50px;
+    border-bottom: 1px solid #08584b25;
+}
+.investoption .optionlist:hover {
+    background-color: #84eedd;
+    cursor: pointer;
+    color: #0f0f0f;
+}
+
+.investoption .optionlist i{
+    padding: 5px;
+    position: relative;
+    /* left: 170px; */
+    float: right;
+    font-weight: 800;
+    font-size: 1.3rem;
+}
+
+.investoption .optionlist img {
+    float: left;
+}
+
+
+.investoption .optionlist h6 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-left: 10px;
+    margin-top: 4px;
+    float: left;
+    color: #0a0a0a;
+}
+.modal-content .deposit-form {
+    flex-direction: column;
+}
+
+.modal-content .deposit-form label {
+    margin-bottom: .5rem;
+    font-weight: 600;
+
+}
+
+
+
+.modal-content .deposit-form .deposit {
+    color: #fff;
+    padding: 10px 100px;
+    background-color: #137d6c;
+    font-weight: 600;
+    border: 1px solid #137d6c;
+    border-radius: 5px;
+    transition: all ease .3s;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.modal-content .deposit-form .deposit:hover {
+    background-color: #076d5c;
+    border: 1px solid #137d6c;
+}
+.pro .enroll .enroll-btn {
+    color: #fff;
+    padding: 10px 60px;
+    background-color: #2ea390;
+    font-weight: 600;
+    border: 1px solid #2ea390;
+    border-radius: 5px;
+    transition: all ease .3s;
+}
+
+.pro .enroll .enroll-btn:hover {
+    background-color: #1d7c6c;
+    border: 1px solid #2ea390;
+}
+
+/* expert */
+/* .expert .number p{
+    color: white;
+    background-color: #137d6c;
+    font-size: 18px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.expert .level-head h5{
+    font-size: 1.9em;
+    font-weight: 700;
+    margin-bottom: 0rem;
+    color: #2ea390;
+}
+
+.expert .level-price h6 {
+   text-align: center;
+   margin-bottom: 0rem;
+   color: #2ea390;
+} */
+
+
+.expert .enroll .enroll-btn {
+    color: #fff;
+    padding: 10px 60px;
+    background-color: #2ea390;
+    font-weight: 600;
+    border: 1px solid #2ea390;
+    border-radius: 5px;
+    transition: all ease .3s;
+}
+
+.expert .enroll .enroll-btn:hover {
+    background-color: #238e7c;
+    border: 1px solid #2ea390;
+}
+
+
+.modal-content {
+    padding: 2rem;
+}
+
+.modal-header .modal-title {
+    font-weight: 700;
+    font-size: 2rem;
+    color: #137d6c;
+}
+.investment-levels .card:hover {
+    border: 1px solid #45a293;
+    cursor: pointer;
+}
+.newoption ul {
+    background-color: #fff;
+    height: 385px;
+    padding: 5px;
+    list-style-type: none;
+}
+
+.newoption ul .optionlist {
+    padding: 25px 15px 35px;
+}
+.newoption ul .optionlist i{
+    padding: 5px;
+    position: relative;
+    /* left: 170px; */
+    float: right;
+    font-weight: 800;
+    font-size: 1.3rem;
+}
+.newoption ul .optionlist img {
+    float: left;
+}
+
+.newoption ul .optionlist h6 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-left: 10px;
+    margin-top: 4px;
+    float: left;
+    color: #0a0a0a;
+}
+.select-section{
+    display: flex;
+    flex-direction: row;
+}
+@media only screen and (max-width: 575.98px) {}
+
+@media only screen and (max-width: 479.98px) {}
