@@ -1,1 +1,0 @@
-<h1>STATIC FILES</h1>
