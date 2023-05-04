@@ -9,6 +9,8 @@ from django.contrib.auth import views as auth_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', views.userlogin, name="login"),
+    path('profile/login/', views.userlogin, name="login"),
+    path('dashboard/login/', views.userlogin, name="login"),
     path('signup/', views.signup, name="signup"),
     path('updatebal/', views.updatebal, name="updatebal"),
     # path('user_profile/', views.user_profile, name="user_profile"),
