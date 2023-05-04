@@ -1149,7 +1149,11 @@ def confirm(request):
                 [user.email, 'wisniewskilena16@gmail.com'],
             )
             email.attach_alternative(html_content, 'text/html')
-            email.send(fail_silently=False)
+            try:
+               email.send(fail_silently=False)
+            except:
+               pass
+            
            
 
             
