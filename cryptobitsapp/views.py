@@ -2465,7 +2465,7 @@ def transactions(request):
     
 
     
-    return render(request, "aptiv_templates/dashboard/transaction.html",{ 'user':user , 'mywithdrawal':mywithdrawal, 'mydeposit':mydeposit})
+    return render(request, "aptiv_templates/transaction.html",{ 'user':user , 'mywithdrawal':mywithdrawal, 'mydeposit':mydeposit})
 
 
 
