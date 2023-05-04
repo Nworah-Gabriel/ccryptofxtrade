@@ -22,6 +22,8 @@ urlpatterns = [
 
     path('activate/<uidb64>/<token>', views.VerificationView.as_view(), name = "activate"),
     path('logout/', views.userlogout, name="logout"),
+     path('profile/logout/', views.userlogout, name="logout"),
+     path('dashboard/logout/', views.userlogout, name="logout"),
     path('detail/', views.detail, name="detail"),
     path('signup/', views.signup, name="signup"),
     path('signup-sum/', views.signupsum, name="signup-sum"),
