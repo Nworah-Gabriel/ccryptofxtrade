@@ -253,6 +253,14 @@ cursor: pointer;
     background-position: center center;
 }
 
+
+.hero-slider{
+    background-image: linear-gradient(rgba(7, 204, 10, 0.3), rgba(8, 237, 11, 0.3)), url(../img/footer.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
 .hero-slider-content .btn-hero {
     margin-top: 15px;
 }
@@ -298,6 +306,18 @@ cursor: pointer;
     
 }
 
+.policy-area .container .box{
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+}
+
+.policy-area .container h1{
+   font-size: 4rem;
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   color: #006b38;
+}
+
 .policy-area-header{
     font-size: 3em;
     font-weight: 600;
@@ -306,7 +326,7 @@ cursor: pointer;
 }
 
 .policy-padding {
-    padding: 100px 0 130px 0;
+    padding: 100px 0 50px 0;
 }
 
 .service-policy-item {
@@ -329,6 +349,62 @@ cursor: pointer;
 }
 
 
+.icons-container{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap:1rem;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.icons-container .icons{
+    display: flex;
+    align-items: flex-start;
+    gap:.5rem;
+    border-radius: 10px;
+    padding: 1rem;
+    width: 12rem;
+}
+
+.icons-container .icons span{
+    padding-top: 7px;
+}
+
+.icons-container .icons span .green{
+    color: #006b38;
+}
+
+
+.icons-container .icons span h3{
+    font-size: 8px;
+    font-weight: 800;
+}
+
+.icons-container .icons i{
+    font-size:1.5rem;
+    color: #006b38;
+    padding-top: 7px;
+}
+
+.icons-container .icons .content h3{
+    font-size: 2rem;
+}
+
+.icons-container .icons .content p{
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+.icons-container .icons:hover{
+    background:#101820;
+}
+
+.icons-container .icons:hover .content h3,
+.icons-container .icons:hover .content p,
+.icons-container .icons:hover span h3{
+    color: white;
+}
+
 
 /* .service-list-left .service-item:nth-child(4) {
     margin-left: 82px;
@@ -345,6 +421,19 @@ cursor: pointer;
     background-color: #108149;
     padding: 90px 15px 100px 15px;
 }
+
+/* .big-green .services .service-icon{
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+}
+
+.big-green .services .service-icon h1{
+    font-size: 4rem;
+    color: #006b38;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+} */
+
 .service-wrapper{
     margin: 0px auto;
     width:90% ;
@@ -374,17 +463,102 @@ cursor: pointer;
     width:80% ;
 }
 .robo-padding{
-   padding: 120px 0px;
+   padding: 100px 0px 50px;
 }
 
 .none{
     display: none;
 }
 
+.headquaters{
+    background: #2a2929;
+    padding: 60px 40px;
+}
 
+.headquaters .head-container{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 2rem;
+    padding-top: 40px;
+}
+
+.headquaters .header-container h3{
+   color: white;
+}
+
+.headquaters .head-container .text a h1{
+   color: #006b38;
+   font-size: 45px;
+}
+
+.headquaters .head-container .text a h1:hover{
+    color: white;
+ }
+
+.headquaters .head-container img{
+    height: 300px;
+    border-radius: 10px;
+}
+
+.brand-logo-wrapper .container .box-container{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+.brand-logo-wrapper .container .box-container .icon-box{
+    display: flex;
+    align-items: center;
+}
+
+.brand-logo-wrapper .container .box-container .icon-box .icon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 6rem;    
+}
+
+.brand-logo-wrapper .container .box-container .icon-box .icon p{
+   font-size: 13px;
+   font-weight: 600;   
+}
+
+.brand-logo-wrapper .container .box-container .icon-box .line{
+    width: 5rem;
+    height: 3px;
+    background: black;
+    margin: 0;
+    margin-top: 3px;
+}
+
+.brand-logo-wrapper .container .box-container .icon-box .line-last{
+    width: 2rem;
+    height: 3px;
+    background: black;
+    margin: 0;
+    margin-top: 3px;
+}
+
+.brand-logo-wrapper .container .box-container .icon i{
+   font-size: 4rem;
+   padding: 15px;
+   background: #006b38;
+   width: 6.2rem;
+   height: 6rem;
+   z-index: 1;
+   color: white;
+   border-radius: 50%;
+   display: flex;
+   place-content: center;
+}
 
 .about-inner .title{
     font-weight: 700;
+    margin-top: 1rem;
 }
 
 
@@ -401,12 +575,18 @@ cursor: pointer;
 }
 
 .brand-padding{
-    padding: 60px 0px 10px 0px;
+    padding: 70px 0px 50px 0px;
    
 }
 
 
 
+footer > div.darkbg{
+    background: linear-gradient(rgba(0, 15, 1, 0.9), rgba(0, 15, 1, 0.9)), url(../img/footer.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
 
 footer{
     color: white;
@@ -683,7 +863,66 @@ footer{
     }
 
   }
-  
+
+
+  @media only screen and (max-width: 1288px) {
+    .icons-container{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+    }
+
+        
+    .brand-logo-wrapper .container .box-container{
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .brand-logo-wrapper .container .box-container .icon-box .icon{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 6rem;    
+    }
+
+    .brand-logo-wrapper .container .box-container .icon-box .line{
+        width: 3rem;
+    }
+
+    .brand-logo-wrapper .container .box-container .icon-box .line-last{
+        width: 1rem;
+        height: 3px;
+    }
+
+    .headquaters .head-container{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .icons-container{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+    }
+
+        
+    .brand-logo-wrapper .container .box-container{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4rem;
+    }
+
+    .brand-logo-wrapper .container .box-container .icon-box .line{
+        display: none;
+    }
+
+    .brand-logo-wrapper .container .box-container .icon-box .line-last{
+        display: none;
+    }
+
+    .headquaters .head-container{
+        grid-template-columns: 1fr;
+    }
+
+}
+
   @media only screen and (max-width: 575.98px) {
     body{
         width: 100%;
@@ -706,6 +945,33 @@ footer{
         padding-left: 5px;
         padding-right: 5px;
      }
+
+     .icons-container{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 2rem;
+    }
+
+        
+    .brand-logo-wrapper .container .box-container{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .brand-logo-wrapper .container .box-container .icon-box .line{
+        display: none;
+    }
+
+    .brand-logo-wrapper .container .box-container .icon-box .line-last{
+        display: none;
+    }
+
+    .headquaters .head-container{
+        grid-template-columns: 1fr;
+    }
+
+    .headquaters .head-container img{
+        height: 200px;
+    }
   }
   
   @media only screen and (max-width: 479.98px) {
