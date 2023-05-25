@@ -12,10 +12,6 @@
     align-items: center;
 }
 
-#dashboard-avatar{
-    height: 50px;
-}
-
 
 html{
     scroll-behavior: smooth;

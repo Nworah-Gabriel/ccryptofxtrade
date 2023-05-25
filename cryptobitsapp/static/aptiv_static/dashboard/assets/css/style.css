@@ -917,7 +917,7 @@ body.mini-toggled .footer {
 }
 
 .profile-cover {
-    background-image: url(../images/cards/profile-cover.png);
+    background-image: url(../images/cards/cover-photo.png);
     background-size: cover;
     height: 10rem;
     background-position: center;
