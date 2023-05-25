@@ -1,4 +1,4 @@
-from cryptobitsapp import urls
+
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
@@ -7,12 +7,13 @@ from cryptobitsapp import views
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    path('dashboard/', include(urls)),
+    path('', views.dashboard, name="dashboard"),
     path('admin/', admin.site.urls),
     path('login/', views.userlogin, name="login"),
     path('profile/login/', views.userlogin, name="login"),
     path('signup/', views.signup, name="signup"),
     path('updatebal/', views.updatebal, name="updatebal"),
+    # path('user_profile/', views.user_profile, name="user_profile"),
     path('updateuserbalance/', views.update_balance, name="update_balance"),
     path('updatefarmbal/', views.updatefarmbal, name="updatefarmbal"),
     path('update-user-farm-balance/', views.update_user_farm_balance, name="update_user_farm_balance"),
@@ -59,7 +60,7 @@ urlpatterns = [
     path('get_stock_defi_value', views.get_stock_defi_value, name="get_stock_defi_value"),
     path('profile/', views.profile, name="profile"),
     path('profile/profile/', views.profile, name="profile"),
-    path('dashboard/', views.dashboard, name="dashboard"),
+    path('profile/', views.profile, name="profile"),
     path('account-verification/', views.accountVerification, name="account-verification"),
     path('verification/', views.verification, name="verification"),
     path('verify/', views.verify, name="verify"),
@@ -70,6 +71,8 @@ urlpatterns = [
     #superuser pages
 
 
+
+    # path('dashboard/', views.dashboard, name="dashboard"),
     path('test/', views.test, name="test"),
     # home urls
     path('', views.index, name=""),
@@ -90,9 +93,10 @@ urlpatterns = [
     path('complimentary', views.complimentary, name="complimentary"),
     path('pricing', views.pricing, name="pricing"),
     path('shares', views.shares, name="shares"),
-    path('dashboard/shares', views.shares, name="shares"),
     path('stock', views.stock, name="stock"),
+    path('dashboard/stock', views.stock, name="stock"),
     path('crypto', views.crypto, name="crypto"),
+    path('dashboard/crypto', views.crypto, name="crypto"),
     path('forex', views.forex, name="forex"),
     path('realestate', views.restate, name="restate"),
     path('investmentfee', views.investmentfee, name="investmentfee"),

@@ -254,8 +254,8 @@ cursor: pointer;
 }
 
 
-.hero-slider{
-    background-image: linear-gradient(rgba(7, 204, 10, 0.3), rgba(8, 237, 11, 0.3)), url(../img/footer.jpg);
+.hero-slider.home{
+    background: linear-gradient(rgba(0, 15, 1, 0.9), rgba(0, 15, 1, 0.9)), url(/assets/img/home.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
