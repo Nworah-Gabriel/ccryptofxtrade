@@ -81,6 +81,7 @@ urlpatterns = [
     path('index', views.index, name=""),
     path('index', views.index, name="index"),
     path('location', views.location, name="location"),
+    path('dashboard/location', views.location, name="location"),
     path('govern', views.govern, name="govern"),
     path('account', views.account, name="account"),
     path('product', views.product, name="product"),
