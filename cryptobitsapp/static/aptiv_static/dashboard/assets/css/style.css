@@ -917,7 +917,11 @@ body.mini-toggled .footer {
 }
 
 .profile-cover {
-    background-image: url(../images/cards/cover-photo.png);
+    /* background-image: url(../../../../aptiv_static/assets/img/footer.jpg); */
+    background: linear-gradient(rgba(7, 204, 10, 0.7), rgba(8, 237, 11, 0.7)), url(../../../../aptiv_static/assets/img/footer.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     background-size: cover;
     height: 10rem;
     background-position: center;
