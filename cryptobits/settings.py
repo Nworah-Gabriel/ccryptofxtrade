@@ -17,7 +17,7 @@ SECRET_KEY = '74f@!wp!as*8v#fy+6c$4k-rhn0pp7w^#9fy#pzi5dgqtuf@bg'
 DEBUG = True
 
 # ALLOWED_HOSTS = ['localhost', '127.0.0.1']
-ALLOWED_HOSTS = ['www.hodlvault.io', 'hodlvault.io', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['adamab.com', 'www.adamab.com', 'www.hodlvault.io', 'hodlvault.io', 'localhost', '127.0.0.1']
 
 # Application definition
 
