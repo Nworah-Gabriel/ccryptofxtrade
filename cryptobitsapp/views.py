@@ -714,25 +714,6 @@ def make_withdraw(request):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         
 
 @login_required(login_url='/login/')
@@ -1334,43 +1315,6 @@ def signupextra(request):
         form=SignupFormextra()
         print(form.errors)
     return render (request, "aptiv_templates/signup.html", {'form':form,'message':message})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
